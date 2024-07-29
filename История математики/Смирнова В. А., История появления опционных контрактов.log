@@ -1,17 +1,13 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.7)  27 JUL 2024 20:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.7)  29 JUL 2024 19:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"Смирнова В. А., История появления опционны
-х контрактов. Решение задачи о справедливо�
-�̆ цене опциона со времен античности до наш�
-�х времен.tex"
+х контрактов.tex"
 
 (./Смирнова В. А., История появления опционны
-х контрактов. Решение задачи о справедливо�
-�̆ цене опциона со времен античности до наш�
-�х времен.tex
+х контрактов.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/book.cls
@@ -587,13 +583,9 @@ Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
 )
 No file "Смирнова В. А., История появления опцио
-нных контрактов. Решение задачи о справедл�
-�вой цене опциона со времен античности до �
-�аших времен".aux.
+нных контрактов".aux.
 \openout1 = `"Смирнова В. А., История появления оп�
-�ионных контрактов. Решение задачи о справе
-дливой цене опциона со времен античности �
-�о наших времен.aux"'.
+�ионных контрактов.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
@@ -689,9 +681,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]
 (./Смирнова В. А., История появления опционны
-х контрактов. Решение задачи о справедливо�
-�̆ цене опциона со времен античности до наш�
-�х времен.aux)
+х контрактов.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -699,20 +689,18 @@ L3 programming layer <2024-02-20>
  ) 
 Here is how much of TeX's memory you used:
  7415 strings out of 474116
- 123351 string characters out of 5743683
+ 121841 string characters out of 5743683
  1928187 words of memory out of 5000000
  29641 multiletter control sequences out of 15000+600000
  565515 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,5n,93p,567b,286s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,5n,93p,416b,286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
 Output written on "Смирнова В. А., История появления 
-опционных контрактов. Решение задачи о спр�
-�ведливой цене опциона со времен античнос�
-�и до наших времен.pdf" (1 page, 77310 bytes).
+опционных контрактов.pdf" (1 page, 77310 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  17 compressed objects within 1 object stream

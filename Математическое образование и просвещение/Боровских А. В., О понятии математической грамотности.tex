@@ -1,0 +1,63 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{О понятии математической грамотности}
+{Боровских Алексей Владиславович}
+{МГУ имени М.В.Ломоносова}
+{aleksey.borovskikh@math.msu.ru}
+{}
+{Математическое образование и просвещение}
+
+Математической грамотностью называется интеллектуальная способность, состоящая во владении математическими знаковыми средствами и проявляющаяся в решении задач с использованием этих средств. Она обеспечивает выстраивание отношения между задачей, сформулированной на общеупотребительном или профессиональном языке, и задачей математической. В состав математической грамотности входят:
+\begin{itemize}
+\item анализ задачи и выделение необходимых данных;
+\item схематизация основных отношений между этими данными;
+\item поиск таких же математических отношений и перенос на них данных задачи;
+\item формулировка, с помощью схемы, математической постановки задачи;
+\item решение математической задачи в рамках той или иной системы операций со знаковыми средствами;
+\item переход, при необходимости, от одной знаковой системы к другой (например, от алгебраической к графической и обратно);
+\item формулировка ответа для математической задачи;
+\item интерпретация ответа и, при необходимости, промежуточных результатов, на схеме;
+\item формулировка ответа на исходную задачу в терминах этой задачи и оценка соответствия ответа смыслу задачи.
+\end{itemize}
+
+Математическая грамотность характеризуется:
+\begin{itemize}
+\item набором освоенных знаковых средств и способов их использования;
+\item классом решаемых задач.
+\end{itemize}
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Боровских А.В. {\it О понятии математической грамотности}, Педагогика, 86 (2022), 3, 33–45.
+\end{enumerate}
+\end{talk}
+\end{document}

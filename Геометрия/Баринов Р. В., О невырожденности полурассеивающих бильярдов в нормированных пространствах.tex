@@ -1,0 +1,49 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{talk}
+{О невырожденности  полурассеивающих бильярдов в нормированных\\ пространствах} %
+{Баринов Роман Васильевич} %
+{МКН СПбГУ}%
+{rbarinov2013@yandex.ru} %
+{} %
+{Геометрия} %
+
+Известно, что бильярдные траектории в дополнении нескольких выпуклых множеств (т.\,е. полурассеивающие бильярды) в евклидовом пространстве имеют локально конечное число отражений от стенок, а при некоторых условиях невырожденности --- и глобально конечное, но построенная теория не обобщается на неевклидов случай. 
+
+В докладе представлены аналогичные вопросы для бильярдов в неевклидовых нормированных пространствах, а также доказано, что в полурассеивающем бильярде в нормированном пространстве любая бильярдная траектория конечной длины содержит конечное число отражений, откуда следует локальная конечность отражений. 
+
+
+\medskip
+
+
+
+\end{talk}
+\end{document}

@@ -1,0 +1,60 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+	
+\begin{talk}
+{О двух проблемах Ролфсена} %
+{Мелихов Сергей Александрович} %
+{МИАН}%
+{melikhov@mi-ras.ru} %
+{} %
+{Топология} %
+
+50 лет назад Д. Ролфсен поставил две проблемы [1]: (а) Всякий ли узел в \(S^3\) изотопен (=гомотопен в классе вложений) кусочно-линейному или, эквивалентно,
+тривиальному узлу? В частности, изотопен ли кусочно-линейному узлу слинг Бинга? (б) Если два кусочно-линейных зацепления в \(S^3\) изотопны, 
+будут ли они кусочно-линейно изотопны?
+
+Ответ на вопрос (б) утвердителен, если инварианты конечного порядка дают полную классификацию кусочно-линейных зацеплений [2].
+Cлинг Бинга не изотопен никакому кусочно-линейному узлу: (i) изотопией, продолжающейся до изотопии двухкомпонентного зацепления с
+коэффициентом зацепления 1; (ii) в классе узлов, являющихся пересечениями вложенных цепочек полноториев [4].
+Причём результат (i) сохраняет силу, если дополнительной компоненте разрешить самопересекаться и даже заменяться на новую, если она представляет
+тот же класс сопряжённости в \(G/[G',G'']\), где \(G\) --- фундаментальная группа дополнения к исходной компоненте [4]. 
+Доказательства основаны на прояснении геометрического смысла определяемых с помощью полинома Конвея от двух переменных формальных аналогов 
+производных инвариантов Кохрана для двухкомпонентных зацеплений с коэффициентом зацепления 1 [3]. 
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] D. Rolfsen, {\it Some counterexamples in link theory}, Canadian J. Math. 26 (1974)
+\item[{[2]}] S. A. Melikhov, {\it Topological isotopy and finite type invariants}, arXiv:2406.09331
+\item[{[3]}] S. A. Melikhov, {\it Two-variable Conway polynomial and Cochran's derived invariants}, arXiv:math/0312007v3 (2024).
+\item[{[4]}] S. A. Melikhov, {\it Is every knot isotopic to the unknot?}, arXiv:2406.09365
+\end{enumerate}
+\end{talk}
+\end{document}

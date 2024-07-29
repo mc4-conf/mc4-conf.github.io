@@ -1,0 +1,49 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Сравнение лежандровых узлов с нетривиальной группой симметрии} %
+{Шастин Владимир Алексеевич} %
+{МГУ им. М.\,В. Ломоносова}%
+{vashast@gmail.com}
+{М.\,В. Прасолов}
+{Топология} %
+
+В работе [1] был построен алгоритм сравнения лежандровых узлов. Если группа симметрий узла тривиальна, соответствующий алгоритм значительно упрощается (см. [2]).  В случае нетривиальной группы симметрии возникают дополнительные трудности: нужно проанализировать подгруппу группы симметрий, порождённую лежандровыми изотопиями. В докладе будут предъявлены порождающие лежандровы изотопии в случае узлов \(7_4\), \(9_{48}\), \(10_{136}\), что позволяет завершить классификацию лежандровых узлов сложности не выше 9. Доклад основан на совместной работе с М.\,В. Прасоловым [3]. 
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] I.\,Dynnikov, M.\,Prasolov.
+An algorithm for comparing Legendrian knots. \emph{Preprint} \\ arXiv:2309.05087
+\item[{[2]}] I.\,Dynnikov, V.\,Shastin. Distinguishing Legendrian knots with trivial orientation-\\-preserving symmetry group. \emph{Algebraic \& Geometric Topology} {\bf 23-4} (2023), 1849--1889. \\ arXiv:1810.06460.
+\item[{[3]}] M.\,Prasolov, V.\,Shastin Distinguishing Legendrian Knots in Topological Types \(7_4\), \(9_{48}\), \(10_{136}\) with maximal Thurston-Benequin number, \emph{Journal of Knot Theory and Its Ramifications}, {\bf 33-01} (2024). arXiv:2306.15461
+\end{enumerate}
+\end{talk}
+\end{document}

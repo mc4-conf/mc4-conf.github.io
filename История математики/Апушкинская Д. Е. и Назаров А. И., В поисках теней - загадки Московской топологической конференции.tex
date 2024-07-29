@@ -1,0 +1,52 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{В поисках теней: загадки Московской топологической конференции}
+{Апушкинская Дарья Евгеньевна и Назаров Александр Ильич}
+{РУДН; ПОМИ РАН и СПбГУ}
+{al.il.nazarov@gmail.com, apushkinskaya@gmail.com}
+{Г.\,И. Синкевич}
+{История математики}
+
+Первая международная топологическая конференция проходила в Москве с 4 по 10 сентября 1935 года. Это была вторая (после конференции по дифференциальной геометрии 1934 г.) специализированная конференция в истории международного математического сообщества, собравшая выдающийся состав участников из 10 стран Европы и Америки. Представленные на ней результаты оказали колоссальное влияние на развитие топологии.
+
+Работа конференции была широко освещена как в официальных публикациях, так и в многочисленных воспоминаниях участников. Тем не менее фактическая информация (список докладчиков, количество докладов и т. д.) почти во всех источниках была дана неполно или неточно, а зачастую и противоречиво, что довольно загадочно для события, произошедшего сравнительно недавно.
+
+Основываясь на доступных источниках, мы попытались представить полную и непротиворечивую картину событий. В частности, мы приводим полный список докладов и докладчиков, а также даем полное описание фотографии участников конференции.
+
+Доклад основан на статье [1].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] D.E. Apushkinskaya, A.I. Nazarov, G.I. Sinkevich, {\it In Search of Shadows: The First Topological Conference, Moscow 1935}, The Mathematical Intelligencer, 41:4 (2019), 37-42.
+\end{enumerate}
+\end{talk}
+\end{document}

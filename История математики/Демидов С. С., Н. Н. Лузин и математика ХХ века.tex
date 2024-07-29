@@ -1,0 +1,45 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+	
+\begin{talk}
+{Н.\,Н. Лузин и математика ХХ века} %
+{Демидов Сергей Сергеевич} %
+{МГУ им. М.В. Ломоносова}%
+{serd42@mail.ru} %
+{} %
+{История математики} %
+
+Н.\,Н. Лузин (1883 – 1950) известен выдающимися результатами в теории множеств и теории функций. Ему принадлежат важные достижения в теории поверхностей, в теории дифференциальных уравнений и других разделах математики. Высокую оценку в научном сообществе получили его философские идеи, в частности, соображения, касающиеся оснований математики, а также его оригинальные историко-математические исследования. Особенным образом следует отметить его педагогический дар, позволивший ему внести важный вклад в отечественную науку и образование и создать одну из важнейших научных школ ХХ столетия --- Московскую школу теории функций, ставшую одним из краеугольных камней Советской математической школы, одной из наиболее влиятельных в математической науке столетия. 
+
+В докладе будут обсуждаться обстоятельства выбора Н.\,Н. Лузиным направлений его исследований, а также их воздействие на развитие математики в нашей стране и в мире. 
+\end{talk}
+\end{document}
+
+

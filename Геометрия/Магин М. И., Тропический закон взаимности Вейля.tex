@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+	
+\begin{talk}
+{Тропический закон взаимности Вейля} %
+{Магин Матвей Ильич} %
+{Санкт-Петербургский государственный университет, МЦМУ им. Леонарда Эйлера}%
+{matheusz.magin@gmail.com} %
+{Калинин Никита Сергеевич} %
+{Геометрия} %
+
+
+В комплексной геометрии широко известен \emph{закон взаимности Вейля}: если \(f\) и \(g\)~--- мероморфные функции на компактной римановой поверхности \(S\) с непересекающимися дивизорами, то выполняется тождество \(\prod_{z \in S} f(z)^{\mathrm{ord}_{z}{g}} = \prod_{z \in S} g(z)^{\mathrm{ord}_{z}{f}}\), где \(\mathrm{ord}_{z}{f}\)~--- минимальная степень в разложении \(f\) в ряд Лорана в окрестности точки \(z\). Топологическое доказательство этого результата принадлежит А. Бейлинсону. 
+
+Мы с Никитой Калининым двумя существенно различными способами доказали полный тропический аналог этого утверждения. А именно, что  для тропических мероморфных функций \(f\) и \(g\) на компактной тропической кривой \(\Gamma\) выполняется тождество  \(\sum_{x \in \Gamma} \mathrm{ord}_{x}{g} \cdot f(x) = \sum_{x \in \Gamma} \mathrm{ord}_{x}{f} \cdot g(x)\). 
+
+Доказательство Никиты Сергеевича опирается на технику \emph{тропической модификации} и использует \emph{тропическую теорему Менелая}.  Идея моего  доказательства состоит в том, что утверждение можно доказать для ребра, а затем проверить, что произведение Вейля выдерживает склейку. Оказалось, что аналогично можно делать для римановой поверхности: разрезать её на цилиндры и штаны и выразить произведение Вейля  через интеграл от некоторой функции по границе куска. Таким образом при помощи идей доказательства тропического закона Вейля было также получено альтернативное топологическое доказательство ``классического'' закона Вейля. Доклад будет посвящен изложению этих результатов. 
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Nikita Kalinin, {\it {A guide to tropical modifications}}, arXiv, 2024.
+\item[{[2]}] A.   Khovanskii, {\it Logarithmic functional and the Weil reciprocity law}, Computer Algebra 2006, 85-108.
+\end{enumerate}
+\end{talk}
+\end{document}

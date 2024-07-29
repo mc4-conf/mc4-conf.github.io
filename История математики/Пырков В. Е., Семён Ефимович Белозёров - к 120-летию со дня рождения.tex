@@ -1,0 +1,46 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{ #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Семён Ефимович Белозёров: к 120-летию со дня рождения} %
+{Пырков Вячеслав Евгеньевич} %
+{Южный федеральный университет}%
+{vepyrkov@sfedu.ru} %
+{} %
+{История математики} %
+
+В докладе будут освещены уточненные и ранее неизвестные сведения о творческом пути и научном наследии С.Е. Белозёрова --- историка математики, ректора Ростовского университета (1938--1954). Эти сведения касаются его деятельности по созданию  кафедры Истории физико-математических наук и по руководству этой кафедрой, постановки курса ``История математики'', а также создания историко-математической школы в Ростовском университете. 
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] С.Е. Белозёров, {\it Математика в Ростовском университете}, Историко-математические исследования.  Вып.VI (1953), 247-352.
+\item[{[2]}] С.Е. Белозёров, {\it Первые шаги в исследовательской работе по истории наук}, Ученые записки Ростовского-н/Д государственного университета им. В.М. Молотова.  Т.XXIV. Труды кафедры истории наук. Вып.1 (1955), 213-214.
+\end{enumerate}
+\end{talk}\end{document}

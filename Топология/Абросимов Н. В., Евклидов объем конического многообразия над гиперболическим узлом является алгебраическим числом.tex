@@ -1,0 +1,60 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+	
+\begin{talk}
+{Евклидов объем конического многообразия над гиперболическим узлом является алгебраическим числом} %
+{Абросимов Николай Владимирович} %
+{Институт математики им. С.\,Л. Соболева СО РАН}%
+{abrosimov@math.nsc.ru} %
+{А.\,А.~Колпаков, А.\,Д.~Медных} %
+{Топология} %
+
+Доклад основан на нашей совместной работе с А.\,А.~Колпаковым и А.\,Д.~Медных [1].
+
+Гиперболическая структура на трехмерном коническом многообразии с узлом в качестве сингулярного множества как правило может быть деформирована в предельную евклидову структуру. В нашей работе мы показываем, что соответствующий нормированный евклидов объем многообразия всегда является алгебраическим числом, то есть корнем некоторого многочлена с целочисленными коэффициентами. Этот результат служит обобщением (для конических многообразий) известной теоремы Сабитова об объемах евклидовых многогранников, давшей ответ на проблему кузнечных мехов. Установленный нами факт выделяется на фоне гиперболических объемов, теоретико-числовая природа которых обычно весьма сложна. Кроме указанной теоремы, в нашей работе предложен алгоритм, позволяющий явно вычислить минимальный многочлен для нормированного евклидова объема.
+
+Пример: Коническое многообразие над узлом \(5_2\) имеет нормированный евклидов объем
+\[
+1/\left(6\sqrt{-6+68\sqrt{2}+4\sqrt{983}+946\sqrt{2}}\right)=0.009909630999945638\ldots
+\]
+Его минимальный многочлен имеет вид
+\[
+785065068490752\,x^8 + 412091172864\,x^6 + 64457856\,x^4 - 864\,x^2 - 1.
+\]
+
+\medskip
+
+Работа выполнена в рамках государственного задания ИМ СО РАН (проект № FWNF-2022-0005).
+
+\begin{enumerate}
+\item[{[1]}] N.~Abrosimov, A.~Kolpakov, A.~Mednykh, {\it Euclidean volumes of hyperbolic knots}, Proc. Amer. Math. Soc., 152 (2024), 869–881.
+\end{enumerate}
+\end{talk}
+\end{document}

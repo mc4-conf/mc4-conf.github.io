@@ -1,0 +1,43 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Синтаксическая алгебра и связь с топологией} %
+{Голубь Никита Игоревич} %
+{Лаборатория Чебышева, СПбГУ}%
+{n.golub2001@gmail.com} %
+{} %
+{Топология} %
+
+Доклад посвящен обьектам, которые мы называем функториальными языками. Первый пример такого языка был построен Романом Михайловым и Сергеем Ивановым. В их работе они показали, что рассмотрев функториальные идеалы \(r\equiv (R-1)\mathbb{Z}[F]\subset f\equiv \triangle(F)\subset \mathbb{Z}[F]\), где \(\mathbb{Z}[-]\) - функтор строящий по свободному копредставлению \(1\to R\to F\to G\to 1\) группы \(G\) групповое кольцо группы \(Z[F]\), и считая старшие пределы \(lim^{i}_{Pres(G)}(w(f,r)|_{Pres(G)})\), где \(w(f,r)\) --- сумма пересечений мономов составленных из произведений \(r,f\) идеалов, мы можем описать многие известные производные функторы из категории групп в абелевы группы (\(G_{ab}, Tor(H_2(G), H_2(G)), H_{2i+1}(G)\dots\)). Однако далее это явление осталось без заслуженного на наш взгляд продвижения.
+
+Мы построим ряд новых языков, продемонстрируем вкратце как можно строить функториальные языки повсюду в математике. Покажем, что применяя алгебраическую К-теорию к некоторым категориям функторов, ассоциированных с функториальными языками, из \(S\to Spectra\), где \(S\subset Gr\) подкатегория категории групп, мы строим интересные инварианты от подкатегорий \(S\). Все это намекает на то, что подобные функториальные языки на самом деле играют роль своеобразных коэффициентов для специфических теорий когомологий, которые мы называем поточными когомологиями, которые в случае fr-языка дают абелевы группы \(\mathcal{FH}^{*}(S;fr)\). Функториальные языки связаны с проблемами в К-теории групповых колец групп, что заходит на территорию важной топологической гипотезы: гипотезы Фаррелла-Джоунса. 
+\end{talk}
+\end{document}
+

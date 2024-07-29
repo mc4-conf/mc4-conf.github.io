@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+	
+\begin{talk}
+{Оценки объемов гиперболических зацеплений через число скручиваний в диаграмме} %
+{Егоров Андрей Александрович} %
+{ИМ СО РАН, НГУ, НОМЦ ТГУ}%
+{a.egorov2@g.nsu.ru} %
+{Веснин А.Ю.} %
+{Топология} %
+
+В приложении к работе [1] приведена верхняя оценка на объём гиперболического зацепления через число скручиваний в его диаграмме. В этом докладе я расскажу о новой верхней оценке для объёмов гиперболических зацеплений, которая улучшает оценку из [1] в случае, если диаграмма зацепления имеет более восьми скручиваний.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] M.~Lackenby , {\it The volume of hyperbolic alternating link complements. With an appendix by I.~Agol and D.~Thurston}, Proceedings of the London Mathematical Society, \textbf{88} (2004),  204--224.
+\end{enumerate}
+\end{talk}
+\end{document}

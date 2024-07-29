@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{О докладе Эйлера 1752 г. ``Principia motus fluidorum''} %
+{Овсянников Владислав Михайлович} %
+{Российский университет транспорта (РУТ-МИИТ)}%
+{OvsyannikovVM@yandex.ru} %
+{} %
+{История математики} %
+
+Обсуждается уравнение неразрывности Эйлера для несжимаемой жидкости в классической работе ``Principia motus fluidorum'' 1752 г. на латыни, выведенное при использовании линейного лагранжева закона движения жидкой частицы с учетом членов второго и третьего порядков малости по времени, содержащее квадратичный и кубичный инварианты тензора скоростей деформаций.  Его запись для сжимаемой среды, произведенная в 2006 г., показала генерацию волн давления и звука, генерируемого аналогичными членами высокого порядка малости волнового уравнения. Принцип построения математики, высказанный Гауссом в переписке с Шумахером, требует учета членов высокого порядка малости при решении задач механики, описывающихся дифференциальными волновыми уравнениями второго и третьего порядков по времени. Л.\,И. Седов в курсе ``Механика сплошной среды'' отмечал, что неучет квадратичного и кубичного инвариантов превращает уравнение неразрывности в приближенное равенство. 
+\end{talk}
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Два портрета на фоне эпохи} %
+{Апушкинская Дарья Евгеньевна и Назаров Александр Ильич} %
+{РУДН; ПОМИ РАН и СПбГУ}%
+{apushkinskaya@gmail.com, al.il.nazarov@gmail.com} %
+{} %
+{История математики} %
+
+Начало XX века в России. Эпоха расцвета промышленности, науки, культуры, и в то же время - эпоха нарастания общественных противоречий, вылившихся в кровавую кашу гражданской войны. Эпоха неустойчивости и ``экспоненциального разбегания'' человеческих судеб. Мы рассмотрим этот период на примере двух ``мировых линий'' с близкими начальными условиями. 
+
+Владимир Иванович Смирнов и Яков Давидович Тамаркин - ровесники, друзья, выпускники Петербургского университета. Выдающиеся математики, ставшие и выдающимися организаторами науки и создателями научных школ – один в Советском Союзе, другой в Соединенных Штатах Америки. Драматических, а порой и трагических поворотов в их биографиях хватило бы на пару голливудских боевиков. Синóпсис такого боевика мы и хотим представить слушателям.
+\end{talk}
+\end{document}

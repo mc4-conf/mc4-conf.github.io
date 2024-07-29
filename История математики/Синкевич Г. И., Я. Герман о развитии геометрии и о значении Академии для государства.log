@@ -1,17 +1,14 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.7)  27 JUL 2024 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.7)  29 JUL 2024 19:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"Синкевич Г. И., Я. Герман о развитии геомет�
-�ии и о значении Академии для государства. Р
-ечь на открытом заседании Петербургской А
-кадемии наук, 1726 г..tex"
+�ии и о значении Академии для государства.tex
+"
 
 (./Синкевич Г. И., Я. Герман о развитии геомет�
-�ии и о значении Академии для государства. Р
-ечь на открытом заседании Петербургской А
-кадемии наук, 1726 г..tex
+�ии и о значении Академии для государства.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/book.cls
@@ -588,12 +585,10 @@ Package babel Info: Importing font and identification data for english
 )
 No file "Синкевич Г. И., Я. Герман о развитии гео�
 �етрии и о значении Академии для государств
-а. Речь на открытом заседании Петербургско�
-�̆ Академии наук, 1726 г.".aux.
+а".aux.
 \openout1 = `"Синкевич Г. И., Я. Герман о развитии г
 еометрии и о значении Академии для государ�
-�тва. Речь на открытом заседании Петербургс
-кой Академии наук, 1726 г..aux"'.
+�тва.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
@@ -695,9 +690,8 @@ lice recitati. Petropoli,
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]
 (./Синкевич Г. И., Я. Герман о развитии геомет�
-�ии и о значении Академии для государства. Р
-ечь на открытом заседании Петербургской А
-кадемии наук, 1726 г..aux)
+�ии и о значении Академии для государства.aux
+)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -705,20 +699,19 @@ L3 programming layer <2024-02-20>
  ) 
 Here is how much of TeX's memory you used:
  7490 strings out of 474116
- 124344 string characters out of 5743683
+ 123184 string characters out of 5743683
  1931187 words of memory out of 5000000
  29712 multiletter control sequences out of 15000+600000
  565515 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,5n,93p,2434b,288s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,5n,93p,2318b,288s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
 Output written on "Синкевич Г. И., Я. Герман о развити
 и геометрии и о значении Академии для госуд
-арства. Речь на открытом заседании Петербу�
-�гской Академии наук, 1726 г..pdf" (1 page, 92624 bytes).
+арства.pdf" (1 page, 92624 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  17 compressed objects within 1 object stream

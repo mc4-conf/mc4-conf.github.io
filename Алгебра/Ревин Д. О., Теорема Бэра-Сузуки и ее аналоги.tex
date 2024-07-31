@@ -1,0 +1,52 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm}
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Теорема Бэра--Сузуки и ее аналоги}
+{Ревин Данила Олегович}
+{Международный научно-образовательный математический центр НГУ; Институт математики им. С.\,Л. Соболева СО РАН}
+{revin@math.nsc.ru}
+{}
+{Алгебра}
+
+Теорема Бэра--Сузуки --- классический результат теории групп. Она утверждает, что \(p\)-радикал конечной группы  для любого простого числа \(p\) совпадает с множеством таких элементов \(x\), что любые два элемента, сопряженных с \(x,\) порождают \(p\)-подгруппу.  Теорема является популярным источником различных аналогов и обобщений. Один из них [1,2] утверждает, что разрешимый радикал конечной группы совпадает с множеством таких элементов \(x\), что любые четыре элемента, сопряженных с \(x\), порождают разрешимую подгруппу.
+
+Пусть фиксирован непустой класс конечных групп \(\mathfrak{X}\), замкнутый относительно подгрупп, гомоморфных образов и расширений (последнее означает, что конечная группа~\(G\), обладающая нормальной подгруппой \(N\) такой, что \(N\) и \(G/N\) принадлежат классу \(\mathfrak{X}\), сама принадлежит \(\mathfrak{X}\)). Основной результат доклада утверждает, что существует натуральная константа \(m\), зависящая от \(\mathfrak{X}\), с тем свойством, что элемент \(x\) конечной группы принадлежит \(\mathfrak{X}\)-радикалу (наибольшей нормальной \(\mathfrak{X}\)-подгруппе) группы тогда и только тогда, когда любые \(m\) сопряженных с \(x\) элементов порождают \(\mathfrak{X}\)-подгруппу.
+
+\medskip
+
+Работа выполнена за счет РНФ, грант 24-11-00127, \url{https://rscf.ru/project/24-11-00127/}.
+
+\begin{enumerate}
+\item[{[1]}] P. Flavell, S. Guest, R. Guralnick, ``Characterizations of the solvable radical'', Proc. Amer. Math. Soc., 138:4 (2010), 1161--1170.
+
+\item[{[2]}] N. Gordeev, F. Grunewald, B. Kunyavski\u{\i}, E. Plotkin, ``From Thompson to Baer--Suzuki: a sharp characterization of the solvable radical'', J. Algebra, 323:10 (2010), 2888--2904.
+\end{enumerate}
+\end{talk}
+\end{document}

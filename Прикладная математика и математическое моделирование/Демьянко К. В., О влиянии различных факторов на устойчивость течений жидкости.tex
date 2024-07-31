@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+	\vskip 0pt\nopagebreak%
+	\vskip 0pt\nopagebreak%
+	\textbf{#1}\vspace{3mm}\\\nopagebreak%
+	\textit{#2}\\\nopagebreak%
+	#3\\\nopagebreak%
+	\url{#4}\vspace{3mm}\\\nopagebreak%
+	\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+	\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{О влиянии различных факторов на устойчивость течений жидкости}
+{Демьянко Кирилл Вячеславович}
+{ИВМ им. Г.\,И. Марчука РАН}
+{k.demyanko@inm.ras.ru}
+{}
+{Прикладная математика и математическое моделирование}
+
+Изучение влияния различных факторов на характеристики линейной устойчивости ламинарных течений жидкости является основой для разработки перспективных методов пассивного управления ламинарно-турбулентным переходом, актуальных для приложений, связанных, например, с производством и оптимизацией элементов конструкций морских судов и дозвуковых летательных аппаратов. К таким факторам относится податливость обтекаемой поверхности, ее форма, а также соотношение геометрических масштабов течения в направлении, перпендикулярном направлению основного течения. На примере ламинарных течений вязкой несжимаемой жидкости в каналах различного сечения с твердыми или податливыми стенками, а также пограничного слоя над продольно оребренной поверхностью в докладе обсуждаются результаты численного исследования влияния перечисленных факторов на характеристики модальной и немодальной линейной устойчивости, необходимые для описания так называемых естественного и докритического сценариев ламинарно-турбулентного перехода соответственно.
+\end{talk}
+\end{document}

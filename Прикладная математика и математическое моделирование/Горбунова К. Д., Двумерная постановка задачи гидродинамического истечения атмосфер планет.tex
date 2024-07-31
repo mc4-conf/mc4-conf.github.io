@@ -1,0 +1,54 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Двумерная постановка задачи гидродинамического истечения атмосфер планет}
+{Горбунова Ксения Дмитриевна}
+{Институт вычислительного моделирования СО РАН}
+{gorbunova.kd@icm.krasn.ru}
+{Н.\,В. Еркаев}
+{Прикладная математика и математическое моделирование}
+
+Рассмотрена двумерная задача о нестационарном истечении верхних слоев атмосферы планеты в результате нагрева жестким ультрафиолетовым излучением Звезды. В отличие от одномерной постановки, учитывается особенность распространения и поглощения ультрафиолетового излучения и добавляется меридиональная составляющая скорости, которая становится больше с увеличением угла отклонения от центральной оси, направленной на родительскую звезду. 
+
+Для расчетов использовались физические характеристики теплого мини-Нептуна TOI-421c и его родительской звезды~[1], компактная схема типа Мак-Кормака и метод Рунге-Кутты четвертого порядка~[2]. Сравнение с одномерными результатами, полученными ранее~[3,4], показало, что они значительно завышают общий расход газа, в связи с этим был подобран параметр для одномерной постановки, позволяющий получить более реалистичную оценку потери массы атмосферы.  
+
+\medskip
+
+Работа поддержана Красноярским математическим центром, финансируемым Минобрнауки РФ в рамках мероприятий по созданию и развитию региональных НОМЦ (Соглашение 075-02-2024-1378).
+
+\begin{enumerate}
+\item[{[1]}] Carleo, I., Gandolfi, D., et al., {\it The multiplanet system TOI-421: A warm Neptune and a super puffy Mini-Neptune transiting a G9 V star in a visual binary}, The Astronomical Journal, 160 (2020), 114--137. 
+\item[{[2]}] JavanNezhad, R., Meshkatee, A.H., et al., {\it High-order compact MacCormack scheme for two-dimensional compressible and non-hydrostatic equations of the atmosphere}, Dynamics of Atmospheres and Oceans, 75 (2016), 102--117.
+\item[{[3]}] Еркаев Н.В., Горбунова К.Д., {\it Компактная разностная схема для гидродинамической модели истечения атмосфер планет}, Вычислительные технологии, 29 № 1 (2024), 5--17.
+\item[{[4]}] Erkaev, N.V., Gorbunova, K.D., {\it Magnetic Barrier in Front of Exoplanets Interacting with Stellar Wind}, Springer, 2022.
+\end{enumerate}
+\end{talk}
+\end{document}
+

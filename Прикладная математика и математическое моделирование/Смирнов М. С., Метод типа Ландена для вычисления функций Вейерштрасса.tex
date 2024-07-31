@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Метод типа Ландена для вычисления функций Вейерштрасса}
+{Смирнов Матвей Станиславович}
+{Институт вычислительной математики им. Г.\,И. Марчука РАН}
+{matsmir98@gmail.com}
+{}
+{Прикладная математика и математическое моделирование}
+
+Метод Ландена широко известен в контексте эллиптических интегралов и функций Якоби. Его суть состоит в замене модулярных параметров, соответствующих удвоению одного из периодов. Повторение этой процедуры приводит к эффективному вычислительному методу, в особенности, потому что эллиптический модуль при этом сходится квадратично быстро. В отличие от функций Якоби, функции Вейерштрасса традиционно мало применяются в вычислительной практике. Данный доклад будет посвящен новому методу вычисления функций Вейерштрасса, основанному на идеях, аналогичных методу Ландена. Полученный метод также устойчив и имеет квадратичную сходимость. Будет показано как на этом пути можно получить эффективный метод вычисления периодов и отображения Абеля для данных инвариантов Вейерштрасса эллиптической кривой.
+\end{talk}
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Математическое моделирование излучения плазменной антенны и исследование ее характеристик методом поверхностного резонанса в тлеющем разряде}
+{Киселев Глеб Борисович}
+{Казанский (Приволжский) федеральный университет, институт физики}
+{kiselev.gleb.97@gmail.com}
+{Желтухин Виктор Семенович, Шемахин Александр Юрьевич}
+{Прикладная математика и математическое моделирование}
+
+Работа включает две основные части. Первая посвящена исследованию длин волн электромагнитных полей, генерируемых плазменной антенной в зависимости от давления. Исследование проводилось путем моделирования в среде Comsol Multiphysics тлеющего разряда вдоль трубки (одномерная постановка). По полученным распределениям тока в плазме была полученная диаграмма направленности и пространственное распределение электромагнитного поля (решение уравнений Максвелла в двумерной постановке) [1].
+
+Вторая часть работы посвящена исследованию неинвазивного метода измерения электронной плотности приповерхностного слоя ртутного тлеющего разряда, который основан на определении резонансных частот между самим слоем разряда и частотой источника. Полученные данные были верифицированы с помощью численной модели, построенной в среде Comsol Multiphysics, и эмиссионной спектроскопией [2].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Terentev, T.N., Kiselev, G.B., Shemakhin, A.Y. et al. {\it Influence of Pressure on Plasma Antenna Resonance Wavelength}. High Energy Chem 58, 190–193 (2024).
+\item[{[2]}] Shemakhin Y. A. et al., {\it Spectral studies of inductively coupled plasma characteristics of low pressure discharges for two configurations of vacuum chambers}, Journal of Physics: Conference Series. – IOP Publishing, 2022. – V. 2270. – №. 1. – p. 012007.
+\end{enumerate}
+\end{talk}
+\end{document}

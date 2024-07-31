@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Многомерная теорема Бёрлинга--Мальявена о мультипликаторе} %
+{Васильев Иоанн Михайлович} %
+{Université Paris Cergy и ПОМИ РАН}%
+{ioann.vasilyev@cyu.fr} %
+{} %
+{Вещественный и функциональный анализ} %
+
+Доклад будет посвящен новому многомерному обобщению теоремы о Бёрлинга и Мальявена о мультипликаторе. Более подробно, мы увидим, как получить новое достаточное условие на то, чтобы радиальная функция являлась мажорантой Бёрлинга и Мальявена в многомерном случае (это означает, что рассматриваемая функция может быть оценена снизу ненулевой, квадратично интегрируемой функцией, которая имеет носитель преобразования Фурье, заключенный в шаре произвольно малого радиуса). Мы также объясним, как отсюда вывести новое точное достаточное условие и в нерадиальном случае. Наши результаты дают частичный ответ на вопрос, поставленный Л. Хёрмандером. Если позволит время, то мы также обсудим некоторые связанные одномерные результаты. Доклад будет основан на результатах статей [1], [2] и [3].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] I. Vasilyev, \emph{On the multidimensional Nazarov lemma}, Proceedings of American Mathematical Society, 11 p., (2022) (DOI: https://doi.org/10.1090/proc/15805).
+\item[{[2]}] I. Vasilyev, \emph{A generalization of the First Beurling--Malliavin theorem}, (2022), 16 p., to appear in Analysis and PDE,  link to arxiv: https://arxiv.org/pdf/2109.04123.pdf, https://msp.org/soon/coming.php?jpath=apde
+\item[{[3]}] I. Vasilyev, \emph{The Beurling and Malliavin Theorem in Several Dimensions}, link to arxiv: https://arxiv.org/pdf/2306.12397.pdf
+\end{enumerate}
+\end{talk}
+\end{document}

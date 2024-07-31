@@ -1,0 +1,55 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Базисы Рисса, порожденные целочисленными сдвигами сплайнов} %
+{Мищенко Евгения Васильевна} %
+{Институт математики им. С.\,Л.Соболева}%
+{e.mishchenko@g.nsu.ru} %
+{} %
+{Вещественный и функциональный анализ} %
+
+Исследована так называемая устойчивость семейств целочисленных сдвигов \(B_m\)-сплайнов, представляющих собой \(m\)-кратную свертку функции-индикатора единичного отрезка, и экспоненциальных сплайнов \(U_{m,p}\), являющихся свертками  некоторой финитной функции экспоненциального вида и \(B_m\)-сплайна. Установить устойчивость  семейства функций из гильбертова пространства \(H\) означает найти  ненулевые конечные константы \(A\)  и \(B\), с помощью которых норма любой линейной комбинации из элементов этого семейства c  коэффициентами  из \(l_2\)  оценивается снизу и сверху через \(l_2\) норму последовательности этих коэффицентов. Такие константы также называются границами Рисса.  Если семейство функций устойчиво и вдобавок полно в \(H\), то оно образует базис Рисса. При \(A=B\) базис Рисса обращается в ортнормированный базис.
+
+В рассматриваемом случае были найдены  постоянные \(A\)  и \(B\) для любых \(m \in N, p \in R\), а также установлены некоторые предельные свойства экспоненциальных сплайнов при \(p \rightarrow 0, \pm \infty .\)
+
+\medskip
+
+Работа выполнена в рамках государственного задания в Институте математики им. С.\,Л.Соболева СО РАН (проект №FWNF-2022-0008).
+
+\begin{enumerate}
+\item[{[1]}] M.A. Unser, {\it Splines: a perfect fit for medical imaging},  Proc. SPIE 4684, Medical Imaging 2002: Image Processing, (9 May 2002). 
+\item[{[2]}] Ch. Chui, 
+{\it An Introduction to Wavelets}, Academic Press, San Diego, 1992. 
+\item[{[3]}] E.V. Mishchenko, 
+{\it Determination of Riesz bounds for the spline basis with the help of trigonometric polynomials}, Siberian Mathematical Journal,  {51}, (2010), 660--666. 
+\end{enumerate}
+\end{talk}
+\end{document}
+

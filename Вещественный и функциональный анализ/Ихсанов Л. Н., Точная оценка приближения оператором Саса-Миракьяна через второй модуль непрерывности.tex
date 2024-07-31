@@ -1,0 +1,59 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Точная оценка приближения оператором Саса--Миракьяна через второй модуль непрерывности} %
+{Ихсанов Лев Назарович} %
+{Санкт-Петербургский государственный университет}%
+{lv.ikhs@gmail.com} %
+{вещественный и функциональный анализ} %
+
+Оператором Саса--Миракьяна называется оператор 
+\(M_nf(x)=e^{-nx}\sum\limits_{k=0}^\infty\frac{(nx)^k}{k!}f\left(\frac{k}n\right).\)
+
+Этот классический положительный оператор, впервые рассмотренный Сасом в работе 1950 года
+(в работе Миракьяна 1941-го рассматриваются соответствующие частичные суммы),
+интерпретируется как математическое ожидание случайной величины \(f\left(\frac{\xi}n\right)\),
+где \(\xi\) -- случайная величина, имеющая распределение Пуассона с параметром \(nx\).
+В силу этой интерпретации, а также совпадения многих аппроксимационных свойств, он часто называется аналогом оператора Бернштейна на полуоси
+(оператор Бернштейна ассоциируется с биномиальным распределением).
+Применяется в статистических моделях, численном решении интегральных уравнений и других задачах.
+
+Нас будет интересовать оценка приближения \(|M_nf(x)-f(x)|\), где \(x>0\), в терминах конструктивных свойств функции \(f\).
+Лучшая  известная ранее оценка была получена Палтаней (1988):
+\[|M_nf(x)-f(x)|\,\le\,\frac{5}2\omega_2\left(f,\,\sqrt{\frac{x}n}\right).\]
+
+{\bf Основной результат} нашей работы представляет собой оценка
+\begin{equation*}
+|M_nf(x)-f(x)|\,\le\,\omega_2\left(f,\,4\max\left\{\frac1n,\,\sqrt{\frac{x}n}\right\}\right).
+\end{equation*}
+
+Речь в докладе пойдёт о свойствах оператора Саса--Миракьяна, точности основного результата, а так же о методе, использованном в исследовании.
+\end{talk}
+\end{document}

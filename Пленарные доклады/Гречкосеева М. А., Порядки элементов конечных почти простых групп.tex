@@ -1,0 +1,45 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Порядки элементов конечных почти простых групп}
+{Гречкосеева Мария Александровна}
+{Институт математики им. С.\,Л. Соболева СО РАН}
+{grechkoseeva@gmail.com}
+{}
+{Пленарный доклад}
+
+Конечная группа \(G\) называется почти простой, если она удовлетворяет условию \(S\leq G\leq \operatorname{Aut} S\) для некоторой конечной неабелевой простой группы  \(S\); при этом  \(S\) является цоколем группы \(G\). Многие вопросы теории конечных групп сводятся не к простым, а к почти простым группам, поскольку важна информация не только о том, каковы композиционные факторы данной конечной группы, но и каково действие группы  на этих композиционных факторах.
+
+Доклад посящен задаче вычисления множеств порядков элементов конечных почти простых групп. Эта задача легко решается для групп со знакопеременным цоколем и 
+давно решена для групп со спорадическим цоколем, поэтому речь пойдет о группах с цоколем лиева типа и, как легко понять, можно ограничиться группами вида \(\langle S, \alpha\rangle\), где~\(\alpha\in \operatorname{Aut} S\). 
+
+Будет дан обзор известных результатов, в том числе,  будет рассказано, как были найдены множества порядков элементов самих простых групп лиева типа и как случай внешнего автоморфизма \(\alpha\) был сведен к случаю, когда \(\alpha\) --- диагонально-графовый автоморфизм. Также будут представлены недавние результаты о диагонально-графовых автоморфизмах. 
+\end{talk}
+\end{document}

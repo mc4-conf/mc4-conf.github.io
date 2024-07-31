@@ -1,0 +1,38 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[5]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Секция: #5\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Радиально симметричные локально вогнутых функций и точные оценки распределений векторнозначных функций} %
+{Добронравов Егор Петрович} %
+{СПбГУ}%
+{yegordobronravov@mail.ru} %
+{Вещественный и функциональный анализ} %
+
+Мы построим теорию позволяющую вычилсять радиально симметричные минимальные локально вогнутые функции по их аналогам меньшей размерности, а так же приложения этой теории к построению точных оценок распределений векторнозначных функций. Так же с помощью полученной теории построим несколько точных функций Беллмана и соответственно получим точные неравенства оценивающие распределения функций.
+\end{talk}
+\end{document}

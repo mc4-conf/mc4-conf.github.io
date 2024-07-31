@@ -1,0 +1,56 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Применение PINN в SIR модели игры среднего поля}
+{Неверов Андрей Вячеславович}
+{Институт математики им. Соболева СО РАН}
+{a.neverov@g.nsu.ru}
+{Криворотько Ольга Игоревна}
+{Прикладная математика и математическое моделирование}
+
+Рассматривается пространственная эпидемиологическая SIR модель, в которой люди распределены в некотором населенном пункте и стремятся не стать инфицированными. Для реализации взаимодействия большого населения в условиях эпидемии применен подход игр среднего поля~[1], характеризующийся совместным решением систем уравнений в частных производных типа Колмогорова-Фоккера-Планка и Гамильтона-Якоби-Беллмана.
+
+Для численной реализации математического моделирования распространения эпидемии в популяции с учетом оптимального управления применяется метод машинного обучения, а именно физически информированные нейронные сети (PINN) с различными модификациями~[2]. Рассматривается возможность решения коэффициентных обратных задач, где информация вводится в виде дополнительных уравнений.
+
+\medskip
+
+Работа выполнена в рамках государственного задания Института математики им. С.\,Л. Соболева СО РАН, проект FWNF-2024-0002 ``Обратные некорректные задачи и машинное обучение в биологических, социально-экономических и экологических процессах''.
+
+\begin{enumerate}
+\item[{[1]}] V. Petrakova, O. Krivorotko, Mean Field Optimal Control Problem for Predicting the Spread of Viral Infections, {\it 19th International Asian School-Seminar on Optimization Problems of Complex Systems (OPCS)}, (2023), 79-84.
+\item[{[2]}] M. Raissi, P. Perdikaris, G.E. Karniadakis,
+Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,
+{\it Journal of Computational Physics},
+378
+(2019), 
+686-707.
+\end{enumerate}
+\end{talk}
+\end{document}

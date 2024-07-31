@@ -1,0 +1,41 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+  {Гурвицевы и (2,3)-порожденные группы} % [1] название доклада
+  {Всемирнов Максим Александрович} % [2] имя докладчика
+  {ПОМИ РАН}% [3] аффилиация
+  {vsemir@pdmi.ras.ru} % [4] адрес электронной почты (НЕОБЯЗАТЕЛЬНО)
+  {} % [5] соавторы (НЕОБЯЗАТЕЛЬНО)
+  {Алгебра} % [6] название секции
+
+В докладе будет рассказано о задаче порождения групп с условиями на порядки образующих и их произведений. Причем нас будет интересовать не только вопрос о возможности или невозможности такого порождения,  но и задача явного нахождения соответствующих образующих. Эти задачи относятся к области так называемого эффективного порождения в группах. Многолетние усилия многих авторов привели к практически полному ответу на вопрос, какие конечные простые группы могут быть порождены инволюцией и элементом порядка три ((2,3)-порождение). Последние существенные результаты в этом направлении были недавно получены Тамбурини и Пеллегрини. С другой стороны, аналогичный вопрос для для другого важного класса, а именно для гурвицевых групп (конечных (2,3,7)-порожденных групп), еще далек от полного разрешения. В докладе будет дан обзор современного состояния этих проблем и сформулированы открытые вопросы.
+\end{talk}
+\end{document}
+

@@ -1,0 +1,51 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+  {Аппроксимация фреймоподобными мульти-всплесками} % [1] название доклада
+  {Кривошеин Александр Владимирович} % [2] имя докладчика
+  {Санкт-Петербургский государственный университет}% [3] аффилиация
+  {krivosheinav@gmail.com} % [4] адрес электронной почты (НЕОБЯЗАТЕЛЬНО)
+  {} % [5] соавторы (НЕОБЯЗАТЕЛЬНО)
+  {Вещественный и функциональный анализ} % [6] название секции
+
+Квазипроекционный оператор, порождённый парой вектор-функций $\Phi$, $\widetilde\Phi: {\mathbb R}^d \to {\mathbb C}^r$, имеет вид
+$$
+Q_j(\Phi, \widetilde\Phi, f) =\sum_{k\in{\mathbb Z}^d} \langle f, \widetilde\Phi_{jk} \rangle \Phi_{jk},
+%=\sum_{\nu = 1}^r\sum_{k\in\zd} \langle f, \w\phi_{\nu,j,k} \rangle \phi_{\nu,j,k}
+$$
+где $\Phi_{jk} = |\det M|^{j/2} \Phi(M^j \cdot + k)$, $j\in{\mathbb Z}$, $k\in {\mathbb Z}^d$, $M$ -- матрица растяжения.
+Изучены аппроксимационные свойства таких операторов и получены оценки погрешности в $L_2$-норме для широкого класса таких операторов.
+
+Для масштабирующих вектор-функций $\Phi$, $\widetilde\Phi$ квазипроекционные операторы $Q_j(f,\Phi,\widetilde\Phi)$
+связаны с двойственными системами мульти-всплесков. Хотя общая схема построения двойственных фреймов мульти-всплесков в многомерном случае известна, ее реализация на практике является сложной задачей из-за необходимости обеспечения некоторых дополнительных свойств. Предложена конструкция фреймоподобных мульти-всплесков с отказом от фреймовости,  но с сохранением возможности разложения функций аналогичного разложению по фреймам. Это упрощает задачу построения фреймоподобных мульти-всплесков. Установлены аппроксимационные свойства фреймоподобных мульти-всплесков. Предложены алгоритмы построения фреймоподобных мульти-всплесков с заданным порядком аппроксимации.
+
+\medskip
+\end{talk}
+\end{document}

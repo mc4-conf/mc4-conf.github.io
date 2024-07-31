@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm}
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{О псевдо-композиционных и трейн алгебрах}
+{Старолетов Алексей Михайлович}
+{Институт математики имени С. Л. Соболева СО РАН}
+{staroletov@math.nsc.ru}
+{}
+{Алгебра}
+
+Коммутативная неассоциативная алгебра имеет ранг \(r\), если каждый её элемент порождает подалгебру размерности не более \(r-1\). Нас будут интересовать следующие два класса алгебр ранга 3.
+Предположим, что \(\mathbb{F}\) -- поле характеристики, отличной от 2 и 3.
+Коммутативная \(\mathbb{F}\)-алгебра \(A\), на которой задана ненулевая симметрическая билинейная форма \(\varphi\), называется псевдо-композицинной, если
+\(x^3=\varphi(x, x)x\) для всех \(x\in A\). Эти алгебры активно изучались в прошлом, в частности Мейберг и Осборн получили классификацию, при некоторых ограничениях, в [1].
+
+Второй класс --- это трейн алгебры ранга 3. Пусть, как и ранее, \(A\) --- коммутативная \(\mathbb{F}\)-алгебра, где \(\operatorname{char}\mathbb{F}\neq 2,3\). Главные степени элементов в \(A\) определяются следующим образом: \(x^1=x\) и \(x^i=x^{i-1}x\) при \(i \geq 2\).
+Если существует ненулевой гомоморфизм алгебр \(\omega:A\rightarrow\mathbb{F}\), то
+\(A\) называется барической. В этом случае пара \((A,\omega)\) называется трейн алгеброй ранга \(r\), если существуют такие элементы \(\lambda_1,\ldots,\lambda_{r-1}\in\mathbb{F}\), что каждый \(x\in A\) удовлетворяет равенству
+\(x^r+\lambda_1\omega(x)x^{r-1}+\ldots+\lambda_{r-1}\omega(x)^{r-1}x=0\).
+Эти алгебры были введены Этерингтоном в 1939 году как часть алгебраического формализма генетики в его фундаментальной работе [2].
+
+Предположим, что \(A\) --- коммутативная \(\mathbb{F}\)-алгебра и \(a\in A\). Если \(\lambda\in\mathbb{F}\), то обозначим \(A_\lambda(a)=\{u\in A~|~au=\lambda u\}\) и для \(L\subseteq F\) определим \(A_L(a):= \bigoplus A_\lambda(a)\).
+
+Псевдо-композиционные алгебры и трейн алгебры ранга 3 обладают следующим общим свойством: для алгебры \(A\) найдётся такой элемент \(\eta\in\mathbb{F}\setminus\{\frac{1}{2},1\}\), что для каждого идемпотента \(e\in A\) справедливо разложение Пирса
+\[A=A_1(e)\oplus A_{\eta}(e)\oplus A_\frac{1}{2}(e),\]
+где \(A_1(e)=\langle e\rangle\), с правилами умножения
+\[A_\eta(e)^2\subseteq A_1(e), A_{1/2}(e)^2\subseteq A_1(e)\oplus A_\eta(e), A_\frac{1}{2}(e)A_\eta(e)\subseteq A_\frac{1}{2}(e).\]
+Будем называть такой идемпотент \(\eta\)-осью в алгебре \(A\).
+Оказывается это свойство характеризует два упомянутых класса алгебр в следующем смысле.
+
+{\bf Теорема.}
+{\it Пусть \(\mathbb{F}\) --- поле характеристики, отличной от \(2\) и \(3\).
+Предположим, что \(\eta\in\mathbb{F}\setminus\{\frac{1}{2},1\}\) и
+\(A\) --- коммутативная \(\mathbb{F}\)-алгебра, порождённая множеством \(\eta\)-осей.
+Справедливы следующие утверждения.
+\begin{enumerate}
+\item[(a)] если \(\eta=-1\), то \(A\) --- псевдо-композиционная алгебра;
+\item[(b)] если \(\eta\neq-1\), то \(A\) --- трейн алгебра ранга \(3\).
+\end{enumerate}
+}
+
+При доказательстве используются методы, развитые ранее при исследовании аксиальных алгебр, определённых в [3]. Результаты доступны в виде препринта {\tt arXiv:2309.05237}.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]
+K.~Meyberg, J.M.~Osborn, {\it Pseudo-composition algebras}, Math Z., {\bf214}:1 (1993), 67--77.
+\item[{[2]}] I.M.H.~Etherington, {\it Genetic algebras},
+Proc. Roy. Soc. Edinburgh, {\bf59} (1939), 242--258.
+\item[{[3]}] J.I.~Hall, F.~Rehren and S.~Shpectorov, {\it Universal axial algebras and a theorem of Sakuma}, J. Algebra, {\bf421} (2015), 394--424.
+\end{enumerate}
+\end{talk}
+\end{document}

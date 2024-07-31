@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Многоконтинуальное усреднение}
+{Аммосов Дмитрий Андреевич}
+{Институт математики и информатики, Северо-Восточный федеральный университет им. М.\,К. Аммосова}
+{dmitryammosov@gmail.com}
+{}
+{Прикладная математика и математическое моделирование}
+
+Многие прикладные задачи являются многомасштабными по своей природе, с неоднородностями на различных масштабах и высоким контрастом. Для решения таких задач часто применяют методы усреднения, в которых вычисляются эффективные свойства в каждой макромасштабной точке. Однако в ряде случаев, особенно при высоком контрасте, этого оказывается недостаточно, поскольку требуется больше усредненных коэффициентов для точного моделирования.
+
+В данном докладе рассматривается применение нового метода многоконтинуального усреднения для задач с высоким контрастом и без разделения масштабов. Данный метод представляет собой гибкий и в то же время строгий подход для вывода многоконтинуальных моделей. Основная идея метода заключается в построении специальных задач на ячейках в расширенных представительных элементах с ограничениями для учета различных эффектов. Решение задач на ячейках позволяет получить разложение искомой функции по континуумам, а затем с помощью некоторых операций вычислить эффективные свойства и вывести соответствующую многоконтинуальную модель.
+\end{talk}
+\end{document}

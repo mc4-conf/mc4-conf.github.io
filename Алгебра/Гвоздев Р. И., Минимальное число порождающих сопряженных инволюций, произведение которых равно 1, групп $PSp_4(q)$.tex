@@ -1,0 +1,48 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+  {Минимальное число порождающих сопряженных инволюций,\\ произведение которых равно 1, групп $PSp_4(q)$} % [1] название доклада
+  {Гвоздев Родион Игоревич} % [2] имя докладчика
+  {Сибирский федеральный университет}% [3] аффилиация
+  {} % [4] адрес электронной почты (НЕОБЯЗАТЕЛЬНО)
+  {Нужин Я.Н., Петруть Т.С., Соколовская А.М.} % [5] соавторы (НЕОБЯЗАТЕЛЬНО)
+  {Алгебра} % [6] название секции
+
+В работе G.~Malle, J.~Saxl, T.~Weigel. Generation of classical groups, Geom. Dedicata, 1994 записана следующая проблема. Для каждой конечной простой неабелевой группы $G$ найти $n_c(G)$ --- минимальное число порождающих сопряженных инволюций, произведение которых равно 1 (см. также вопрос 14.69в в коуровской тетради). К настоящему времени вопрос решен для спорадических, знакопеременных групп и групп $PSL_n(q)$, $q$ нечетно, исключая случай $n=6$ и $q\equiv3(mod4)$.
+
+Если $G$ --- конечная простая неабелева группа, то $n_c(G)\geq 5$, а если она еще и порождается тремя инволюциями $\alpha$, $\beta$, $\gamma$, первые две из которых перестановочны и все четыре инволюции $\alpha$, $\beta$, $\gamma$ и $\alpha\beta$ сопряжены, то $n_c(G)=5$. Доказана\medskip
+
+\textbf{Теорема. } {\sl Группа $PSp_4(q)$ тогда и только тогда порождается тремя инволюциями $\alpha$, $\beta$, $\gamma$, первые две из которых перестановочны и все четыре инволюции $\alpha$, $\beta$, $\gamma$ и $\alpha\beta$ сопряжены, когда $q\neq2,3$.}\\
+
+\textbf{Следствие. } {\sl 1) $n_c(PSp_4(q))=5$, при $q\neq2,3$;\\
+2) $n_c(PSp_4(3))=6$;\\
+3) $n_c(PSp_4(2))=10$.}\medskip
+\end{talk}
+\end{document}

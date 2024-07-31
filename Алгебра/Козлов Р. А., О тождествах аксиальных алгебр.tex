@@ -1,0 +1,61 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{О тождествах аксиальных алгебр}
+{Козлов Роман Александрович}
+{Институт математики им С.\,Л. Соболева СО РАН}
+{KozlovRA.NSU@yandex.ru}
+{В.\,Ю. Губарев}
+{Алгебра}
+
+Аксиальные алгебры --- это класс коммутативных неассоциативных алгебр, порождённых идемпотентами специального вида, называемых осями. Аксиальные алгебры были введены в работе Дж. Холла, Ф. Рейрена и С. Шпекторова [1] как новый подход к реализации алгебры Грисса. В той же работе отмечена тесная взаимосвязь между аксиальными и йордановыми алгебрами.
+
+В работе В. Губарева, Ф. Машурова и А. Панасенко [2] впервые ставится вопрос о поиске тождеств, выполненных на аксиальных алгебрах. Так, было доказано, что для почти всех значений параметров \(\alpha\) и \(t\) на \(S(\alpha, t, E)\) --- расщепляемой алгебре невырожденной билинейной формы -- нет тождеств степеней 3 и 4, не следующих из коммутативности. А среди тождеств степени 5 на алгебре \(S(\alpha,E)\) при \(\alpha\not\in\{\pm1,0,1/2,2\}\) появляется единственное новое:
+\[((a, b, c), d, b) + ((c, b, d), a, b) + ((d, b, a), c, b) = 0,\]
+где \((a, b, c)\) = \((a b) c - a (b c)\). Назовём его тождеством трёх ассоциаторов.
+
+В работе пяти авторов [3] была предложена конструкция, позволяющая явно построить три бесконечных серии аксиальных алгебр монстрового типа. 
+В данной работе исследуется первая из них --- серия \(Q_k(\eta)\), для неё найдено разложение в~прямую сумму пространств \(A \oplus B\), где \(A\) --- подалгебра, а \(B\) есть \(A\)-модуль.
+Установлено, что четырёхмерная алгебра \(Q_2(\eta)\), как и алгебра \(S(\alpha,E)\), для почти всех \(\eta\) не имеет тождеств степени \(\le 5\), не следующих из коммутативности и тождества трёх ассоциаторов. 
+
+Вычисления проводились в системах компьютерной алгебры \texttt{Singular} и \texttt{GAP}.
+
+\medskip
+
+Работа выполнена при поддержке математического центра в Академгородке, соглашение номер 075-15-2022-281 с министерство науки и высшего образования РФ.
+
+\begin{enumerate}
+\item[{[1]}] J.I. Hall, F. Rehren, S. Shpectorov, Primitive axial algebras of Jordan type, J.~Algebra {\bf 437} (2015), 79–115.
+\item[{[2]}] V. Gubarev, F. Mashurov, A. Panasenko, Generalized sharped cubic form and split spin factor algebra. Comm. Algebra {\bf 52(8)} (2024), 3282--3305.
+\item[{[3]}]
+A. Galt, V. Joshi, A. Mamontov, S. Shpectorov, A. Staroletov, Double axes and subalgebras of Monster type in Matsuo algebras, Comm. Algebra {\bf 49} (2021), 4208--4248.
+\end{enumerate}
+\end{talk}
+\end{document}

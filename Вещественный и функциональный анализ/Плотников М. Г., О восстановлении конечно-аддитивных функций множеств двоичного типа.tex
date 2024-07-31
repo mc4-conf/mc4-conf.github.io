@@ -1,0 +1,50 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{О восстановлении конечно-аддитивных функций множеств двоичного типа} %
+{Плотников Михаил Геннадьевич} %
+{МГУ им. М.\,В. Ломоносова, Московский центр фундаментальной и прикладной математики}%
+{mikhail.plotnikov@math.msu.ru} %
+{}%
+{Вещественный и функциональный анализ} %
+
+Пусть \(\mathcal{B}\) --- множество двоичных полуоткрытых кубов из \([ 0, 1 )^d\), \(QM\) --- множество конечно-аддитивных функций из \(\mathcal{B}\) в \(\mathbb{C}\) (называемых {\it квазимерами}). 
+Рассмотрена задача о том, при каких условиях можно полностью восстановить квазимеру \(\tau\) из некоторого подкласса \(QM\), если знать значения \(\tau\) на всех двоичных кубах, лежащих в заданном открытом множестве \(G \subset [ 0, 1 )^d\). В качестве ингредиентов этой задачи мы берем обобщенные двоичные классы Коробова, состоящие из квазимер, чьи коэффициенты Фурье по системе Уолша имеют не более чем степенную скорость убывания, а также модельные множества \(G\) типа Шапиро, обладающие определенной двоичной структурой.  
+
+Изучен вопрос о взаимоотношениях между параметром обобщенного двоичного класса Коробова и энтропией ``слоев'' \(d\)-мерного множества \(G\) типа Шапиро, при которых любая квазимера из данного класса может быть распознана по своим значениям на лежащих в~\(G\) двоичных кубах. В этом направлении найдены условия, являющиеся в определенном смысле окончательными.    
+
+\medskip 
+
+\begin{enumerate}
+\item[{[1]}] Б.\,И.~Голубов, А.\,В.~Ефимов, В.\,А.~Скворцов, {\it Ряды и преобразования Уолша\(:\) теория и применение}, М.: Наука, 1987.
+\item[{[2]}] F.~Schipp, W.\,R.~Wade, P.~Simon, {\it Walsh Series. An Introduction to Dyadic Harmonic Analysis}, Budapest: Academiai Kiado, 1990.
+\end{enumerate} 
+\end{talk}
+\end{document}

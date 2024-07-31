@@ -1,0 +1,50 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+
+\newenvironment{talk}[5]{%
+	\vskip 0pt\nopagebreak%
+	\vskip 0pt\nopagebreak%
+	\textbf{#1}\vspace{3mm}\\\nopagebreak%
+	\textit{#2}\\\nopagebreak%
+	#3\\\nopagebreak%
+	\url{#4}\vspace{3mm}\\\nopagebreak%
+	\ifthenelse{\equal{#5}{}}{}{Секция: #5\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Размерность мер с преобразованием Фурье в \(L_p\)} %
+{Добронравов Никита Петрович} %
+{СПбГУ}%
+{dobronravov1999@mail.ru} %
+{Вещественный и функциональный анализ} %
+
+Принцип неопределённости в математическом анализе --- это семейство фактов о том, что  функция и её преобразование Фурье не могут быть одновременно малы. Одной из версий это принципа является следующая теорема. 
+
+{\bf Теорема.}
+{\it Пусть \(S\subset \mathbb{R}^d\) --- компакт, такой что \(\mathcal{H}_{\alpha}(S)<\infty\). Пусть обобщённая функция \(\zeta\) такая что \(supp(\zeta)\subset S\) и \(\hat{\zeta}\in L_p(\mathbb{R}^d)\) для некоторого \(p<\frac{2d}{\alpha}\). Тогда \(\zeta=0\).}
+
+
+
+Здесь \(\mathcal{H}_{\alpha}\) --- это \(\alpha\)-мера Хаусдорфа.	
+Мы разобрали, что происходит в предельном случае \(p=\frac{2d}{\alpha}\). Оказалось, что в этом случае принцип неопределённости неверен, а именно удалось доказать следующую теорему:
+
+{\bf Теорема.}
+{\it Существуют компакт \(S\subset\mathbb{R}^d\) и такая вероятностная мера \(\mu\), что \(supp(\mu)\subset S\), \(\hat{\mu}\in L_p(\mathbb{R}^d)\) и \(\mathcal{H}_{\frac{2d}{p}}(S)=0\).}
+\end{talk}
+\end{document}

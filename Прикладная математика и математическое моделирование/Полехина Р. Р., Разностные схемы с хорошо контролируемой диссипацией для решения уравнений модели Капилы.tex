@@ -1,0 +1,55 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Разностные схемы с хорошо контролируемой диссипацией для решения уравнений модели Капилы}
+{Полехина Рузана Рамилевна}
+{ИПМ им. М.\,В. Келдыша РАН}
+{tukhvatullinarr@gmail.com}
+{Савенков Е.\,Б.}
+{Прикладная математика и математическое моделирование}
+
+Работа посвящена применению разностной схемы с хорошо контролируемой
+диссипацией для решения уравнений модели Капилы, описывающей
+двухфазные течения. Последняя является неконсервативной системой
+гиперболических уравнений первого порядка и, таким образом, требует
+указания конкретного вида регуляризующего диссипативного оператора,
+выделяющего единственное решение задачи. Суть схем с хорошо
+контролируемой диссипацией заключается в том, что диссипативный
+оператор, который определяется видом их первого дифференциального
+приближения, совпадает с точностью до малых высшего порядка с
+заданным, использованным при определении обобщенного решения в
+континуальной постановке. В~результате ожидается сходимость
+численного решения схемы к заданному решению. Численные
+эксперименты, представленные в работе, демонстрируют эффективность
+такого подхода. В качестве точных решений
+использованы численные решения типа бегущей волны, полученные другим
+методом.
+\end{talk}
+\end{document}

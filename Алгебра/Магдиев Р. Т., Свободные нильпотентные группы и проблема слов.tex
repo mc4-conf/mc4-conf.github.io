@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Свободные нильпотентные группы и проблема слов}
+{Магдиев Руслан Тимурович}
+{Магистрант фМКН СПБГУ}
+{rus.magdy@mail.ru}
+{Семидетнов Артём Алексеевич}
+{Алгебра}
+
+Доклад посвящен геометрической интерпретации решения проблемы слов для конечно-порождённых свободных нильпотентных групп. В ходе описания решения будет описана обнаруженная нами геометрическая конструкция, позволяющая построить ранее неизвестные представления для групп из данного класса. Также будет уделено время обобщениям на случай произвольной конечно-порождённой нильпотентной группы. Доклад основан на [1, 2] и на новых, ранее неопубликованных результатах в этой области математики.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] I. Alekseev, R. Magdiev, {\it The language of geodesics for the discrete Heisenberg group}, {\tt arXiv:1905.03226}, 2019.
+\item[{[2]}] R. Magdiev, A. Semidetnov, \textit{On the geometry of free nilpotent groups}, \texttt{arXiv:2106.00095}, 2021.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+	\vskip 0pt\nopagebreak%
+	\vskip 0pt\nopagebreak%
+	\textbf{#1}\vspace{3mm}\\\nopagebreak%
+	\textit{#2}\\\nopagebreak%
+	#3\\\nopagebreak%
+	\url{#4}\vspace{3mm}\\\nopagebreak%
+	\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+	\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Операторы Роты--Бакстера на группах}
+{Гальт Алексей Альбертович}
+{Институт математики им. С.Л. Соболева СО РАН}
+{galt84@gmail.com}
+{}
+{Алгебра}
+
+Операторы Роты--Бакстера на группах ввели Л. Гуо, Х. Ланг и Ю. Шенг в работе~2021 года [1]. После выхода данной статьи уже опубликованы различные работы, посвященные данному направлению. С одной стороны, активно исследуется соответствие между операторами Роты--Баксетра на группах Ли и алгебрах Ли. С другой стороны, определение оператора Роты--Бакстера на группе было перенесено на полугруппы Клиффорда, алгебры Хопфа, решетки и другие структуры. Кроме того, была доказана глубокая взаимосвязь между операторами Роты--Бакстера на группах и структурами Хопфа--Галуа, а также косыми левыми брейсами, которые в свою очередь являются теоретико-множественными решениями уравнения Янга--Бакстера. 
+
+В 2023 году, В. Бардаков и В. Губарев показали, что все операторы Роты-Бакстера на простых спорадических группах  расщепляемы, то есть получаются из точных факторизаций групп. В докладе будет рассказано о знакопеременных и диэдральных группах, которые обладают нерасщепляемыми операторпми Роты-Бакстера.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] L. Guo, H. Lang, Yu. Sheng, {\it Integration and geometrization of Rota--Baxter Lie
+algebras}, Adv. Math., 387 (2021), 107834.
+\end{enumerate}
+\end{talk}
+\end{document}

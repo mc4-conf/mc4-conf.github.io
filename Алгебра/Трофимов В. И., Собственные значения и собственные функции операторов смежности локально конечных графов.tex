@@ -1,0 +1,55 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm}
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Собственные значения и собственные функции операторов смежности локально конечных графов}
+{Трофимов Владимир Иванович}
+{ИММ УрО РАН, УрФУ, УМЦ}
+{trofimov@imm.uran.ru}
+{}
+{Алгебра}
+
+В докладе излагаются некоторые алгебраические результаты спектральной теории операторов
+смежности локально конечных графов, разработанной в [1].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] В. И. Трофимов, {\it Об операторах смежности локально конечных графов},
+Изв. РАН. Сер. матем., 88:3 (2024), 139-191.
+\end{enumerate}
+\end{talk}
+\end{document}
+
+
+
+
+
+
+

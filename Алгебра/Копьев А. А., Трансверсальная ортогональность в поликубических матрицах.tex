@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Трансверсальная ортогональность в поликубических матрицах}
+{Копьев Алексей Александрович}
+{Студент 4 курса бакалавриата, Казанский Федеральный Университет}
+{AAKopev@stud.kpfu.ru}
+{Хмельницкая Алена Владимировна, Яшагин Евгений Иванович}
+{Алгебра}
+
+Мы определяем на множестве поликубически матриц умножения -- расширения классического не путем тензорного умножения двумерных, а по принципу: строка на столбец, столбец на ряд и т. д.
+
+В работе получена формула числа новых умножений, введено понятие \(k\)-мерной трансверсальной ортогональности в \(n\)-размерных поликубических матрицах и приведены формулы для поиска алгебр им удовлетворяющих. На примерах трехмерных кубических матриц продемонстрированы групповые структуры и выделены те, которые сохраняют трансверсальную ортогональность. Понятие трансверсальной ортогональности обязано своим появлением необходимости описания с помощью поликубических матриц многочастичных квантовых взаимодействий элементарных частиц со множеством квантовых характеристик. Полученные формулы вводят для этого новые понятия полиэрмитовых алгебр.
+\end{talk}
+\end{document}

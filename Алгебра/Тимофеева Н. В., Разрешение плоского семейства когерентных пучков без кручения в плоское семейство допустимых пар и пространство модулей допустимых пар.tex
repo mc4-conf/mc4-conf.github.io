@@ -1,0 +1,54 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Разрешение плоского семейства когерентных пучков без кручения в плоское семейство допустимых пар и пространство модулей допустимых пар в размерности \(\ge 2\)}
+{Тимофеева Надежда Владимировна}
+{Ярославский госуниверситет им. П.\,Г.Демидова, Центр интегрируемых систем}
+{ntimofeeva@list.ru}
+{}
+{Алгебра}
+
+В докладе будут рассмотрены следующие вопросы:
+\begin{enumerate}
+\item[(a)] Преобразование единичного когерентного алгебраического пучка \(E\), имеющего ранг \(r\) и полином Гильберта \(rp(t)\) на неособом проективном алгебраическом многообразии \((S,L)\) размерности \(d\ge 2\) (\(L\) -- обильный обратимый пучок) в допустимую пару \(((\tilde S, \tilde L), \tilde E)\) (\((\tilde S, \tilde L)\) -- проективная алгебраическая схема определённого вида, \(\tilde E\) -- локально свободный пучок того же ранга \(r\) и с тем же полиномом Гильберта \(rp(t)\)) [1];
+\item[(b)] Преобразование плоского семейства когерентных алгебраических пучков в плоское семейство допустимых пар, послойно сводящееся к преобразованию п.1;
+\item[(c)] Понятия стабильности (полустабильности) допустимой пары \(((\tilde S, \tilde L), \tilde E)\) и их связь со стабильностью (полустабильностью) когерентного пучка \(E\), разрешением которого получена эта пара [1];
+\item[(d)] Индуцированный морфизм пространства (алгебраической схемы) модулей полустабильных допустимых пар на классическое пространство модулей Гизекера -- Маруямы когерентных пучков без кручения.
+\end{enumerate}
+
+С обоснованием и происхождением рассматриваемых задач также можно ознакомиться по работе [1].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Н. В. Тимофеева, {\it Стабильность и эквивалентность допустимых пар произвольной размерности для компактификации пространства модулей стабильных векторных расслоений}, ТМФ, 212:1 (2022),  109–128.
+\end{enumerate}
+\end{talk}
+\end{document}

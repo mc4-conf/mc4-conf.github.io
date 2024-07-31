@@ -1,0 +1,71 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm} 
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm} 
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+%\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Ассоциированная рефлексивность некоторых функциональных классов} %
+{Степанов Владимир Дмитриевич} 
+{ВЦ ДВО РАН, МИАН}%
+{stepanov@mi-ras.ru} %
+{} %
+{Вещественный и функциональный анализ} %
+
+В докладе рассматривается задача об описании ассоциированных и дважды 
+ассоциированных пространств к функциональным классам, включающим как идеальные, так и 
+неидеальные структуры. Последние включают в себя двухвесовые пространства Соболева первого 
+порядка на положительной полуоси [1]. Показано, что, в отличие от понятия двойственности, 
+ассоциированность может быть "сильной" и "слабой". В то же время дважды ассоциированные 
+пространства делятся еще на три типа. В этом контексте установлено, что пространство функций 
+Соболева с компактным носителем обладает слабо ассоциированной рефлексивностью, а сильно 
+ассоциированное к слабо ассоциированному пространству состоит только из нуля [2]. 
+Аналогичными свойствами обладают весовые пространства типа Чезаро и Копсона, для которых 
+проблема полностью изучена и установлена их связь с пространствами Соболева со степенными 
+весами~[3]. В качестве приложения рассматривается проблема ограниченности преобразования 
+Гильберта из весового пространства Соболева в весовое пространство Лебега~[4].
+
+\medskip
+
+Работа поддержана Российским Научным Фондом (https://rscf.ru/project/24-11-00170/, Project 19-11-00087).
+
+\begin{enumerate}
+\item[{[1]}] Д.~В. Прохоров, В. Д. Степанов, Е. П. Ушакова, 
+{\it Характеризация функциональных пространств, ассоциированных с весовыми пространствами 
+Соболева первого порядка на действительной оси}, Успехи матем. наук, 74:6 (2019), 119--158.
+\item[{[2]}] В. Д. Степанов, Е. П. Ушакова, 
+{\it О сильной и слабой ассоциированности весовых пространств Соболева первого порядка}, 
+Успехи матем. наук, 78:1 (2023), 167--204.
+\item[{[3]}] V. D. Stepanov, 
+{\it On Ces\`{a}ro and Copson type function spaces. Reflexivity}, 
+J. Math. Anal. Appl., 507:1 (2022), Paper No. 125764, 18 pp.
+\item[{[4]}] V. D. Stepanov, 
+{\it On the boundedness of the Hilbert transform from weighted Sobolev space to 
+weighted Lebesgue space}, 
+J. Fourier Anal. Appl., {28} (2022), Paper No. 46, 17 pp.
+\end{enumerate}
+\end{talk}
+\end{document}

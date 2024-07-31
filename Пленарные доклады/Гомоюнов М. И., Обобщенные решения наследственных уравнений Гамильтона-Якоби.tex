@@ -1,0 +1,61 @@
+\documentclass[12pt, a4paper, figuresright]{book}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+
+\setlength{\textheight}{25.2cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm}
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.3cm}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\textbf{#1}\vspace{3mm}\\\nopagebreak%
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\url{#4}\vspace{3mm}\\\nopagebreak%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\vspace{3mm}\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\quad \vspace{3mm}\\\nopagebreak}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{talk}
+{Обобщенные решения наследственных уравнений Гамильтона--Якоби}
+{Гомоюнов Михаил Игоревич}
+{ИММ УрО РАН}
+{m.i.gomoyunov@gmail.com} %
+{} %
+{} %
+
+В рамках доклада будут представлены результаты по развитию теории минимаксных и вязкостных (обобщенных) решений для наследственных уравнений Гамильтона--Якоби с коинвариантными производными над пространством непрерывных функций.
+Уравнения такого типа возникают в задачах динамической оптимизации систем с запаздыванием [1, 2].
+Основной результат [3] состоит в доказательстве эквивалентности определений минимаксного решения (в форме пары неравенств для нижних и верхних производных по многозначным направлениям) и вязкостного решения (в форме пары неравенств для коинвариантных суб- и суперградиентов).
+Одним из следствий этого результата является теорема о единственности вязкостного решения задачи Коши для рассматриваемого класса уравнений Гамильтона--Якоби.
+Ключевую роль в доказательстве играет специальное свойство коинвариантного субдифференциала, обоснование которого в свою очередь потребовало развития техники, восходящей к доказательствам многомерных негладких обобщений формулы конечных приращений [4, 5] и использующей подходящие гладкие вариационные принципы [6].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]
+Н.~Ю.~Лукоянов, {\it Функциональные уравнения Гамильтона--Якоби и задачи управления с наследственной информацией}, УрФУ, Екатеринбург, 2011.
+\item[{[2]}]
+М.~И.~Гомоюнов, Н.~Ю.~Лукоянов, {\it Минимаксные решения уравнений Гамильто\-на--Яко\-би в задачах динамической оптимизации наследственных систем}, Успехи математических наук, 79:2(476) (2024), 43--144.
+\item[{[3]}]
+M.~I.~Gomoyunov, A.~R.~Plaksin, {\it Equivalence of minimax and viscosity solutions of path-dependent Hamilton--Jacobi equations}, Journal of Functional Analysis, 285:11 (2023), 110155, 41 pp.
+\item[{[4]}]
+А.~И.~Субботин, {\it Об одном свойстве субдифференциала}, Математический сборник, 182:9 (1991), 1315--1330.
+\item[{[5]}]
+F.~H.~Clarke, Yu.~S.~Ledyaev, {\it Mean value inequalities in Hilbert space}, Transactions of the American Mathematical Society, 344:1 (1994), 307--324.
+\item[{[6]}]
+J.~M.~Borwein, Q.~J.~Zhu, {\it Techniques of variational analysis}, Springer, 2005.
+\end{enumerate}
+\end{talk}
+\end{document}

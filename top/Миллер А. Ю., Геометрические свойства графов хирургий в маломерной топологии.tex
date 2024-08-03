@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Геометрические свойства графов хирургий в маломерной топологии}
+{Миллер Алексей Юрьевич}
+{ПОМИ РАН}
+{miller.m2@mail.ru}
+{}
+{Топология} %
+
+Последние двадцать лет вопрос о локальном и глобальном геометрическом поведении графов преобразований различных маломерных объектов получает особенное внимание. В этом докладе мы обсудим ряд продвижений в этом направлении, а именно: доказательство гипотезы Жиса--Гамбаду о поведении гордиевых графов на бесконечности, техники, позволяющие обнаружить исключительный локальный геометрический паттерн (в духе Баадера и Хирасавы--Учиды) в гордиевом графе переключения перекрёстков и расположение в Большом графе хирургий Дена одного примечательного класса трехмерных многообразий.
+\end{talk}
+\end{document}

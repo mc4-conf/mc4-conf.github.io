@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Накрытия полных графов: симметрии и ассоциированные объекты}
+{Циовкина Людмила Юрьевна}
+{ИММ УрО РАН, УрФУ}
+{l.tsiovkina@gmail.com}
+{}
+{Теория чисел и дискретная математика}
+
+Доклад посвящен исследованию задачи классификации дистанционно регулярных накрытий полных графов, группа автоморфизмов которых вершинно-транзитивна и имеет не более двух орбит в ее индуцированном действии на множестве дуг накрытия. Из работ автора [2] и [3] следует, что  новые  накрытия с транзитивной на дугах группой автоморфизмов могут быть обнаружены лишь в небольшом числе открытых подслучаев, когда такая группа индуцирует некоторую аффинную группу подстановок ранга 2 на множестве фибр накрытия. В общем случае рассматриваемая задача далека от решения и остается актуальной в контексте проблем поиска новых конструкций  накрытий с различными параметрами и ассоциированных с ними объектов (например, обобщенных матриц Адамара или равноугольных множеств прямых). В докладе мы сосредоточимся на исследовании этой задачи для большого класса т.н. абелевых  (в смысле Годсила и Хензеля [1]) накрытий, новый всплеск интереса к которым вызван их приложениями в дискретной геометрии.  Будет представлен способ ее частичного сведения к рассмотрению   фактор-накрытий, группа автоморфизмов которых  наследует указанные свойства  и индуцирует группу подстановок ранга \(\le 3\) на множестве фибр, а также методы классификации, основанные на классификации таких групп подстановок  и включающие специальную технику ограничения спектра   накрытий в зависимости от вида индуцируемой группы. Особое внимание будет уделено исследованию абелевых накрытий из нескольких потенциально  бесконечных классов, которое, в том числе, мотивировано проблемами существования и построения равноугольных жестких фреймов с заданными параметрами.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]  C. D. Godsil, A. D. Hensel, {\it Distance regular covers of the complete graph},  J. Comb. Theory Ser. B., 56 (1992) 205--238.
+\item[{[2]}] L. Yu.  Tsiovkina, {\it Arc-transitive groups of automorphisms of antipodal distance-regular graphs of diameter 3 in affine case},  Sib. Elektron. Mat. Izv., 17 (2020) 445--495.
+\item[{[3]}]  L. Yu. Tsiovkina, {\it Covers of  complete graphs and related association schemes},  J. Comb. Theory Ser. A., 191  (2022) 105646.
+\end{enumerate}
+\end{talk}
+\end{document}

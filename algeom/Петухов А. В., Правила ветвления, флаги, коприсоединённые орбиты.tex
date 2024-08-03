@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Правила ветвления, флаги, коприсоединённые орбиты}
+{Петухов Алексей Владимирович}
+{ИППИ РАН имени А.\,А. Харкевича}
+{alex--2@yandex.ru}
+{Р.\,С. Авдеев}
+{Алгебраическая Геометрия}
+
+Пусть \(G\) --- некоторая, редуктивная группа над \(\mathbb C\), а \(H\) --- её редуктивная
+подгруппа. Любое конечномерное представление \(G\) является суммой неприводимых \(G\)-
+представлений, а ограничение конечномерного неприводимого \(G\)-представления \(V\) на
+\(H\) (обозначаемое \(V|_H\)) является прямой суммой неприводимых \(H\)-представлений.
+Параметры таких разложений \(V|_H\) называются {\it правилами ветвления}. Мы будем
+говорить, что \(G\)-модуль \(V\) имеет {\it простой \(H\)-спектр}, если в ограничении \(V|_H\)
+неприводимые \(H\)-слагаемые не повторяются. Описание правил ветвления, в том числе
+ветвлений с простым спектром, является интересной и важной задачей.
+В своём докладе я хотел поговорить о том, как, используя теорему Бореля--Вейля,
+перефразировать вопрос об описании классов неприводимых \(G\)-представлений с простым
+\(H\)-спектром, связанных с \(G\)-флагами, в вопрос об описании \(H\)-сферических действий
+на многообразиях \(G\)-флагов. Используя этот подход, мы с Романом Авдеевым получили
+описание таких серий правил ветвления в терминах некоторых свободных решёток,
+образующие которых соответствуют дивизорам в подходящем многообразии \(G\)-флагов,
+являющимся стабильными относительно действия некоторой Борелевской подгруппы группы
+\(H\). Такие классы \(G\)-представлений с простым \(H\)-спектром соответствуют \(H\)-сферическим действиям на многообразиях \(G\)-флагов. В конце доклада я хочу обсудить
+идею класификации таких наборов (\(G\), \(G\)-флаги; \(H\)-сферическое действие), используя
+идеи связанные с симплектической геометрией, отображением моментов,
+коприсоединёнными орбитами, а также какие-то простые факты о сферических
+многообразиях.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Р. С. Авдеев, А. В. Петухов, {\it Сферические действия на
+многообразиях флагов}, Матем. сб. 205 (2014), No 9, 3–48; arXiv:1401.1777.
+\item[{[2]}] R. Avdeev, A. Petukhov, {\it Branching rules related to spherical actions on flag
+varieties}, Algebr. Represent. Theory 23 (2020), no. 3, 541--581; arXiv:1711.09801.
+\item[{[3]}] A. V. Petukhov, {\it Bounded reductive subalgebras of sl(n)}, Transform. Groups
+16 (2011), no. 4, 1173--1182; arXiv:1007.1338.
+\end{enumerate}
+\end{talk}
+\end{document}

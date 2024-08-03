@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Операторы Роты--Бакстера нулевого веса и операторы усреднения на алгебрах многочленов}
+{Ходзицкий Артем Федорович}
+{НГУ, Новосибирск}
+{a.khodzitskii@g.nsu.ru}
+{}
+{Алгебра}
+
+Пусть \(A\) --- алгебра над полем \(F\).
+Линейный оператор \(T\) на \(A\) называется оператором усреднения,
+если выполнены соотношения
+\(T(a)T(b) = T(T(a)b) = T(a T(b))\)
+для всех \(a,b\in A\).
+Линейный оператор \(R\) на \(A\)
+называется оператором Роты--Бакстера, если
+\[R(a)R(b) = R\big(R(a)b + a R(b) + \lambda a b\big)\]
+выполнено для всех \(a,b \in A\).
+Здесь \(\lambda\in F\) --- фиксированный скаляр, вес оператора~\(R\).
+
+Линейный оператор \(L\) на алгебре многочленов называется мономиальным,
+если для любого монома \(t\) найдутся
+моном \(z_t\) и скаляр \(\alpha_t\) такие, что \(L(t) = \alpha_t z_t\).
+Мономиальные операторы Роты--Бакстера на \(F[x]\) были введены в~[1]
+и описаны на \(F[x]\) в~[2].
+
+В работе~[3] найдена взаимосвязь между
+операторами Роты--Бакстера и операторами усреднения.
+В этой работе был описан класс операторов Роты--Бакстера ненулевого веса,
+построенных по гомоморфным операторам усреднения на \(F[x,y]\).
+Мы классифицировали операторы Роты--Бакстера нулевого веса,
+построенные по операторам усреднения
+с~линейными функциями в степенях мономов из образа на \(F[x,y]\).
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] L. Guo, M. Rosenkranz, and S.H. Zheng.
+\textit{Rota---Baxter operators on the polynomial algebras,~integration~and~averaging operators,~Pacific~J.\,Math.\,(2)~275~(2015),\,481--507.}
+\item[{[2]}] H. Yu.
+\textit{Classification of monomial Rota---Baxter operators on \(k[x]\),
+J. Algebra Appl. 15 (2016), 1650087.}
+\item[{[3]}] A. Khodzitskii,
+\textit{Monomial Rota---Baxter Operators of Nonzero Weight on \(F[x, y]\) Coming from Averaging Operators,
+Mediterr. J. Math. 20 (2023), No~251.}
+\end{enumerate}
+\end{talk}
+\end{document}

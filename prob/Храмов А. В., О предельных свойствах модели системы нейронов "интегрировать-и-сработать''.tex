@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О предельных свойствах модели системы нейронов ``ин\-те\-гри\-ро\-вать-и-сра\-бо\-тать''}
+{Храмов Александр Вадимович}
+{ИМ СО РАН}
+{a.khramov@g.nsu.ru}
+{}
+{Теория вероятностей} %
+
+В работе изучается многомерный случайный процесс в непрерывном времени
+\[ Z(t)=(Z_1(t),\ldots,Z_N(t)),\ t>0, \]
+где \(N\ -\) число нейронов, \(Z_i\ -\) положительный потенциал \(i\)-го нейрона и процесс \(Z(t)\) непрерывен справа и имеет конечные пределы слева. С течением времени потенциалы нейронов линейно снижаются, а при достижении нуля нейрон посылает сигналы всем остальным нейронам.
+
+В предшествующих работах (см. [1, 2, 3]) подробно изучен случай, когда все сигналы между нейронами неотрицательны. Случай с наличием отрицательных связей рассмотрен лишь с жёсткими ограничениями на взаимосвязь между нейронами ([4]).
+
+В данной работе рассмотрен случай двух нейронов, когда один из них (ингибитор) посылает неотрицательные импульсы, а другой (возбудитель) --- неположительные. Рассматривается положительная возвратность процесса.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Cottrell M., {\it Mathematical analysis of a neural network with inhibitory coupling},\\ Stochastic Processes and their applications, 40.1 (1992), 103-126.
+\item[{[2]}] Karpelevich F., Malyshev V. A., Rybko A. N., {\it Stochastic evolution of neural networks},\\ Markov Processes and Related Fields, 1.1 (1995), 141-161.
+\item[{[3]}] Prasolov T. V., {\it Stochastic stability of a system of perfect integrate-and-fire inhibitory neurons}, Сибирские электронные математические известия. 17.0 (2020), 971-987.
+\item[{[4]}] Cottrell M., Turova T. S., {\it Use of an hourglass model in neuronal coding}, Journal of applied probability, 37.1 (2000), 168-186.
+\end{enumerate}
+\end{talk}
+\end{document}

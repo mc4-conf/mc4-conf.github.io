@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Динамика многозвенного колесного робота: частные решения и неограниченное ускорение}
+{Артемова Елизавета Марковна}
+{Уральский математический центр, УдГУ}
+{liz-artemova2014@yandex.ru}
+{Бизяев Иван Алексеевич}
+{Дифференциальные уравнения и динамические системы}
+
+Построена математическая модель, описывающая движение многозвенного колесного робота, в рамках неголономной модели. Подробно рассмотрено движение по инерции. Указаны неподвижные точки редуцированной системы и проанализирована их устойчивость, найдены инвариантные многообразия. Для случая трех платформ (звеньев) приведены фазовый портрет при движении на инвариантном многообразии, а также траектории движения точек закрепления колесных пар трехзвенника. Кроме того, рассмотрено движение в случае когда на ведущей платформе находится ротор, угловая скорость которого является периодической функцией времени. Показано существование траекторий,
+для которых одна из компонент скорости неограниченно возрастает, и найдена для нее асимптотика.
+\end{talk}
+\end{document}

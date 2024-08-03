@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О нижних сложностных оценках в кванторной вероятностной логике}
+{Сперанский Станислав Олегович}
+{Математический институт им. В.\,А. Стеклова Российской академии наук}
+{katze.tail@gmail.com}
+{}
+{Математическая логика и теоретическая информатика}
+
+Доклад посвящён двум естественным обогащениям популярной бескванторной <<полиномиальной>> вероятностной логики из [1]. Одно из них, обозначаемое через \(\mathsf{QPL}^{\mathrm{e}}\), получается посредством добавления кванторов по произвольным событиям, а в другом, обозначаемом через \(\underline{\mathsf{QPL}}^{\mathrm{e}}\), используются кванторы по пропозициональным формулам (т.е.\ фактически по событиям, выразимым посредством таких формул). Предыдущие доказательства результатов о нижних сложностных оценках для \(\mathsf{QPL}^{\mathrm{e}}\) и \(\underline{\mathsf{QPL}}^{\mathrm{e}}\) сильно зависели от наличия умножения и, стало быть, от полиноминальности на бескванторном уровне; см.\ [2] и [3]. В настоящем докладе будет показано, как можно получить те же самые нижние оценки для фрагментов \(\mathsf{QPL}^{\mathrm{e}}\) и \(\underline{\mathsf{QPL}}^{\mathrm{e}}\), в которых допускаются лишь линейные комбинации весьма специального вида. Также мы обсудим, что происходит при добавлении кванторов по вещественным числам к \(\mathsf{QPL}^{\mathrm{e}}\) и \(\underline{\mathsf{QPL}}^{\mathrm{e}}\).
+
+\medskip
+
+\begin{enumerate}
+
+\item[{[1]}] R.\ Fagin, J.\,Y.\ Halpern, N.\ Megiddo.
+A logic for reasoning about probabilities.
+\emph{Information and Computation} 87(1--2), 78--128, 1990.
+\item[{[2}] S.\,O.\ Speranski.
+Complexity for probability logic with quantifiers over propositions.
+\emph{Journal of Logic and Computation} 23(5), 1035--1055, 2013.
+\item[{[3]}] S.\,O.\ Speranski.
+Quantifying over events in probability logic: An introduction.
+\emph{Mathematical Structures in Computer Science} 27(8), 1581--1600, 2017.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О восстановлении конечно-аддитивных функций множеств двоичного типа}
+{Плотников Михаил Геннадьевич}
+{МГУ им. М.\,В. Ломоносова, Московский центр фундаментальной и прикладной математики}
+{mikhail.plotnikov@math.msu.ru}
+{}
+{Вещественный и функциональный анализ} %
+
+Пусть \(\mathcal{B}\) --- множество двоичных полуоткрытых кубов из \([ 0, 1 )^d\), \(QM\) --- множество конечно-аддитивных функций из \(\mathcal{B}\) в \(\mathbb{C}\) (называемых {\it квазимерами}).
+Рассмотрена задача о том, при каких условиях можно полностью восстановить квазимеру \(\tau\) из некоторого подкласса \(QM\), если знать значения \(\tau\) на всех двоичных кубах, лежащих в заданном открытом множестве \(G \subset [ 0, 1 )^d\). В качестве ингредиентов этой задачи мы берем обобщенные двоичные классы Коробова, состоящие из квазимер, чьи коэффициенты Фурье по системе Уолша имеют не более чем степенную скорость убывания, а также модельные множества \(G\) типа Шапиро, обладающие определенной двоичной структурой.
+
+Изучен вопрос о взаимоотношениях между параметром обобщенного двоичного класса Коробова и энтропией ``слоев'' \(d\)-мерного множества \(G\) типа Шапиро, при которых любая квазимера из данного класса может быть распознана по своим значениям на лежащих в~\(G\) двоичных кубах. В этом направлении найдены условия, являющиеся в определенном смысле окончательными.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Б.\,И.~Голубов, А.\,В.~Ефимов, В.\,А.~Скворцов, {\it Ряды и преобразования Уолша\(:\) теория и применение}, М.: Наука, 1987.
+\item[{[2]}] F.~Schipp, W.\,R.~Wade, P.~Simon, {\it Walsh Series. An Introduction to Dyadic Harmonic Analysis}, Budapest: Academiai Kiado, 1990.
+\end{enumerate}
+\end{talk}
+\end{document}

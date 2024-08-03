@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О формуле Ито для винеровского процесса}
+{Смородина Наталия Васильевна}
+{ПОМИ РАН}
+{smorodina@pdmi.ras.ru}
+{}
+{Теория вероятностей}
+
+Показано, что в классической формуле Ито для винеровского процесса \(w(t)\) можно  заменить вторую производную,
+понимаемую в смысле обычного дифференцирования, на вторую
+производную в смысле дифференцирования
+обобщенных функций. Это можно сделать в
+случае, когда первая производная принадлежит классу \(L_{2,loc}(\mathbb{R})\).
+Ранее, в работе [1] при тех же условиях была получена другая
+форма последнего слагаемого в формуле Ито.
+
+\textbf{Теорема.} {\it Пусть функция \(v\in L_{2,loc}(\mathbb{R})\),
+функция \(V\) есть первообразная \(v\) (т.е. \(V^\prime=v\)), а
+обобщенная функция \(v^\prime\) есть производная \(v\) в смысле дифференцирования обобщенных функций. Пусть
+\(\{v_\varepsilon\}\) --- произвольное семейство абсолютно непрерывных
+функций,  такое, что для любого \(N>0\) выполнено
+\(\lim_{\varepsilon\to 0}\|v_\varepsilon-v\|_{L_2[-N,N]}=0\).
+Тогда
+\begin{enumerate}
+\item Существует предел по вероятности \(\lim_{\varepsilon\to
+0+}\int_0^tv^\prime_\varepsilon(w(\tau))\,d\tau,\) и этот предел не
+зависит от выбора семейства \(v_\varepsilon\). Для данного предела
+используем обозначение \(\int_0^tv^\prime(w(\tau))\,d\tau\).
+\item Справедлива формула Ито
+\(V(w(t))=V(w(0))+\int_0^tv(w(\tau))\,dw(\tau)+\frac{1}{2}\int_0^tv^\prime(w(\tau))\,d\tau\).
+\end{enumerate}}
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] H. F\"{o}llmer , Ph.  Protter , A. N.  Shiryayev,
+{\it Quadratic Covariation and an Extension of Ito's Formula , }
+Bernoulli, 1/2(1995), 149--169.
+\end{enumerate}
+\end{talk}
+\end{document}

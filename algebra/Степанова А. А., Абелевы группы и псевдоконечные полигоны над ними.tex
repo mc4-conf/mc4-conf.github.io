@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Абелевы группы и псевдоконечные полигоны над ними}
+{Степанова Алена Андреевна}
+{Дальневосточный федеральный университет}
+{stepanova.aa@dvfu.ru}
+{С.\,Г. Чеканов}
+{Алгебра}
+
+Теория моделей псевдоконечных структур --- активно развивающаяся в последнее время область математики. Это направление исследований, благодаря теореме Лося, тесно связано с теорией конечных моделей. Структура \(\mathfrak{M}\) языка \(L\) псевдоконечна, если любое предложение языка \(L\), истинное в \(\mathfrak{M}\), истинно в некоторой конечной структуре языка \(L\). В работах [1-6] изучаются вопросы строения псевдоконечных структур (полей, групп, колец, графов, унаров, полигон над моноидом).
+
+Доклад посвящен исследованию \(T\)-псевдоконечных полигонов над группой \(G\), где \(T\) --- теория всех полигонов  над \(G\). Полигон \(_GA\) называется \(T\)-псевдоконечным, если  любое предложение, истинное в \(_GA\), истинно в некотором конечном полигоне над \(G\). Доказано, что класс всех полигонов над конечнопорожденной абелевой группой, представимых в виде копроизведения полигонов \(_GG/S_i\), \(1\le i\le n\), где  \(S_1,\ldots,S_n\) --- фиксированные подгруппы группы \(G\), \(T\)-псевдоконечен.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Z. Chatzidakis. Notes on the model theory of finite and pseudo-finite fields.\\{\tt http://www.logique.jussieu.fr/\~zoe/papiers/Helsinki.pdf}.
+\item[{[2]}] D. Macpherson, {\it  Model theory of finite and pseudofinite groups}, Arch. Math. Logic, 57:1-2 (2018), 159-184.
+\item[{[3]}] R. Bello-Aguirre, Model theory of finite and pseudofinite rings, PhD thesis, University of Leeds, 2016.
+\item[{[4]}] N. D.  Markhabatov, {\it Approximations of Acyclic Graphs}, Известия Иркутского государственного университета. Серия «Математика», 40 (2022), 104–111.
+\item[{[5]}] E.L. Efremov, A.A. Stepanova, S.G. Chekanov, {\it Pseudofinite unars}, Algebra Logic (in press).
+\item [{[6]}] E.L. Efremov, A.A. Stepanova, S.G. Chekanov, {\it Pseudofinite S-acts}, Siberian Electronic Mathematical Reports,  V. 21:1 (2024), p. 271-276.
+\end{enumerate}
+\end{talk}
+\end{document}

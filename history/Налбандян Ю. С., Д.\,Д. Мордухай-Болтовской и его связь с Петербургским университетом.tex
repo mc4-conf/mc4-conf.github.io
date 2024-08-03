@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Д.\,Д. Мордухай-Болтовской и его связь с Петербургским университетом}
+{Налбандян Юлия Сергеевна}
+{Южный федеральный университет, Институт математики, механики и компьютерных наук имени И.\,И. Воровича}
+{ysnalbandyan@sfedu.ru}
+{}
+{История математики} %
+
+Дмитрий Дмитриевич Мордухай-Болтовской, по праву считающийся одним из основателей ростовской математической школы, учился в Санкт-Петербургском университете в 1894--1898 гг. По рекомендации К.А. Поссе и А.А. Маркова по окончании университета он был направлен в Варшаву, в Варшавский политехнический институт, ``штатным преподавателем с функциями ассистента'' при Г.Ф. Вороном. Впоследствии Мордухай-Болтовской сдавал в Санкт-Петербурге магистерские экзамены и в 1906 г. защитил магистерскую диссертацию.  Став профессором Варшавского Императорского университета, переехав вместе с университетом в Ростов-на-Дону, он всегда тепло вспоминал своих учителей, которые, по его образному выражению, ``жили под солнцем Чебышёва''. К этой школе на правах внука он причислял и себя.
+
+В докладе предполагается остановиться на студенческих годах выдающегося математика, проанализировать трудности, с которыми он столкнулся в первые годы своей работы (например, упор на практические занятия в политехническом институте), а также рассмотреть его взаимоотношения с такими учёными как А.\,А. Марков, К.\,А. Поссе, Г.\,Ф. Вороной, И.\,Л. Пташицкий. Используются материалы из опубликованных статей, архивные документы и письма Д.\,Д. Мордухай-Болтовского, адресованные сыну.
+\end{talk}
+\end{document}

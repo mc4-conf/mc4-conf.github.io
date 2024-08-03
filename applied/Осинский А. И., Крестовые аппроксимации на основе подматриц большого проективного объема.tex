@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Крестовые аппроксимации на основе подматриц большого проективного объема}
+{Осинский Александр Игоревич}
+{Сколковский институт науки и технологий; Институт вычислительной математики имени Г.\,И.~Марчука РАН}
+{osinskiy1189@gmail.com}
+{}
+{Прикладная математика и математическое моделирование}
+
+Крестовые аппроксимации часто используются в вычислительной математике в качестве замены сингулярного разложения. Основная причина состоит в существенно более высокой скорости их построения, а также в отсутствии необходимости знать все элементы приближаемой матрицы. В данном докладе будет показано, что часто можно быстро строить крестовые аппроксимации с точностью по норме Фробениуса сколь угодно близкой к сингулярному разложению. Это позволяет использовать крестовую аппроксимацию в качестве приближенного проектора на множество матриц фиксированного ранга. Таким образом можно существенно ускорить методы переменных проекций и проекций градиента на пространство малоранговых матриц. В частности, в алгоритмах восстановления матриц и построения неотрицательных аппроксимаций.
+\end{talk}
+\end{document}

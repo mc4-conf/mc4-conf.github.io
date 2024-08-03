@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Доминирующие множества для модельных пространств}
+{Дубцов Евгений Сергеевич}
+{ПОМИ РАН}
+{dubtsov@pdmi.ras.ru}
+{А.\,Б. Александров}
+{Комплексный анализ}
+
+Пусть \(\mathcal{D}\subset \mathbb{C}^n\) обозначает ограниченную симметричную область
+и \(\mathrm{b}\mathcal{D}\) --- граница Шилова области \(\mathcal{D}\).
+Пусть \(\beta\) --- единственная нормированная положительная радоновская мера, заданная на границе
+\(\mathrm{b}\mathcal{D}\) и инвариантная относительно всех линейных автоморфизмов
+области  \(\mathcal{D}\).
+Далее, пусть \(I\) --- внутренняя функция, заданная на области \(\mathcal{D}\).
+Измеримое множество \(E\subset \mathrm{b}\mathcal{D}\) называется \textit{доминирующим}
+для большого модельного множества
+\(H^2 \ominus I H^2\), если \(\beta(E) < 1\) и
+\[\|f\|_{H^2}^2 \le C\int_E |f|^2\, d\beta\]
+для всех \(f\in H^2 \ominus I H^2\).
+В докладе получен результат о композициях с внутренними функциями,
+из которого, в частности, следует, что доминирующие множества существуют
+для каждого пространства \(H^2 \ominus I H^2\).
+
+\medskip
+
+Исследование выполнено за счёт гранта Российского научного фонда
+№24-11-00087.
+\end{talk}
+\end{document}

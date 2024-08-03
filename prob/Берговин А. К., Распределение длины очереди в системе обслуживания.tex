@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Распределение длины очереди в системе обслуживания со смешанной приоритетной дисциплиной в условиях критической загрузки}
+{Берговин Алексей Константинович}
+{МГУ имени М.\,В. Ломоносова, МЦМУ ``Московский центр фундаментальной и прикладной математики''}
+{alexey.bergovin@gmail.com}
+{}
+{Теория вероятностей} %
+
+В данном докладе рассматривается система обслуживания с приоритетами, функционирующая в условиях критической загрузки, а, именно, исследуется поведение длины очереди, когда одновременно и время стремится к бесконечности, и загрузка к единице, такую постановку предложил Ю.\,В. Прохоров в [1].
+
+Рассматривается система в которой три пуассоновских входящих потока, каждый из которых имеет свою функцию распределения времени обслуживания, в системе есть бесконечное число мест в очереди для ожидания и один обслуживающий прибор. Приоритетная дисциплина является смешанной, установлены следующие приоритеты: относительный приоритет между требованиями первого и второго потоков и между требованиями второго и третьего потоков, а для требований первого и третьего потоков --- абсолютный приоритет с обслуживанием занового прерванного требования. Будем считать, что первый поток имеет наивысший приоритет, а третий --- низший.
+
+Используя соотношения, которым удовлетворяет преобразование Лалпаса совместной производящей функции количества требований каждого приоритетного класса в системе, полученные в работе [2], были найдены предельные распределения для количества требований наименее приоритетного класса системы в условиях критической загрузки.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Прохоров~Ю.\,В. Переходные явления в процессах массового обслуживания // Литовский математический сборник. 1963. Т.3,  № 1. С. 199 -– 206.
+\item[{[2]}] Берговин~А.\,К., Ушаков~В.\,Г. Исследование систем обслуживания со смешанными приоритетами // Информатика и ее применения. 2023. Т. 17, Вып. 2. С. 57 -- 61.
+\end{enumerate}
+\end{talk}
+\end{document}

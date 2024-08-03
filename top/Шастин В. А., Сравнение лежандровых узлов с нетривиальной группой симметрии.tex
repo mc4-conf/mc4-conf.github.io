@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Сравнение лежандровых узлов с нетривиальной группой симметрии}
+{Шастин Владимир Алексеевич}
+{МГУ им. М.\,В. Ломоносова}
+{vashast@gmail.com}
+{М.\,В. Прасолов}
+{Топология} %
+
+В работе [1] был построен алгоритм сравнения лежандровых узлов. Если группа симметрий узла тривиальна, соответствующий алгоритм значительно упрощается (см. [2]).  В случае нетривиальной группы симметрии возникают дополнительные трудности: нужно проанализировать подгруппу группы симметрий, порождённую лежандровыми изотопиями. В докладе будут предъявлены порождающие лежандровы изотопии в случае узлов \(7_4\), \(9_{48}\), \(10_{136}\), что позволяет завершить классификацию лежандровых узлов сложности не выше 9. Доклад основан на совместной работе с М.\,В. Прасоловым [3].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] I.\,Dynnikov, M.\,Prasolov.
+An algorithm for comparing Legendrian knots. \emph{Preprint} \\ arXiv:2309.05087
+\item[{[2]}] I.\,Dynnikov, V.\,Shastin. Distinguishing Legendrian knots with trivial orientation-\\-preserving symmetry group. \emph{Algebraic \& Geometric Topology} {\bf 23-4} (2023), 1849--1889. \\ arXiv:1810.06460.
+\item[{[3]}] M.\,Prasolov, V.\,Shastin Distinguishing Legendrian Knots in Topological Types \(7_4\), \(9_{48}\), \(10_{136}\) with maximal Thurston-Benequin number, \emph{Journal of Knot Theory and Its Ramifications}, {\bf 33-01} (2024). arXiv:2306.15461
+\end{enumerate}
+\end{talk}
+\end{document}

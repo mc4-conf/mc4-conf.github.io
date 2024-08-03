@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Операторы Римана--Лиувилля в пространствах Бесова}
+{Ушакова Елена Павловна}
+{Институт проблем управления им. В.\,А. Трапезникова РАН; Математический институт им. В.\,А. Стеклова РАН}
+{elenau@inbox.ru}
+{}
+{Вещественный и функциональный анализ} %
+
+Рассматриваются свойства операторов интегрирования Римана--Лиувилля \(I^\alpha_\pm\) положительных порядков \(\alpha\) [1] в пространствах Бесова с весовыми функциями типа Мукенхоупта на \(\mathbb{R}\). Найдены условия для выполнения неравенств, связывающих нормы образов и прообразов \(I^\alpha_\pm\). В качестве инструментов решения задачи используются системы сплайновых всплесков и соответствующие им теоремы декомпозиции. Полученные результаты применяются к исследованию поведения последовательностей аппроксимативных и энтропийных чисел \(I^\alpha_\pm\), а также к изучению свойств преобразования Гильберта.
+
+\medskip
+
+Доклад основан на результатах публикаций [2-5]. Исследование поддержано  грантом Российского научного фонда № 24-11-00170, https://rscf.ru/project/24-11-00170/.
+
+\begin{enumerate}
+\item[{[1]}]~С.~Г. Самко,~А.~А. Килбас,~О.~И. Маричев, {\it Интегралы и производные дробного порядка и некоторые приложения}, М.: Наука и техника, 1987.
+\item[{[2]}] Е. П. Ушакова, {\it Образы операторов интегрирования в весовых функциональных пространствах}, Сибирский математический журнал, 63:6 (2022), 1382--1410.
+\item[{[3]}] Е. П. Ушакова, К. Э. Ушакова, {\it Неравенства для норм с дробными интегралами}, Алгебра и анализ, 35:3 (2023), 185--219.
+\item[{[4]}] E. P. Ushakova, {\it Boundedness of the Hilbert transform in Besov spaces}, Anal. Math., 49:4 (2023), 1137–1174.
+\item[{[5]}] E. P. Ushakova, {\it The study by splines of norm inequalities for Riemann--LIouville operators in weighted Besov spaces}, Journal of Mathematical Sciences, (2023), accepted.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Об отечественных научных школах нелинейного функционального анализа в 1940-х-1960-х гг.}
+{Богатов Егор Михайлович}
+{ГФ НИТУ МИСИС; СТИ НИТУ МИСИС}
+{embogatov@inbox.ru}
+{}
+{История математики} %
+
+Рассмотрение истории математики через призму научных школ даёт дополнительное представление о  математике и её истории [1]. Математические мыслительные средства, выработанные в рамках какой-либо научной школы, являются продуктом коллективной деятельности, что многократно увеличивает скорость их приведения в систему, генерацию продуктивных методов их использования и распространение в пределах национальных и международных научных сообществ.
+
+Основным результатом работы является:
+\begin{enumerate}
+\item введение в историко-научный оборот в области  математики XX в. нового материала - истории отечественных школ нелинейного функционального анализа (НФА);
+\item характеризация научных школ НФА, функционирующих в СССР в 1940-х-1960-х гг. с выделением времени и места их основания, руководителей и основных представителей, продолжительности функционирования и конкретизацией области исследований;
+\item определение вклада отечественных школ НФА в развитие следующих его разделов - вариационного исчисления в целом, теории ветвления и бифуркаций, теории положительных операторов, топологических методов нелинейного анализа, вариационных и приближённых  методов решения нелинейных операторных уравнений.
+\end{enumerate}
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Demidov S. L'histoire des mathématiques en Russie et l'URSS en tant qu'histoire des écoles // ИМИ. 2-я серия. Спец. выпуск. М., 1997. С.9-21.
+\end{enumerate}
+\end{talk}
+\end{document}

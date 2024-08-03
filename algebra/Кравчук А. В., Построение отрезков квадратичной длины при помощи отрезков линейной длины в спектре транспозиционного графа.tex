@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Построение отрезков квадратичной длины при помощи отрезков линейной длины в спектре транспозиционного графа}
+{Кравчук Артём Витальевич}
+{Институт Математики им. С.~Л. Соболева, Новосибирск}
+{artemkravchuk13@gmail.com}
+{}
+{Алгебра}
+
+В данной работе исследуются собственные значения транспозиционного графа Кэли \(T_n\), \(n \geqslant 2\). Собственные значения графа \(T_n\) являются целыми числами [1,2]. Спектр \(Spec(T_n)\) этого графа симметричен относительно нуля, так как граф является двудольным. Кроме этого, в работе [1] доказано, что наибольшее собственное значение \(\frac{n(n-1)}{2}\) имеет кратность \(1\), второе собственное значение \(\frac{n(n-3)}{2}\) имеет кратность \((n-1)^2\). Таким образом, имеется некоторое представление о том, как устроен спектр транспозиционного графа. Однако точное описание спектра для этого графа неизвестно. Следующий результат даёт описание спектра около нуля.
+
+{\bf Теорема 1.} {\rm [3, Теорема~3]}
+{\it Для  \(n \geqslant 19\), все целые числа из отрезка \([-\frac{n-4}{2}, \frac{n-4}{2}]\) лежат в спектре \(T_n\).}
+
+В данной работе показывается, что при \(n\geqslant48\) существует отрезок квадратичной относительно \(n\) длины, который целиком содержится в спектре транспозиционного графа.
+
+{\bf Теорема 2.} {\rm [4, Теорема 4]}
+{\it Для  всех \(n \geqslant 48\), все целые числа из отрезков \([-y_2, -y_1]\) и \([y_1, y_2]\) лежат в спектре \(T_n\), где \(y_1=C_{\lceil \frac{n}{3} \rceil + 1}^2 - 2(\lfloor \frac{2n}{3}\rfloor - 1), y_2=C_{\lfloor \frac{2n + 1}{3} \rfloor}^2\)}.
+
+Доказательства этих теорем опирается на основные факты из теории представлений симметрической группы для графов Кэли, а также некоторые новые утверждения о соответствии между собственными значениями графа \(T_n\) и разбиениями числа \(n\).
+
+Работа выполнена при поддержке Математического Центра в Академгородке, соглашение с Министерством науки и высшего образования Российской
+Федерации номер 075-15-2022-281.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] \emph{K.~Kalpakis, Y.~Yesha}, On the bisection Width of the Transposition network, \emph{Networks}, \textbf{29} (1997) 69--76.
+\item[{[2]}] \emph{E.~V.~Konstantinova, D.~V.~Lytkina}, Integral Cayley graphs over finite groups, \emph{Algebra Colloquium}, \textbf{27}(1) (2020) 131--136.
+\item[{[3]}] Elena~V.~Konstantinova, Artem Kravchuk, Distinct eigenvalues of the Transposition graph, \emph{LAA}, \textbf{690} (2024) (132-141), {\tt https://doi.org/10.1016/j.laa.2024.03.011}.
+\item[{[4]}] \emph{Artem Kravchuk}, Constructing segments of quadratic length in \(Spec(T_n)\) through segments of linear length, {\tt https://arxiv.org/abs/2404.00410}.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Применение PINN в SIR модели игры среднего поля}
+{Неверов Андрей Вячеславович}
+{Институт математики им. Соболева СО РАН}
+{a.neverov@g.nsu.ru}
+{Криворотько Ольга Игоревна}
+{Прикладная математика и математическое моделирование}
+
+Рассматривается пространственная эпидемиологическая SIR модель, в которой люди распределены в некотором населенном пункте и стремятся не стать инфицированными. Для реализации взаимодействия большого населения в условиях эпидемии применен подход игр среднего поля~[1], характеризующийся совместным решением систем уравнений в частных производных типа Колмогорова-Фоккера-Планка и Гамильтона-Якоби-Беллмана.
+
+Для численной реализации математического моделирования распространения эпидемии в популяции с учетом оптимального управления применяется метод машинного обучения, а именно физически информированные нейронные сети (PINN) с различными модификациями~[2]. Рассматривается возможность решения коэффициентных обратных задач, где информация вводится в виде дополнительных уравнений.
+
+\medskip
+
+Работа выполнена в рамках государственного задания Института математики им. С.\,Л. Соболева СО РАН, проект FWNF-2024-0002 ``Обратные некорректные задачи и машинное обучение в биологических, социально-экономических и экологических процессах''.
+
+\begin{enumerate}
+\item[{[1]}] V. Petrakova, O. Krivorotko, Mean Field Optimal Control Problem for Predicting the Spread of Viral Infections, {\it 19th International Asian School-Seminar on Optimization Problems of Complex Systems (OPCS)}, (2023), 79-84.
+\item[{[2]}] M. Raissi, P. Perdikaris, G.E. Karniadakis,
+Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,
+{\it Journal of Computational Physics},
+378
+(2019),
+686-707.
+\end{enumerate}
+\end{talk}
+\end{document}

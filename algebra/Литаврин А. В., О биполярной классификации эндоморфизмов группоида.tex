@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О биполярной классификации эндоморфизмов группоида}
+{Литаврин Андрей Викторович}
+{Сибирский федеральный университет}
+{anm11@rambler.ru}
+{}
+{Алгебра}
+
+Рассматривается проблема поэлементного описания моноида всех эндоморфизмов произвольного группоида. Установлено, что данный моноид раскладывается в объединение попарно непересекающихся классов эндоморфизмов; эти классы получают название базовых множеств эндоморфизмов. Такие множества эндоморфизмов группоида \(G\) параметризуются отображениями \(\gamma \colon \ G \to \{1,2\}\), которые в данной работе называются биполярными типами (либо, кратко, типами). Если некоторый эндоморфизм лежит в базовом множестве типа \(\gamma\), то мы говорим, что этот эндоморфизм имеет тип \(\gamma\). Таким образом, мы получаем классификацию всех эндоморфизмов фиксированного группоида (биполярную классификацию эндоморфизмов). Получен способ вычисления биполярного типа эндоморфизма произвольного группоида. Для группоидов с попарно различными левыми сдвигами элементов --- в частности, группоидов с правым нейтральным элементом, моноидов, луп и групп --- описанный способ вычисления биполярного типа эндоморфизма приводит к критерию неподвижной точки данного эндоморфизма. Выяснилось, что биполярный тип эндоморфизмов группоида с попарно различными левыми сдвигами содержит всю информацию о неподвижных точках эндоморфизмов этого типа.
+\end{talk}
+\end{document}

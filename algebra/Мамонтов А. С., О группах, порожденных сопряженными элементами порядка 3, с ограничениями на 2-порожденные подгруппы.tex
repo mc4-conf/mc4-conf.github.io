@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О группах, порожденных сопряженными элементами порядка 3, с ограничениями на 2-порожденные подгруппы}
+{Мамонтов Андрей Сергеевич}
+{ИМ СО РАН}
+{mamontov@math.nsc.ru}
+{}
+{Алгебра}
+
+На протяжении всей истории теории групп разнообразные условия конечности группы и связи между ними вызывали живой интерес исследователей.
+Классическими примерами подобных условий являются периодичность и локальная конечность: они широко изучаются в многочисленных работах.
+Условие периодичности по своей сути накладывает ограничение на подгруппы, порожденные одним элементом группы.
+Классический пример, где ограничения накладываются на 2-порожденные подгруппы --- это группы 3-транспозиций.
+Группа \(G\) называется группой \(n\)-транспозиций, если она порождается классом \(C\) сопряженных элементов порядка 2 (инволюций), таким что
+порядок \(xy\) не превосходит \(n\) для любых элементов \(x\) и \(y\) из \(C\).
+Группы 2-транспозиций, очевидно, абелевы и потому локально конечны.
+Известно, что группы \(3\)-транспозиций локально конечны.
+Вопрос о локальной конечности групп \(n\)-транспозиций для \(n>3\) открыт.
+В настоящем докладе речь пойдет о группах, порожденных классом \(D\) сопряженных элементов порядка три.
+Дополнительно будем считать, что любые два элемента из \(D\) порождают подгруппу являющуюся гомоморфным образом группы из \(M=\{ 3^{1+2},  SL_2(3), SL_2(5) \}\), здесь \(3^{1+2}\) --- экстраспециальная группа порядка \(27\) и периода \(3\), а \(SL\) --- специальные линейные группы.
+Такие группы порождают два элемента порядка 3, инвертируемые 3-транспозициями так называемого типа \(S_4\).
+\end{talk}
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О тождестве Эйлера}
+{Синкевич Галина Ивановна}
+{Санкт-Петербургский государственный архитектурно-строительный университет}
+{galina.sinkevich@gmail.com}
+{}
+{История математики} % [6] название секции
+
+Об истории формул и тождества Эйлера много писали, но в ней остается немало противоречий и лакун. Еще когда Эйлер был
+ребенком, равенство $\ln(\cos x+\sqrt{-1}\sin x)=x\sqrt{-1}$ было получено в словесной форме при расчете поверхности геоида Р. Коутсом
+(R. Cotes) с помощью метода логарифмических пропорций. Некоторые комментаторы полагают, что у Коутса содержалась ошибка. Так
+ли это?
+
+В 1743--1748 гг. Эйлер определил показательную функцию через ряды синуса и косинуса и получил уравнение
+$\cos\phi+\sqrt{-1}\sin\phi=e^{\sqrt{-1}\phi}$, а также выразил тригонометрические функции через экспоненту.
+Но у Эйлера нет знаменитого тождества $e^{i\pi}=-1$,
+или $ e^{i\pi}+1=0$. Нам удалось выяснить, когда и у кого оно появилось впервые. Мы покажем, как постепенно менялось мнение об
+этой формуле как о незначительном частном случае и до признания ее красивейшей формулой математики.
+\medskip
+\begin{enumerate}
+\item[{[1]}] Синкевич Г.И. История самой красивой формулы математики. Тождество Эйлера // История науки и техники, 2023, {\bf 3}.
+-- с. 3--25.
+\end{enumerate}
+\end{talk}
+\end{document}

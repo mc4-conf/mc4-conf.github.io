@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Периодические ветвящиеся диффузионные процессы в \(\mathbb{R}^d\)}
+{Рядовкин Кирилл Сергеевич}
+{Санкт-Петербургское отделение Математического института
+им. В.\,А.Стеклова РАН}
+{kryadovkin@gmai.com}
+{}
+{Теория вероятностей}
+
+Мы рассмотрим диффузионный ветвящийся процесс в \(\mathbb{R}^d\). Будем предполагать, что перемещение частиц в пространстве описывается стохастическим дифференциальным уравнением, коэффициенты которого являются периодическими в \(\mathbb{R}^d\) функциями. В каждой точке \(\mathbb{R}^d\) частица может умереть и породить случайное число потомков. Среднее число потомков
+при одном делении мы будем также предполагать периодическим в \(\mathbb{R}^d\) с теми же периодами. При условии, что в начальный момент времени есть только одна частица, и все частицы эволюционируют независимо друг от друга, мы опишем асимптотическое поведение среднего числа частиц в ограниченном множестве при больших временах.
+\end{talk}
+\end{document}

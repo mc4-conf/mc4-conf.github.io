@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Спетральные серии оператора Шрёдингера с дельта-по\-тен\-ци\-ал\-ом в полюсах двух- и трехмерных поверхностей вращения}
+{Рыхлов Владислав Владимирович}
+{Московский Государственный Университет им. М.\,В.~Ломоносова}
+{vladderq@gmail.com}
+{А.\,И.~Шафаревич}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+Рассматривается спектральная задача для оператора Шрёдингера
+\[H\psi = E\psi + o(h),\quad
+H = -\frac{h^2}{2}\Delta + \delta_{x_1}(x) + \delta_{x_2}(x),
+\quad x\in M,\]
+где \(h\to+0\), \(x_j\) --- полюса \(M\), \(M\) --- двумерная \(M^2\subset\mathbb R^3\) или трехмерная \(M^3\subset\mathbb R^4\) поверхность вращения:
+\[M^2 = \{ (v(s)\cos{\varphi}, v(s)\sin{\varphi}, w(s))\,\big|\, s\in [s_1,s_2], \varphi\in\mathbb S^1\}\quad\text{и}\]
+\[M^3 = \{ (v(s)\cos{\theta}\cos{\varphi}, v(s)\cos{\theta}\sin{\varphi}, v(s)\sin{\theta}, w(s))\,\big|\, s\in [s_1,s_2], \varphi\in\mathbb S^1, \theta\in [-\frac{\pi}{2},\frac{\pi}{2}]\},\]
+\(s\in [s_1,s_2]\) --- натуральный параметр кривой \((v(s),w(s))\subset\mathbb R^2\), и значения \(s_j\) соответствуют точкам \(x_j\).
+
+Оператор~\(H\) определен на функциях из \(L^2(M)\) как самосопряженное расширение оператора~\(\Delta\), действующего на функциях \(\psi_0 \in W_2^2(M)\), обращающихся в нуль в полюсах~\(x_j\).
+В области определения оператора~\(H\) лежат функции, имеющие особенности в точках~\(x_j\), а именно, для \(\psi\in D(H)\) имеется асимптотическое равенство~[1] при \(x\to x_j\)
+\begin{equation}\label{asymp_expans}
+\psi(x) = -\frac{a_j}{2\pi} \ln{d(x,x_j)} + b_j + o(1) \text{ на } M^2,\quad
+\psi(x) = \frac{a_j}{4\pi} \frac{1}{d(x,x_j)} + b_j + o(1)\text{ на } M^3,
+\end{equation}
+где \(d(x,x_j)\) --- геодезическое расстояние на~\(M\) между точками~\(x\) и~\(x_j\), а коэффициенты~\(a_j\) при сингулярной части и \(b_j\) при регулярной связаны следующим образом:
+\begin{equation}\label{boundary_cond}
+i (\mathbf{I} + U) a + \frac{2}{h^2}(\mathbf{I}-U)b=0,\quad a = \begin{pmatrix} a_1 \\ a_2\end{pmatrix},\quad b = \begin{pmatrix} b_1 \\ b_2\end{pmatrix},
+\end{equation}
+где \(\mathbf{I}\) --- единичная матрица, \(U\) --- некоторый унитарный оператор.
+
+В работе получены явные выражения для условий квантования Бора--Зоммерфельда--Маслова, позволяющие изучить поведение асимптотического спектра. Асимптотические собственные функции имеют представление в терминах функций Бесселя и Неймана.
+
+\medskip
+
+\begin{enumerate}
+\item J.~Br\"uning, V.~A.~Geyler, Scattering on compact manifolds with infinitely thin horns, J. Math. Phys., 44:2 (2003), 371--405
+\item В.~П.~Маслов, М.~В.~Федорюк, Квазиклассическое приближение для уравнений квантовой механики, Изд. Наука, Mосква, 1976
+\item W.~Wasow, Asymptotic Expansions for Ordinary Differential Equations, Изд. Interscience Publ. John Wiley \& Sons, Inc., New York--London--Sydney, 1965
+\end{enumerate}
+\end{talk}
+\end{document}

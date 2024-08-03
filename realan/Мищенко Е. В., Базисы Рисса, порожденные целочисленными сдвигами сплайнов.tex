@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Базисы Рисса, порожденные целочисленными сдвигами сплайнов}
+{Мищенко Евгения Васильевна}
+{Институт математики им. С.\,Л.Соболева}
+{e.mishchenko@g.nsu.ru}
+{}
+{Вещественный и функциональный анализ} %
+
+Исследована так называемая устойчивость семейств целочисленных сдвигов \(B_m\)-сплай\-нов, представляющих собой \(m\)-кратную свертку функции-индикатора единичного отрезка, и экспоненциальных сплайнов \(U_{m,p}\), являющихся свертками  некоторой финитной функции экспоненциального вида и \(B_m\)-сплайна. Установить устойчивость  семейства функций из гильбертова пространства \(H\) означает найти  ненулевые конечные константы \(A\)  и \(B\), с помощью которых норма любой линейной комбинации из элементов этого семейства c  коэффициентами  из \(l_2\)  оценивается снизу и сверху через \(l_2\) норму последовательности этих коэффицентов. Такие константы также называются границами Рисса.  Если семейство функций устойчиво и вдобавок полно в \(H\), то оно образует базис Рисса. При \(A=B\) базис Рисса обращается в ортнормированный базис.
+
+В рассматриваемом случае были найдены  постоянные \(A\)  и \(B\) для любых \(m \in N, p \in R\), а также установлены некоторые предельные свойства экспоненциальных сплайнов при \(p \rightarrow 0, \pm \infty .\)
+
+\medskip
+
+Работа выполнена в рамках государственного задания в Институте математики им. С.\,Л.Соболева СО РАН (проект №FWNF-2022-0008).
+
+\begin{enumerate}
+\item[{[1]}] M.A. Unser, {\it Splines: a perfect fit for medical imaging},  Proc. SPIE 4684, Medical Imaging 2002: Image Processing, (9 May 2002).
+\item[{[2]}] Ch. Chui,
+{\it An Introduction to Wavelets}, Academic Press, San Diego, 1992.
+\item[{[3]}] E.V. Mishchenko,
+{\it Determination of Riesz bounds for the spline basis with the help of trigonometric polynomials}, Siberian Mathematical Journal,  {51}, (2010), 660--666.
+\end{enumerate}
+\end{talk}
+\end{document}

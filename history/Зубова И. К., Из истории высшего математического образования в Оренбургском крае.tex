@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Из истории высшего математического образования в Оренбургском крае}
+{Зубова Инна Каримовна}
+{Оренбургский государственный университет}
+{zubova-inna@yandtx.ru}
+{Игнатушина Инесса Васильевна}
+{История математики} %
+
+Говоря о предыстории высшего образования в Оренбургском крае, нельзя не вспомнить о тех средних учебных заведениях, в которых уже начиная с 30-х гг. XIX в.
+работали выпускники лучших университетов страны, приезжавшие сюда по назначению и, как правило, сразу начинавшие играть значительную роль в общественной и
+культурной жизни города. Эти преподаватели сыграли большую роль в формировании предпосылок для создания в городе высших учебных заведений.
+Авторы останавливаются на деятельности некоторых преподавателей математики, которые не только добросовестно выполняли служебные обязанности, но и все свои знания,
+энтузиазм и творческие возможности отдавали делу просвещения, организуя научные кружки, читая публичные лекции, совершенствуясь в методике преподавания своих
+предметов. Достойными преемниками этих преподавателей являются специалисты советского времени, которых можно назвать создателями современных вузов города.
+Оренбургский государственный университет, возникший на базе политехнического института --– сегодня крупнейший вуз области. Богатую историю имеет и
+Оренбургский педагогический университет, который в этом году отмечает свое 105-летие. В докладе представлен краткий обзор истории этих высших учебных заведений Оренбурга
+и деятельности преподавателей математики, на протяжении многих лет в них трудившихся.
+\end{talk}
+\end{document}

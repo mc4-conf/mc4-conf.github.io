@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О группах, порождённых инволюциями таблиц Юнга}
+{Германсков Михаил Витальевич}
+{МЦМУ им. Леонарда Эйлера, СПбГУ}
+{mgermanskov@gmail.com}
+{}
+{Теория чисел и дискретная математика}
+
+Каждой диаграмме Юнга можно сопоставить группу, действующую на множестве таблиц Юнга той же формы. Эта группа порождена инволюциями, которые меняют местами числа  \(i\)  и  \(i+1\)  в таблице, если соответствующие клетки не соседние; в противном случае таблица остаётся неизменной. Такие группы, отвечающие двустрочечным диаграммам, являются либо знакопеременными, либо симметрическими. В докладе я расскажу, как различать эти два случая, глядя на двоичные записи длин двух строк.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]А. М. Вершик, Н. В. Цилевич, “Группы, порожденные инволюциями ромбовидных графов, и деформации ортогональной формы Юнга”, Теория представлений, динамические системы, комбинаторные и алгоритмические методы. XXX, Зап. научн. сем. ПОМИ, 481, ПОМИ, СПб., 2019, 29–38
+\item[{[2]}] М. В. Германсков, \emph{“Описание групп, порожденных инволюциями двухстрочечных таблиц Юнга”}, Теория представлений, динамические системы, комбинаторные методы. XXXIV, Зап. научн. сем. ПОМИ, 517, ПОМИ, СПб., 2022, 70–81
+\item[{[3]}] М. Германсков, \emph{“Классификация групп, порожденных инволюциями двустрочечных таблиц Юнга”}, Теория представлений, динамические системы, комбинаторные методы. XXXV, Зап. научн. сем. ПОМИ, 528, ПОМИ, СПб., 2023, 107–115
+\end{enumerate}
+\end{talk}
+\end{document}

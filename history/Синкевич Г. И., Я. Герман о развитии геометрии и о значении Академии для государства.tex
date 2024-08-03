@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Якоб Герман о развитии геометрии и о значении Академии для государства. Речь на открытом заседании Петербургской Академии наук, 1726 г.}
+{Синкевич Галина Ивановна}
+{Санкт-Петербургский государственный архитектурно-строительный университет}
+{galina.sinkevich@gmail.com}
+{}
+{История математики} %
+
+Якоб Герман (1678–1733), швейцарский математик и механик, любимый ученик Якоба Бернулли, родственник Леонарда Эйлера, был первым профессором высшей математики Петербургской академии наук. Ему, известному математику, самому старшему из академиков, светскому и разносторонне образованному человеку, надлежало выступать на открытых заседаниях в присутствии императрицы. Он прибыл в Петербург в 1725 г. и выступал на первом (1725) и втором (1726) открытых заседаниях Академии. После смерти Петра I перспективы существования Академии стали неясны. Речь Германа можно смело назвать программной, или, как мы сейчас бы сказали, пленарной, так как она, по словам автора, раскрывает не только ``начало, развитие и торжество математики'', но и дает современную к тому моменту картину состояния математики, определяет задачи для молодых академиков по развитию математики и механики и обучению студентов. Главной же  целью Германа было внушить сильным мира сего мысль о необходимости сохранения Академии для государства. Речь 1726 г. ``О происхождении и развитии геометрии'' была опубликована на латыни в 1728 г. и без малого 300 лет оставалась непереведенной.  Русский перевод  будет звучать впервые.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]  J. Hermann. De ortu et progressu Geometriae. Sermones in secundo solenni Academiae Scientiarum imperialis conventu die 1 augusti anni MDCCXXVI publice recitati. Petropoli, 1728. - 125 p.
+\end{enumerate}
+\end{talk}
+\end{document}

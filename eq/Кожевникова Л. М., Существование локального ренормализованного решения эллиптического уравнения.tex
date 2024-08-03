@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Существование локального ренормализованного решения эллиптического уравнения с переменными   показателями  в пространстве \(\mathbb{R}^n\)}
+{Кожевникова Лариса Михайловна}
+{Стерлитамакский филиал Уфимского университета науки и технологий}
+{kosul@mail.ru}
+{}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+Концепция ренормализованных решений является важным шагом в изучении общих
+вырождающихся эллиптических уравнений с данными в виде меры. Первоначальное определение
+приведено в работе [1] и распространено М.\,Ф. Бидо-Верон [2] в локальную
+и очень полезную форму  для уравнения с \(p\)-лапласианом, поглощением и мерой Радона \(\mu\):
+\[-\Delta_pu+|u|^{p_0-2}u=\mu,\quad p\in(1,n),\quad p<p_0.\eqno(1)\]
+В частности, М.\,Ф. Бидо-Верон доказала существование в пространстве \(\mathbb{R}^n\) локального энтропийного решения уравнения (1)  c правой частью из пространства \(L_{1,{\rm loc}}(\mathbb{R}^n)\). В монографии [3] Л. Верон обобщил  понятия локального ренормализованного решения для уравнения со степенными нелинейностями вида
+\[-{\rm div}\,{\rm a}({\rm x},\nabla
+u)+b({\rm x},u,\nabla u)=\mu.\eqno(2)\]
+
+В докладе понятие  локального ренормализованного решения адаптируется на  уравнение вида (2) c переменными показателями роста.
+В локальном пространстве Соболева с переменным показателем доказано существование локального ренормализованного решения уравнения (2)  c \(\mu\in L_{1,{\rm loc}}(\mathbb{R}^n)\) в пространстве \(\mathbb{R}^n\).
+
+Ранее автором в работе [4] для уравнения вида (2) с \(p({\rm x})\)-ростом и общей мерой Радона \(\mu\) с конечной полной вариацией доказано существование ренормализованного решения задачи Дирихле в ограниченной области \(\Omega\).
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] G. Dal Maso, F. Murat, L. Orsina, A. Prignet, {\it Renormalized solutions of elliptic
+equations with general measure data}, Ann. Scuola Norm. Sup. Pisa Cl. Sci. (4),
+28:4 (1999), 741--808.
+\item[{[2]}]
+M. F. Bidaut-V\(\acute{e}\)ron, {\it Removable singularities and existence for a quasilinear equation
+with absorption or source term and measure data}, Adv. Nonlinear Stud., 3:1
+(2003), 25--63.
+\item[{[3]}] L. V\(\acute{e}\)ron,  {\it Local and global aspects of quasilinear degenerate elliptic equations. Quasilinear
+elliptic singular problems}, World Sci. Publ., Hackensack,  2017.
+\item[{[4]}] Л. М. Кожевникова,  {\it Ренормализованные решения эллиптических уравнений с переменными показателями и данными в виде общей меры}, Матем. сб., 211:12 (2020), 83--122.
+\end{enumerate}
+\end{talk}
+\end{document}

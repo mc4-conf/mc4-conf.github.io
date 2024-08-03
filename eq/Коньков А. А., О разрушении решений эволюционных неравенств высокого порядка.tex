@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О разрушении решений эволюционных неравенств высокого порядка}
+{Коньков Андрей Александрович}
+{Московский государственный университет имени~М.\,В.~Ломоносова, Московский центр фундаментальной и прикладной математики}
+{konkov@mech.math.msu.su}
+{А.\,Е.~Шишков}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+Рассматривается задача Коши
+\[
+\partial_t^k u
+-
+\sum_{|\alpha| = m}
+\partial^\alpha
+a_\alpha (x, t, u)
+\ge
+f (|u|)
+\quad
+\mbox{в }
+{\mathbb R}_+^{n+1} = {\mathbb R}^n \times (0, \infty),
+\eqno (1)
+\]
+\[
+u (x, 0) = u_0 (x),
+\partial_t u (x, 0) = u_1 (x),
+\ldots,
+\partial_t^{k-1} u (x, 0) = u_{k-1} (x) \ge 0,
+\eqno (2)
+\]
+где
+\(k, m, n \ge 1\)
+и
+\(a_\alpha\) --- каратеодориевы функции такие, что
+\[
+|a_\alpha (x, t, \zeta)| \le A |\zeta|^p,
+\quad
+|\alpha| = m,
+\quad
+A, p = const > 0,
+\]
+для почти всех
+\((x, t) \in {\mathbb R}_+^{n+1}\)
+и для всех
+\(\zeta \in {\mathbb R}\).
+
+Для слабых решений~(1), (2) найдены точные условия blow-up.
+В случае степенной нелинейности \(f (\zeta) = \zeta^\lambda\) наши условия совпадают с условиями, раннее полученными в работах~[1--4] и, в частности, с известными условиями Фуджиты-Хаякавы и Като.
+Нам также удалось обобщить результаты работы [5] на случай неравенств высокого порядка вида~(1). При этом в отличие от~[5] мы не накладываем никаких условий эллиптичности на коэффициенты \(a_\alpha\) дифференциального оператора. Нам также не требуются никакие условия роста на решение задачи Коши на начальные значения.
+Все формулировки и доказательства доступны в архиве Корнельского университета~[6].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]
+Yu.\,V.Egorov, V.\,A.~Galaktionov, V.\,A.~Kondratiev, S.\,I.~Pohozaev,
+{\it On the necessary conditions of global existence of solutions to a quasilinear inequality in the half-space},
+C. R. Acad. Sci. Paris, S\'er. 1: Math. 330 (2000), 93--98.
+\item[{[2]}]
+H.~Fujita,
+{\it On the blowing up of solutions of the Cauchy problem for \(u_t = \Delta u + u^{1 + \alpha}\)},
+J. Fac. Sci. Univ. Tokyo Sect. IA Math. 13 (1966), 109--124.
+\item[{[3]}]
+K.~Hayakawa,
+{\it On nonexistence of global solutions of some semilinear parabolic diffe\-ren\-tial equations},
+Proc. Japan Acad. 49 (1973), 503--505.
+\item[{[4]}]
+T.~Kato,
+{\it Blow-up of solutions of some nonlinear hyperbolic equations},
+Commun. Pure Appl. Math. 33 (1980), 501--505.
+\item[{[5]}]
+R.~Laister, M.~Sier\.{z}\c{e}ga,
+{\it A blow-up dichotomy for semilinear fractional heat equations},
+Math. Ann. 381 (2021), 75--90.
+\item[{[6]}]
+A.\,A.~Kon'kov, A.\,E.~Shishkov,
+{\it On blow-up conditions for nonlinear higher order evo\-lu\-tion inequalities},
+arXiv:2309.00574 [math.AP], DOI: 10.48550/arXiv.2309.00574
+\end{enumerate}
+\end{talk}
+\end{document}

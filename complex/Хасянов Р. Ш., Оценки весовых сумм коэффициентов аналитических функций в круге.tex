@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Оценки весовых сумм коэффициентов аналитических функций в круге}
+{Хасянов Рамис Шавкятович}
+{Санкт-Петербургский государственный университет}
+{st070255@student.spbu.ru}
+{}
+{Комплексный анализ}
+
+В докладе будет рассказано об оценках следующих функционалов в классах аналитических функций в круге:
+\[\sum_{n\ge m}c_n|a_n|^2r^{2n} \:\: \text{и} \:\: \sum_{n\ge m}c_n|a_n|r^n, \quad 0\le r<1, \: m\ge 0.\]
+Частными случаями этих сумм являются функционал площади, вторая норма на окружности  и мажорантный ряд.
+Мы развиваем метод И.Р. Каюмова и С. Поннусами [2], используя в оценках результат Э. Райха [3], который обобщает теорему Голузина о мажорации подчинённых функций [4]. Сначала мы докажем общую теорему, после чего сформулируем важные следствия, например, мы докажем точную оценку площади образа круга радиуса \(r\) под действием ограниченной в единичном круге функции.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Khasyanov R., {\it The Bohr radius and the Hadamard convolution operator}, J. Math. Anal. Appl., 127782, (2024).
+\item[{[2]}] Kayumov I., Ponnusamy S., {\it Bohr’s inequalities for the analytic functions with lacunary series and harmonic functions}, J. Math. Anal. Appl.,  V.465, No.2, (2018), 857–871.
+\item[{[3]}] Reich E., {\it An inequality for subordinate analytic functions}, Pacific J. Math., V.4, No.2, (1954), 259–274.
+\item[{[4]}]  Голузин Г. М., {\it О мажорации подчинённых функций}, Матем. сб., Т.29, №71, (1951), 209–224.
+\end{enumerate}
+\end{talk}
+\end{document}

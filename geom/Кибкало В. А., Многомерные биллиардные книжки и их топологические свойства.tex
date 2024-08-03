@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Многомерные биллиардные книжки и их топологические свойства}
+{Кибкало Владислав Александрович}
+{МГУ имени М.\,В.\,Ломоносова; Московский центр фунд. и прикл. матем}
+{slava.kibkalo@gmail.com}
+{}
+{Геометрия}
+
+Топологический подход к интегрируемым гамильтоновым системам, развитый в работах А.\,Т.\,Фоменко и его научной школы [1]. Недавно класс интегрируемых биллиардов в областях, ограниченных софокусными квадриками, был существенно расширен В.\,В.\,Ведюшкиной, что позволило промоделировать биллиардами широкий класс слоений и особенностей интегрируемых систем с 2 степенями свободы. А именно, был построен класс биллиардных книжек, склеенных (по гладким граничным дугам) из двумерных софокусных областей с плоской метрикой. Ребра (1-клетки) оснащены циклическими перестановками, а вершины (0-клетки) --- условиями коммутирования.
+
+Автором предложено и изучено многомерное обобщение биллиардных книжек для софокусного семейства \(\sum_{i=1}^n x_i^2/(a_i - \lambda) = 1\) квадрик в \(\mathbb{R}^n\). Такая книжка есть \(CW\)-комплекс \(X^n\) с проекцией \(\pi: X^n \to \mathbb{R}^n\), являющейся изометрией на замыкании каждой n-мерной клетки \(\bar{e}^n\). Каждая \(n-1\)-мерная клетка \(e^{n-1}_i\) проецируется на одну из квадрик \(\lambda = \lambda_i\), возможно, вырожденную (при \(\lambda = a_i\)) и оснащается циклической перестановкой на множестве \(n\)-клеток, в чью границу входит. Каждая клетка \(e^k\) отвечает связному пересечению \(n-k\)-квадрик, каждой из которых отвечает перестановка, составленная из циклических перестановок тех клеток, чьи гиперграни проецируются на эту квадрику.
+
+\textbf{Теорема 1.} {\itМногомерная билллиардная книжка и система биллиарда на ней корректно определяются циклическими перестановками на гипергранях \(e^{n-1}\) при условии коммутирования перестановок, отвечающих \(n-2\)-мерным клеткам. Биллиардный поток остается непрерывен вблизи траекторий, проходящих через точки клеток \(e^k\) для \(k <n-1\).}
+
+С помощью новых систем удалось реализовать биллиардами (с точностью до послойного гомеоморфизма) особенности определенных классов, встречающиеся в интегрируемых системах с 3 и более ст.\,св. (реализация инвариантов седловых особенностей в системах с 2 ст.\,св. обсуждается в [3]).
+
+\textbf{Теорема 2.} {\it Многомерными билллиардными книжками топологически реализуются невырожденные особенности коранга 1 интегрируемых систем с \(n\) ст. св., а также (при добавлении к системе билларда центрального потенциала Гука) седловые и седло-фокусные особенности ранга 0 интегрируемых систем с 3 степенями свободы.}
+
+\medskip
+
+Работа выполнена при поддержке РНФ, проект 22-71-10106.
+
+\begin{enumerate}
+\item[{[1]}] Alexey Bolsinov, Anatoly Fomenko, {\it Integrable Hamiltonian systems. Geometry, topology, classification}, Publ. house ``Udmurt Univ.'', Izhevsk, 1999.
+\item[{[2]}] V. V. Vedyushkina, I. S. Kharcheva, {\it Billiard books model all three-dimensional bifurcations of integrable Hamiltonian systems}, Sb. Math., 209:12 (2018), 1690–1727.
+\item[{[3]}] Anatoly Fomenko, Vladislav Kibkalo, {\it  Saddle Singularities in Integrable Hamiltonian Systems: Examples and Algorithms}, Understanding Complex Systems, Springer, Cham, 2021.
+\end{enumerate}
+\end{talk}
+\end{document}

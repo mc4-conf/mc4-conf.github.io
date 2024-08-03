@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О дистанционных графах, вложенных в векторное пространство над конечным полем}
+{Воронов Всеволод Александрович}
+{Кавказский математический центр Адыгейского государственного университета, Московский физико-технический институт (национальный исследовательский университет)}
+{v-vor@yandex.ru}
+{Д.\,Д. Черкашин}
+{Теория чисел и дискретная математика}
+
+Рассмотрим граф \(G^{(n)}_{q}\), вершинами которого являются точки \(n\)-мерного векторного пространства \(\mathbb{F}^n_{q}\), где \(q = p^k\), \(p\) простое; ребрами соединены пары точек \(x,y \in \mathbb{F}^n_{q}\), евклидово расстояние между которыми равно единице.  Свойства данного класса графов изучались в работах А. Иосевича и соавторов [1, 2]. В частности, из оценок мощности подмножества \(\mathbb{F}^n_{q}\), в котором реализуются все расстояния, следует, что хроматическое число \(\chi(G^{(n)}_{q})\) стремится к бесконечности при фиксированном \(n \geq 2 \) и \(q \to \infty\). При этом оценка, которую можно получить на основе работы [1], при малых \(q\) является достаточно грубой.
+
+В докладе будут представлены новые оценки хроматических чисел \(G^{(n)}_{q}\), полученные методами спектральной теории графов, а также оценки, основанные на явных построениях.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] A. Iosevich, M. Rudnev, {\it Erdos distance problem in vector spaces over finite fields}, Transactions
+of the American Mathematical Society, 359 (2007), 6127–6142.
+\item[{[2]}] A. Iosevich, H. Parshall, {\it Embedding distance graphs in finite field vector spaces}, J. Korean Math. Soc., 56 (2019), 1515–1528.
+\end{enumerate}
+\end{talk}
+\end{document}

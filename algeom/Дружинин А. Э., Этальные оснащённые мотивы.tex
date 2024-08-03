@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Этальные оснащённые мотивы}
+{Дружинин Андрей Эдуардович}
+{СПбГУ МКН, лаборатория им. Чебышёва; ПОМИ РАН, лаборатория Алгебры и теории чисел}
+{andrei.druzh@gmail.com}
+{Ola Sande}
+{Алгебраическая геометрия}
+
+Теорема сравнения для мотивных и классических стабильных гомотопических групп, доказанная М. Левином, утверждает изоморфизм упомянутых групп
+\[\pi^{\mathbb A^1,\mathrm{Nis}}_{i,0}(X)\simeq \pi_{i}(X(\mathbb C)),\]
+для всякой гладкой схемы \(X\) над \(\mathbb C\) и топологического пространства её комплексных точек.
+
+В первой части доклада будет рассказано о двух обобщениях или аналогах функтора реализации Бетти
+\[X\mapsto X(\mathbb C)\]
+для полей положительной характеристики:
+1) с помощью \(\infty\)-категорной теории топосов Гротендика, построенной Дж. Лури, и топологичесих моделей Д. Исаксена, построение которых в \(\infty\)-категорном контексте выполнено М. Айуа,
+и
+2) с помощью теорем жёсткости Воеводского-Суслина, Дж. Айуба и Т. Бахмана,
+а также
+об обобщении указанного выше изоморфизма на алгебраически замкнутые базовые поля произвольной характеорискики, и целого числа \(n\) обратимого в базовом поле, доказанном М. Заргаром.
+
+Во второй части доклада будет рассказано альтернативное доказательство указанного выше изоморфизма над \(\mathbb C\) и его обобщения для произвольного базового поля, основанное на теории оснащённых мотивов, построенной оригинально Г. Гаркушей и И. Паниным для Нисневич локальных \(\mathbb A^1\)-мотивных \(\mathbb P^1\)-спектров, в сочетании с её переном на гиперполные этальные \(n\)-пополненные \(\mathbb A^1\)-мотивные \(\mathbb P^1\)-спектры, выполненном автором в соавторстве с Ула Санде.
+\end{talk}
+\end{document}

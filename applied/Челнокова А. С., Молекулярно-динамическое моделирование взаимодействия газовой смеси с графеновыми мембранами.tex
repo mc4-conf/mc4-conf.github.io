@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Молекулярно-динамическое моделирование взаимодействия газовой смеси с графеновыми мембранами}
+{Челнокова Анна Сергеевна}
+{Региональный научно-образовательный математический центр Томского государственного университета}
+{smolina-nyuta@mail.ru}
+{Бубенчиков Алексей Михайлович}
+{Прикладная математика и математическое моделирование}
+
+Наноструктуры на основе углерода, такие как графен, углеродные нанотрубки и фуллерены, привлекли широкое внимание исследователей по всему миру благодаря своим уникальным свойствам. В наномасштабе одним из устоявшихся подходов к изучению подобных структур является молекулярно-динамическое моделирование. Оно особенно полезно для количественной оценки основных взаимодействий и динамических процессов, определяющих коэффициенты адсорбции или диффузии.
+
+В настоящее время в качестве перспективного фильтрующего материала рассматриваются графеноподобные мембраны, и существует необходимость в разработке теоретических подходов для изучения диффузии и сорбции, которые включают межчастичные взаимодействия для предоставления точной информации о массопереносе.
+
+В докладе будет представлена математическая модель взаимодействия компонент газовой смеси He, Ar и Xe с графеновыми листами, в том числе имеющими дефекты. Силы взаимодействия описаны с использованием потенциалов Леннарда-Джонса и Бреннера второго рода. Приведено сравнение коэффициентов проницаемости различных газовых компонент через графеновые листы с дефектами с применением вышеуказанных потенциалов. Представлены оценки температуры газовой смеси и графеновой мембраны.
+\end{talk}
+\end{document}

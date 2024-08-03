@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Гурвицевы и (2,3)-порожденные группы}
+{Всемирнов Максим Александрович}
+{ПОМИ РАН}
+{vsemir@pdmi.ras.ru}
+{}
+{Алгебра} % [6] название секции
+
+В докладе будет рассказано о задаче порождения групп с условиями на порядки образующих и их произведений. Причем нас будет интересовать не только вопрос о возможности или невозможности такого порождения,  но и задача явного нахождения соответствующих образующих. Эти задачи относятся к области так называемого эффективного порождения в группах. Многолетние усилия многих авторов привели к практически полному ответу на вопрос, какие конечные простые группы могут быть порождены инволюцией и элементом порядка три ((2,3)-порождение). Последние существенные результаты в этом направлении были недавно получены Тамбурини и Пеллегрини. С другой стороны, аналогичный вопрос для для другого важного класса, а именно для гурвицевых групп (конечных (2,3,7)-порожденных групп), еще далек от полного разрешения. В докладе будет дан обзор современного состояния этих проблем и сформулированы открытые вопросы.
+\end{talk}
+\end{document}

@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Уточнение оценки Меньшова \(L_2\)-нормы мажоранты частных сумм}
+{Солодов Алексей Петрович}
+{Московский государственный университет имени М.\,В. Ломоносова, Московский центр фундаментальной и прикладной математики}
+{apsolodov@mail.ru}
+{}
+{Вещественный и функциональный анализ} %
+
+Теорема Меньшова--Радемахера о точном множителе Вейля для сходимости почти всюду по любой ортонормированной системе основана на оценке нормы максимального оператора. Меньшов показал, что \(L_2\)-норма мажоранты частных сумм с коэффициентами  \(c_n\) по любой ортонормированной системе, состоящей из \(N\) функций, не превосходит \(L_2\)-нормы самой частной суммы с теми же коэффициентами, умноженной на величину \(\log_2 N + 1\). Впоследствии Беннетт показал, что \(L_1\)-норма мажоранты частных сумм с коэффициентами, равными единице,  по любой ортонормированной системе, состоящей из \(N\) функций, не превосходит \(L_\infty\)-нормы самой частной суммы с некоторыми коэффициентами, по модулю не превосходящими единицы, умноженной на величину \(\pi^{-1}\ln N+o(1)\), причем постоянная \(\pi^{-1}\)~--- точная. Этот результат  Беннетт использовал  для усиления неравенства  Меньшова, получив асипмтотически  точную оценку.
+
+Предложен метод усиления доказательства Меньшова, позволяющий уточнить оценку \(L_2\)-нормы мажоранты частных сумм непосредственно. В частности, показано, что  множитель \(\log_2 N + 1\) в оценке Меньшова можно заменить на \(0.5 \log_2 N + 1\). Развитие этого метода позволит, на наш взгляд, лучше изучить структуру ортонормированных систем с экстремально большой нормой мажоранты частных сумм.
+\end{talk}
+\end{document}

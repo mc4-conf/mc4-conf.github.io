@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О построении решений одномерной системы мелкой воды над ровным наклонным дном с помощью дробных производных}
+{Сударикова Ольга Сергеевна}
+{Московский физико-технический институт (национальный исследовательский университет), Институт проблем механики им. А.\,Ю. Ишлинского Российской академии наук}
+{sudarikova.os@phystech.edu}
+{Дмитрий Сергеевич Миненков}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+Рассматривается одномерная нелинейная система уравнений мелкой воды, описывающая набег необрушающихся длинных волн на пологий берег. С помощью специальной замены система асимптотически сводится к линеаризованной системе мелкой воды (эквивалентной волновому уравнению с переменной скоростью), заданной в фиксированной области с вырождением функции дна на границе. Асимптотики нелинейной системы таким образом строятся с помощью решений линеаризованной системы [1]. Для линеаризованной системы известны асимптотики в виде стоячих или бегущих волн, а в специальных случаях и семейства точных решений (для ровного наклонного или параболического дна). С помощью дифференцирования по времени можно строить новые точные решения линеаризованной системы. В данной работе исследуются точные решения, полученные с помощью дробного дифференцирования по времени решений в виде бегущих волн из [2]. Также обсуждается связь некоторых определений дробного дифференцирования и вопрос удобной реализации финальных формул с помощью программных пакетов.
+
+\medskip
+
+Работа выполнена по теме государственного задания ИПМех РАН (№ госрегистрации 124012500442-3).
+
+\begin{enumerate}
+\item[{[1]}] Dobrokhotov S.Yu, Minenkov D.S., Nazaikinskii V.E., {\it Asymptotic Solutions of the Cauchy Problem for the Nonlinear Shallow Water Equations in a Basin with a Gently Sloping Beach}, Russian J. of Math. Phys., 2022, T.29 № 1. C.28-36
+\item[{[2]}] 	Доброхотов С. Ю., Тироцци Б., {\it Локализованные решения одномерной нелинейной системы уравнений мелкой воды со скоростью \(c=\sqrt x\)},  УМН, 2010, Т. 65. В. 1 (391). С. 185-186.
+\end{enumerate}
+\end{talk}
+\end{document}

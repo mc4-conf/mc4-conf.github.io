@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Вариативный виток спиральной модели как средство развития математического мышления школьников}
+{Картвелишвили Татьяна Александровна}
+{МГУ им. М.\,В.Ломоносова}
+{tgs497@gmail.com}
+{Сергеев Игорь Николаевич}
+{Математическое образование и просвещение}
+
+В последнее время все большее развитие получают учебные программы по математике, построенные на основе дидактической спирали. Как известно, спиральная модель включает в себя семь основных витков. Но особый интерес представляет собой финальный --- вариативный виток. Именно на нем происходит настоящее развитие и формирование математического мышления школьников. Переходя на вариативный виток, обучающийся сталкивается с нетривиальной для него задачей --- выбором наилучшего подхода к решению
+сложных и нестандартных задач. И именно тут они окончательно уходят от действий по ``алгоритму'', испытывая на себе акт дифференциации и получая средства для решения необходимых математических проблем.
+
+Как правило, рассматриваются четыре основных подхода: алгебраический, логический, функциональный и графический, но если подумать, то можно добавить еще и арифметический, комбинаторный, вероятностный и топологический подходы. В данном докладе, помимо анализа всего вариантивного витка, мы особо остановимся на логическом подходе и его преиуществах. Ведь, согласно Пиаже, именно логика является единственным и главным критерием мышления, таким образом, развитие логики и математического мышления неотделимо связаны друг с другом.
+\end{talk}
+\end{document}

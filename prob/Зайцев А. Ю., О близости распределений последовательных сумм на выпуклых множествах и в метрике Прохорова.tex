@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О близости распределений последовательных сумм на выпуклых множествах и в метрике Прохорова}
+{Зайцев Андрей Юрьевич}
+{ПОМИ РАН}
+{zaitsev@pdmi.ras.ru}
+{}
+{Теория вероятностей} %
+
+Мы обсуждаем результаты работ докладчика [1, 2]. Пусть \(X_1, X_2, \ldots\),  --- независимые одинаково распределенные случайные
+векторы в \(d\)-мерном евклидовом пространстве с распределением \(F\). Тогда
+\(S_n=X_1+\ldots+X_n\) имеет распределение \(F^n\) (степени мер понимаются в
+смысле свертки). Пусть \(R(F,G)=\sup|F(A)-G(A)|\), где супремум берется по
+всем выпуклым подмножествам \(d\)-мерного евклидова пространства. Тогда для любых нетривиальных распределений \(F\) найдется \(c(F)\), зависящее только от \(F\) и такое, что \(R(F^n,F^{n+1})\) не превосходит \(c(F)\), деленного на корень из \(n\), для любых натуральных \(n\). Распределение \(F\) считается тривиальным, если оно сосредоточено на аффинной гиперплоскости, не содержащей начало координат. Ясно, что для таких \(F\) имеет место равенство \(R(F^n,F^{n+1})=1\).
+
+Аналогичный результат получен также для расстояния Прохорова между
+распределениями векторов \(S_n\) и \(S_{n+1}\), нормированных на корень из
+\(n\). При этом утверждение остается верным для любых распределений, в том
+числе и тривиальных.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]  А. Ю. Зайцев, {\it О близости распределений последовательных сумм в метрике Прохорова}, Теория вероятн. и ее примен., 69 (2024), 272–284.
+\item[{[2]}] А. Ю. Зайцев, {\it Оценки устойчивости по количеству слагаемых для распределений последовательных сумм независимых одинаково распределенных векторов}, Зап. научн. сем. ПОМИ, 525 (2023), 86–95.
+\end{enumerate}
+\end{talk}
+\end{document}

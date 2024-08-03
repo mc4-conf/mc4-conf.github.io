@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{К теореме Гаусса Люка для многочленов над кватернионами}
+{Емиж Ислам Тимурович}
+{Кавказский математический центр Адыгейского государственного университета}
+{iemizh@bk.ru}
+{А.\,Э. Гутерман}
+{Алгебра}
+
+Получено усиление кватернионной теоремы Гаусса-Люка, доказанной Гилони и Перотти в 2018 г. Пусть I --- кватернион единичной нормы без действительной части и P ---
+многочлен с кватернионными коэффициентами. Возьмем многочлены полученные из
+P путем ортогонального проектирования его коэффциентов на и вдоль C --- плоскости
+порожденной 1 и I. Ограничим проекции на данную плоскость, соответственно будем
+рассматривать только те корни, которые принадлежат C. Рассмотрим множество, которое является пересечением выпуклых оболочек корней данных проекций. Доказано,
+что корни производной многочлена P принадлежат объединению по всем возможным
+I таких множеств.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] R. Ghiloni, A. Perotti, The quaternionic Gauss–Lucas theorem. — Annali di Matematica Pura ed Applicata (1923-) 197 (2018), 1679-1686.
+\end{enumerate}
+\end{talk}
+\end{document}

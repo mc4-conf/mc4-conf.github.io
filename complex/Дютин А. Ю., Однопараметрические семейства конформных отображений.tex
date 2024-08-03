@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Однопараметрические семейства конформных отображений}
+{Дютин Андрей Юрьевич}
+{Институт математики и механики им. Н.\,И. Лобачевского Казанского (Приволжского) федерального университета}
+{dyutin.andrei2016@yandex.ru}
+{}
+{Комплексный анализ}
+
+Получен приближённый метод нахождения конформного отображения концентрического кольца на~произвольную двусвязную многоугольную область. Этот метод основан на идеях, связанных с~параметрическим методом Левнера--Комацу. Мы рассматриваем гладкие однопараметрические семейства конформных отображений \(\mathcal{F}(z,t)\) концентрических колец на~двусвязные многоугольные области \(\mathcal{D}(t)\), которые получаются из~фиксированной двусвязной многоугольной области \(\mathcal{D}\) проведением конечного числа прямолинейных или в~общем случае полигональных разрезов переменной длины; при этом мы не~требуем монотонности семейства областей~\(\mathcal{D}(t)\). В~интегральное представление для конформных отображений \(\mathcal{F}(z,t)\) входят неизвестные (акцессорные) параметры.  Мы находим дифференциальное уравнение в~частных производных, которому удовлетворяют такие семейства конформных отображений, и~выводим из~него систему дифференциальных уравнений, описывающих динамику акцессорных параметров при~изменении параметра \(t\) и~динамику конформного модуля данной двусвязной области в~зависимости от~параметра~\(t\). Отметим, что в~правые части полученной системы ОДУ входят функции, которые являются скоростями движения концевых точек разрезов. Это позволяет полностью контролировать динамику разрезов, в~частности, добиваться их согласованного изменения в~случае, если в~области \(\mathcal{D}\) проводится более одного разреза. Рассмотрены примеры, иллюстрирующие эффективность предложенного метода.
+\end{talk}
+\end{document}

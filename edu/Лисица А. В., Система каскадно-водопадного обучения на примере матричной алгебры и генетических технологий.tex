@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Система каскадно-водопадного обучения на примере матричной алгебры и генетических технологий}
+{Лисица Андрей Валерьевич}
+{ФГАОУ ВО ``Тюменский государственный университет''}
+{lisitsa052@gmail.com}
+{Андреюк Денис Сергеевич, Российская ассоциация содействия науке (РАСН); Козлова Анна Сергеена, ФГБНУ ``Научно-исследовательский институт биомедицинской химии имени В.\,Н. Ореховича'' (ИБМХ)}
+{Математическое образование и просвещение}
+
+Рассматриваются результаты применения системы ``Таблекс'' (разработчик --- ООО ``КуБ'') на базе Центра научно-практического образования ИБМХ с 2021 по 2024 г. Система [1] предоставляет возможность организации научных кружков для школьников и студентов. Проведены следующие курсы: генетические технологии (сборка геномов), анализ широкомасштабных протеомных и метаболомных данных, 3D моделирование белков, с применением облачных технологий Яндекс-Клауд. Математическое мышление формируется с использованием стандартных модулей Питона — а именно гистограмм, диаграмм Венна, методов распознавания образов, анализ главных компонент, дисперсионный анализ.
+
+Особенностью методологии преподавания в системе ``Таблекс'' является парное программирование, где есть роли пилота, штурмана и инструктора. Пилоты и штурманы, достигая уровня инструктора, вовлекаются в систему монетизации и школьник может заработать до 500 рублей в день. Результатом такого подхода являются команды, которые обновляют кадровый состав при реализации федеральных программ, связанных с генетическими технологиями и применением искусственного интеллекта. Общая логика построения кадрового резерва предложена в рамках системы ``Кванториум''.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] http://oookub.ru/tablex-main.html ``Таблекс - каскадно-водопадная система обучения'' св. о рег. программы для ЭВМ №2022685715 от 27.12.2022.
+\end{enumerate}
+\end{talk}
+\end{document}

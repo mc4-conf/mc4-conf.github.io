@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Проблема систематических ошибок в освоении темы ``Площадь'' по результатам мониторинга на платформе ``Учи.ру''}
+{Москаленко Ольга Борисовна}
+{ООО ``Учи.ру''}
+{Olga.b.moskalenko@yandex.ru}
+{}
+{Математическое образование и просвещение}
+
+В начальной школе учащиеся знакомятся с рядом величин, одной из
+которых является площадь. В рамках этой темы изучаются способы сравнения и
+измерения площадей фигур, понятие квадратного сантиметра и другие единицы
+измерения площади, а также правило нахождения площади прямоугольника по
+известным длинам его сторон. В~2021-2022 учебном году задачи на тему
+``Площадь'' были предложены ученикам~4 и~6 классов в рамках мониторинга на
+платформе ``Учи.ру''. Каждую из этих задач решали более 30 тысяч учащихся.
+Анализ результатов мониторинга, полученных на столь большой выборке,
+позволяет, во-первых, отличить систематические ошибки учащихся от
+случайных, а во-вторых, рассматривать в качестве основного фактора влияния
+методику изложения темы ``Площадь'' в учебниках для начальной школы. Это
+ставит проблему о выявлении тех дефектов методики обучения, которые
+привели к совершению учащимися систематических ошибок в задачах
+мониторинга. Цель исследования состояла в том, чтобы выяснить,
+представлены ли в учебниках для начальной школы все составляющие,
+необходимые для успешного решения задач мониторинга, и если представлены,
+то в какой мере. Рассмотрены три УМК из Федерального перечня, и для каждого из них обоснована необходимость применения
+учителем дополнительных упражнений к тем, что представлены в учебнике, а
+также предложены источники, в которых содержатся недостающие упражнения.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Боровских А.В. О понятии математической грамотности // Педагогика. 2022, Т.~86. № 3. С.
+33-45.
+\item[{[2]}] Вертгеймер М. Продуктивное мышление. М.: Прогресс, 1987.
+\item[{[3]}] Эльконин Б.Д. Строение действия и периодизация Д.Б. Эльконина // Деятельностный подход
+в образовании: монография. Книга 3 / Составитель В.А. Львовский.
+М.: Некоммерческое партнерство ``Авторский Клуб'', 2020. С. 104-117.
+\end{enumerate}
+\end{talk}
+\end{document}

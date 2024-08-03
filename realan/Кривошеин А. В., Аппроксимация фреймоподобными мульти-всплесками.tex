@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Аппроксимация фреймоподобными мульти-всплесками}
+{Кривошеин Александр Владимирович}
+{Санкт-Петербургский государственный университет}
+{krivosheinav@gmail.com}
+{}
+{Вещественный и функциональный анализ} % [6] название секции
+
+Квазипроекционный оператор, порождённый парой вектор-функций $\Phi$, $\widetilde\Phi: {\mathbb R}^d \to {\mathbb C}^r$, имеет вид
+$$
+Q_j(\Phi, \widetilde\Phi, f) =\sum_{k\in{\mathbb Z}^d} \langle f, \widetilde\Phi_{jk} \rangle \Phi_{jk},
+%=\sum_{\nu = 1}^r\sum_{k\in\zd} \langle f, \w\phi_{\nu,j,k} \rangle \phi_{\nu,j,k}
+$$
+где $\Phi_{jk} = |\det M|^{j/2} \Phi(M^j \cdot + k)$, $j\in{\mathbb Z}$, $k\in {\mathbb Z}^d$, $M$ -- матрица растяжения.
+Изучены аппроксимационные свойства таких операторов и получены оценки погрешности в $L_2$-норме для широкого класса таких операторов.
+
+Для масштабирующих вектор-функций $\Phi$, $\widetilde\Phi$ квазипроекционные операторы $Q_j(f,\Phi,\widetilde\Phi)$
+связаны с двойственными системами мульти-всплесков. Хотя общая схема построения двойственных фреймов мульти-всплесков в многомерном случае известна, ее реализация на практике является сложной задачей из-за необходимости обеспечения некоторых дополнительных свойств. Предложена конструкция фреймоподобных мульти-всплесков с отказом от фреймовости,  но с сохранением возможности разложения функций аналогичного разложению по фреймам. Это упрощает задачу построения фреймоподобных мульти-всплесков. Установлены аппроксимационные свойства фреймоподобных мульти-всплесков. Предложены алгоритмы построения фреймоподобных мульти-всплесков с заданным порядком аппроксимации.
+
+\medskip
+\end{talk}
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Числа, удаленные от простых, образуют базис порядка 2}
+{Радомский Артём Олегович}
+{Национальный исследовательский университет <<Высшая школа экономики>>}
+{artyom.radomskii@mail.ru}
+{Габдуллин Михаил Рашидович}
+{Теория чисел и дискретная математика}
+
+Пусть \(f(n)\) обозначает расстояние от \(n\) до ближайшего простого числа. Заметим, что из асимптотического закона распределения простых чисел следует, что среднее значение \(f(n)\) (взятое по всем \(n\leq N\)) имеет порядок хотя бы \(\ln N\). Пусть функция \(g(n)\to +\infty\) при \(n\to +\infty\). Следуя Форду, Хис-Брауну и Конягину [1], назовем \(n\) \emph{числом, удаленным от простых с функцией \(g\)}, если
+\[f(n)\geq g(n)\ln n.\]
+
+Напомним, что множество \(A\subseteq \mathbb{N}\) называется \emph{базисом порядка \(k\)}, если всякое достаточно большое натуральное число может быть представлено в виде суммы \(k\) слагаемых, принадлежащих \(A\). Мы доказываем, что числа, удаленные от простых с функцией
+\[g(n)= (\ln \ln n)^{1/325565},\]
+образуют базис порядка 2. Более точно, справедлив следующий результат (см. [2]).
+
+{\bf Теорема.}
+{\it Всякое достаточно большое натуральное число \(N\) может быть представлено в виде суммы \(N=n_{1}+ n_{2}\), где
+\[f(n_{i})\geq (\ln N) (\ln\ln N)^{1/325565},\]
+для \(i=1, 2\).}
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] K. Ford, D.\,R. Heath-Brown, S. Konyagin, {\it Large gaps between consecutive prime numbers containing perfect powers}, Analytic number theory, 2015, Springer, Cham, pp. 83--92.
+\item[{[2]}] М. Р. Габдуллин, А. О. Радомский, {\it Числа, удаленные от простых, образуют базис порядка 2}, Математический сборник, 215 (2024), выпуск 5, 47--70.
+\end{enumerate}
+\end{talk}
+\end{document}

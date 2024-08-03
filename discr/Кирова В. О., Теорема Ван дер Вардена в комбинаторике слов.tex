@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Теорема Ван дер Вардена в комбинаторике слов}
+{Кирова Валерия Орлановна}
+{МГУ им. М.\,В. Ломоносова}
+{kirova_vo@mail.ru}
+{}
+{Теория чисел и дискретная математика}
+
+Теорема Ван дер Вардена, которую А. Я. Хинчин называл жемчужиной теорией чисел, внесла большой вклад в комбинаторику слов, положив в 2000 г. начало исследованию функции арифметической сложности бесконечных слов, обобщив понятие классической функции комбинаторной сложности. В своей работе, Avgustinovich S. V., Fon-der-Flaass D. G., Frid A. помимо введения понятия функции арифметической сложности, представили теоремы Семереди и Ван дер Вардена в терминах комбинаторики слов. В 1996 г. Leibman A., Bergelson V. представили теорему Ван дер Вардена для полиномиального случая. Эта теорема положила начало исследованию функции полиномиальной сложности --- более обобщенной модификацией комбинаторной и арифметической сложности. Введенные функции прежде всего были рассмотрены на классе слов с наименьшей комбинаторной сложностью --- словах Штурма, для которых получены интересные оценки.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Hedlund G.A. , Morse M. {\it Symbolic dynamics} Amer. J. Math, 1938, 815-866.
+\item[{[2]}] Avgustinovich S., Fon-Der-Flaass D., Frid A.
+{\it Arithmetical complexity of infnite words }
+Proc. Words, Languages and Combinatorics III, 2000. Singapore: World Scientifc,
+2003. P. 51-62.
+\item[{[3]}] Leibman A., Bergelson  V.  {\it Polynomial extensions of van der Waerden's and Szemeredi's theorems}, Journal of the American Math Society, Vol. 9, 1996, 725-753.
+\item[{[4]}] Kirova V.O., Godunov I.V. {\it On the complexity functions of Sturmian words} Chebyshevskii sbornik, 2023, vol. 24, no. 4, pp. 63-44.
+\end{enumerate}
+\end{talk}
+\end{document}

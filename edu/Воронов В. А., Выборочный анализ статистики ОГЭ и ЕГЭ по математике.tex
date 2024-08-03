@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Выборочный анализ статистики ОГЭ и ЕГЭ по математике}
+{Воронов Всеволод Александрович}
+{Кавказский математический центр Адыгейского государственного университета, Московский физико-технический институт (национальный исследовательский университет)}
+{v-vor@yandex.ru}
+{}
+{Математическое образование и просвещение}
+
+Статистические данные, которые обрабатывают Федеральный институт педагогических измерений и Рособрнадзор по результатам государственной итоговой аттестации в 9 и 11 классах школы, к сожалению, лишь частично являются открытыми. Далеко не все регионы публикуют статистические отчеты, и не всегда статистический отчет по единой форме доступен для страны в целом. Деперсонифицированная база результатов ОГЭ/ЕГЭ доступна лишь на информационных ресурсах отдельных регионов. Анализ статистики затрудняется, кроме того, запретом на публикацию контрольно-измерительных материалов, не имеющим срока давности. Тем не менее на основе неполных данных можно сделать ряд любопытных наблюдений.
+
+\begin{enumerate}
+\item Для Сибири и Дальнего Востока типичны сравнительно низкие результаты по профильной математике в сравнении с регионами Европейской части. Это не всегда может быть объяснено различным уровнем социально-экономического развития регионов.
+\item Из тех регионов, для которых статистика доступна, наилучшие показатели по профильной математике имеет Татарстан.
+\item В 2021-м году средний балл ЕГЭ по профильной математике в Москве был ниже, чем в среднем по России.
+\item В нескольких регионах на графике распределения баллов ОГЭ по математике наблюдается резкое падение числа участников при переходе от 19 первичных баллов к 20 (граница первой части ОГЭ).
+\item В статистических отчетах редко указывают процент двоек, полученных в основной период (без учета пересдач).
+\end{enumerate}
+\end{talk}
+\end{document}

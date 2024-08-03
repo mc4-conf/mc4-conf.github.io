@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Многоконтинуальное усреднение}
+{Аммосов Дмитрий Андреевич}
+{Институт математики и информатики, Северо-Восточный федеральный университет им. М.\,К. Аммосова}
+{dmitryammosov@gmail.com}
+{}
+{Прикладная математика и математическое моделирование}
+
+Многие прикладные задачи являются многомасштабными по своей природе, с неоднородностями на различных масштабах и высоким контрастом. Для решения таких задач часто применяют методы усреднения, в которых вычисляются эффективные свойства в каждой макромасштабной точке. Однако в ряде случаев, особенно при высоком контрасте, этого оказывается недостаточно, поскольку требуется больше усредненных коэффициентов для точного моделирования.
+
+В данном докладе рассматривается применение нового метода многоконтинуального усреднения для задач с высоким контрастом и без разделения масштабов. Данный метод представляет собой гибкий и в то же время строгий подход для вывода многоконтинуальных моделей. Основная идея метода заключается в построении специальных задач на ячейках в расширенных представительных элементах с ограничениями для учета различных эффектов. Решение задач на ячейках позволяет получить разложение искомой функции по континуумам, а затем с помощью некоторых операций вычислить эффективные свойства и вывести соответствующую многоконтинуальную модель.
+\end{talk}
+\end{document}

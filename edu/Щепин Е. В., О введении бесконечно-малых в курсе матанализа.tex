@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О введении бесконечно-малых в курсе матанализа}
+{Щепин Евгений Витальевич}
+{Математический институт им. В.А. Стеклова РАН}
+{scepin@mi-ras.ru}
+{}
+{Математическое образование и просвещение}
+
+В докладе изложен подход к
+введению и активному использованию актуально бес\-ко\-неч\-но-ма\-лых величин в начальном курсе математического анализа, который достаточно строг и
+хорошо адаптирован к применениям в физике и геометрии.
+Для описания дифференциалов функций одной переменной используются числа, известные под именем \emph{дуальных},
+которые автор предпочитает называть \emph{числами двойной точности}, мотивируя это название компьютерной аналогией.
+Числа двойной точности представляют собой минимальное неархимедово расширение действительных чисел. А именно,
+к полю действительных чисел добавляется один "идеальный" бесконечно-малый  элемент, обозначаемый \(\sqrt0\), который положителен
+но имеет нулевой квадрат.
+В результате возникает линейно упорядоченное кольцо чисел вида \(a+b\sqrt0\) с интуитивно понятными операциями
+сложения и умножения. Для определения значений трансцендентных функций на числах двойной точности достаточно постулировать,
+что все известные для них  нестрогие неравенства для действительных чисел остаются справедливыми для чисел двойной точности.
+
+Связь с теорией пределов обеспечивается следующей моделью построения чисел двойной точности. Действительные числа
+интерпретируются как постоянные последовательности. \(\sqrt0\) интерпретируется как монотонная стремящаяся к нулю последовательность
+положительных чисел \(o_n\). А числа двойной точности интерпретируются как сходящиеся последовательности \(x_n\), такие что
+сходятся последовательности отношений \(\frac {x_n-\lim x_n}{o_n}\). Число двойной точности \(a+b\sqrt0\)  представляется как
+совокупность всех последовательностей с описанными условиями сходимости, для которых \(\lim x_n=a\),  \(\lim \frac {x_n-a}{o_n}=b\).
+\end{talk}
+\end{document}

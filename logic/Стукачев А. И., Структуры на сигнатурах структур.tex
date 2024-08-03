@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Структуры на сигнатурах структур}
+{Стукачев Алексей Ильич}
+{Новосибирский государственный университет}
+{aistu@math.nsc.ru}
+{}
+{Математическая логика и теоретическая информатика}
+
+В математической лингвистике слова естественного языка используются как символы (или знаки) для обозначения сущностей, свойств сущностей, свойств свойств сущностей и т. д. Совокупность этих слов, символов или знаков образует лексикон или сигнатуру. Однако это не просто множество, на нем существует определенная структура.  Например, каждое слово имеет грамматическую категорию (иногда две и более),  обладать монотонностью разной направленности  и т. д.
+
+В докладе рассматриваются проблемы сложности структур такого типа в терминах \(\Sigma\)-определимости и  \(\Sigma\)-сводимости [1], и обсуждаются некоторые новые результаты из [2, 3, 4].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]
+A.I. Stukachev,  {\it Effective model theory: an approach via Sigma-definability}, Lecture Notes in Logic, 41 (2013), 164-197.
+\item[{[2]}]
+A.S. Burnistov, A.I. Stukachev,  {\it Generalized computable models and Montague semantics}, Studies in Computational Intelligence, 1081 (2023), 107-124.
+\item[{[3]}]
+A.S. Burnistov, A.I. Stukachev, {\it Computable functionals of finite types in Montague semantics}, Lecture Notes in Computer Science (to appear).
+\item[{[4]}]
+A.I. Stukachev, U.D. Penzina, {\it
+Skolem functions and generalized quantifiers for negative polarity items semantics}, Lecture Notes in Networks and Systems (to appear).
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Вероятности нижних больших уклонений ветвящихся процессов в случайной среде в первой зоне уклонений}
+{Шкляев Александр Викторович}
+{МИАН}
+{ashklyaev@gmail.com}
+{}
+{Теория вероятностей} %
+
+Исследование вероятностей больших уклонений ветвящихся процессов в случайной среде (ВПСС) началось с работ М.В. Козлова 2006 и 2009 годов, в которых рассматривалась точная асимптотика вероятностей больших уклонений для случая геометрического числа непосредственных потомков одной частицы, позднее результаты были обобщены до локальной асимптотики К.Ю. Денисовым в 2021 году. В 2018-2022 рядом исследователей был совершен прорыв, позволивший исследовать точную асимптотику вероятностей больших уклонений без предположений о типе распределения, см. [1-3].
+
+Асимптотика вероятностей нижних больших уклонений для надкритических ВПСС исследована гораздо хуже. В этой области К.Ю. Денисовым в 2022-2024 годах был получен ряд результатов в случае геометрического распределения, в случае общего распределения известна лишь грубая асимптотика (см. [4]). Настоящая работа является первой работой, исследующей точную асимптотику вероятностей нижних больших уклонений без предположений о типе распределения.
+
+Более конкретно, пусть \(\{Z_n\}\) --- ВПСС, для количества непосредственных потомков одной частицы которого мы будем использовать общее обозначение \(X\), \(\{S_n\}\) --- случайное блуждание с шагами \(\{\xi_i\}\), \(\mu>0\) --- среднее сопровождающего блуждания. Рассматривается асимптотика вероятностей
+\[
+{\bf P}(0<\ln Z_n<x),\quad x/n\in [\theta_1,\theta_2]\subseteq (0,\mu).
+\]
+Для такого рода вероятностей в строго надкритическом случае (\(m(-1) = {\bf E}\xi e^{-\xi}>0\)) рассматривают две зоны больших уклонений: верхняя \(x/n\in (m(-1),\mu)\) и нижняя \(x/n\in (0,\mu)\). В работе~[4] показано, что логарифмическая асимптотика при этом имеет существенно различный вид.
+
+Настоящая работа посвящена асимптотике указанных вероятностей в верхней зоне уклонений.
+Положим \(m^*=m(-1)\) в строго надкритическом случае и \(m^*=0\) в слабо докритическом (\({\bf E}\xi e^{-\xi}<0\)) или умеренно докритическом (\({\bf E}\xi e^{-\xi}=0\)) случаях.
+
+{\bf Теорема.} {\it Пусть при некотором \(h^{-}\in (-1,0)\) выполнены условия \({\bf E}e^{h\xi}<+\infty\),  \({\bf E}X^{1-h}<+\infty\), \(h\in (h^{-},0]\). Тогда
+\[
+{\bf P}(0<\ln Z_n<x) \sim I\left(\frac{x}{n}\right) {\bf P}(S_n\le x),\quad I\left(\theta\right) = \lim_{n\to\infty} {\bf E}^{(h_{\theta})}\left(\left(\frac{Z_n}{e^{S_n}}\right)^{h_{\theta}}; Z_n>0\right),
+\]
+причем асимптотика равномерна по \(x/n\) из любого подкомпакта внутри \((m^*,\mu)\).}
+
+Для получения указанной теоремы потребовались новые оценки для гармонических моментов естественного мартингала для ВПСС, расширяющие ранее полученные оценки I. Grama, Q. Liu, E. Miqueu (2017, 2023). Отметим, что нам удалось получить результаты для общего ВПСС, в то время как предыдущие результаты касались процессов с нулевой вероятностью гибели частицы.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]  Шкляев А. В. Большие уклонения ветвящегося процесса в случайной среде. II //Дискретная математика. – 2020. – Т. 32. – №. 1. – С. 135-156.
+\item[{[2]}] Buraczewski D., Dyszewski P.  Precise large deviation estimates for branching process in random environment. //  preprint: arXiv:1706.03874. 2017.
+\item[{[3]}] Struleva M. A., Prokopenko E. I. Integro-local limit theorems for supercritical branching process in a random environment //Statistics \& Probability Letters. – 2022. – Т. 181. – С. 109234.
+\item[{[4]}] Bansaye V., Böinghoff C. Lower large deviations for supercritical branching processes in random environment //Proceedings of the Steklov Institute of Mathematics. – 2013. – Т. 282. – С. 15-34.
+\end{enumerate}
+\end{talk}
+\end{document}

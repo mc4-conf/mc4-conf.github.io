@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О системе интегральных уравнений, возникающих в модели стационарных биологических сообществ}
+{Никитин Алексей Антонович}
+{МГУ им. М.\,В. Ломоносова, факультет ВМК}
+{nikitin@cs.msu.ru}
+{}
+{Дифференциальные уравнения и динамические системы}
+
+В работе рассматриваются основные подходы к изучению стохастического процесса популяционной динамики неподвижных особей с непрерывным временем и пространством, основанного на модели У. Дикмана и Р. Лоу. Динамика пространственного паттерна в этой модели описывается при помощи иерархии уравнений пространственных статистик, которые описывают среднюю плотность и пространственное распределение индивидов, организованных в пары, тройки, четверки, и т. д. В качестве пространственных статистик используются факториальные меры пространственных моментов, которые в случае пары особей пропорциональны функции радиального распределения или функции парной корреляции.
+
+Описывается метод замыкания пространственных моментов и приводятся различные методы исследования получающейся системы интегро-дифференциальных уравнений, соответствующей динамике пространственных моментов этого процесса. Пространственные моменты, полученные при использовании различных методов и замыканий, валидируются при сравнении с пространственными статистиками симуляции стохастического пространственно-временного точечного процесса рождения-разброса-смерти в ограниченной области с периодическими граничными условиями.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Николаев М. В., Никитин А. А., Дикман У. Применение обобщённого принципа неподвижных точек к исследованию системы нелинейных интегральных уравнений, возникающей в модели популяционной динамики // Дифференциальные уравнения. — 2022. — Т. 58, № 9. 1242-1250.
+\end{enumerate}
+\end{talk}
+\end{document}

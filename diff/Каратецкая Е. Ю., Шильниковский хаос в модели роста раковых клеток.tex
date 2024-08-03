@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Шильниковский хаос в модели роста раковых клеток}
+{Каратецкая Ефросиния Юрьевна}
+{Национальный исследовательский университет ``Высшая школа экономики''}
+{ekarateczkaya@hse.ru}
+{}
+{Дифференциальные уравнения и диннамические системы}
+
+Моделирование роста раковых клеток --- одна из важнейших задач в области изучения живых систем. Это важный инструмент в исследовании рака и разработке новых методов лечения, позволяющий понять механизмы взаимодействия инфицированных клеток с окружающими тканями и оценить влияние различных внешних и внутренних факторов на их рост.
+В данном докладе будут представлены результаты исследования хаотической динамики в модели де Пиллиса и Радунской, описывающей взаимодействие раковых клеток с двумя типами эффекторных клеток [1,2]:
+\begin{equation}
+\begin{cases}
+\dot x_1 = x_1(1 - x_1) - a_{12}x_1x_2 - a_{13}x_1x_3,\\
+\dot x_2 = r_2x_2(1 - x_2) - a_{21}x_1x_2,\\
+\dot x_3 = \frac{r_3x_1x_3}{x_1 + k_3} - a_{31}x_1x_3 - d_3x_3
+\end{cases}
+\label{mainEq}
+\end{equation}
+
+Из работ [3,4] известно, что в системе (1) может возникнуть спиральный хаос, связанный с возникновением седло-фокусной петли Шильникова. Показано, что странные аттракторы рождаются в результате реализации сценария Шильникова [5]. Основная часть работы посвящена изучению бифуркаций коразмерности два, которые являются организационными центрами в рассматриваемой системе. В частности, описывается сценарий бифуркации состояния равновесия в случае, когда оно имеет пару нулевых собственных значений (бифуркация Богданова-Такенса), а также ноль и пару чисто мнимых собственных значений (бифуркация Ноль-Хопф). Показано, как эти бифуркации связаны с возникновением аттракторов Шильникова.
+
+\medskip
+
+Данная работа подготовлена в ходе проведения исследования в рамках проекта ``Зеркальные лаборатории НИУ ВШ''.
+
+\begin{enumerate}
+\item[{[1]}] De Pillis, L. G.; Radunskaya, A. (2001). A Mathematical Tumor Model with Immune Resistance and Drug Therapy: An Optimal Control Approach. Journal of Theoretical Medicine, 3(2), 79–100.
+\item[{[2]}] de Pillis L.G., Radunskaya A. (2003). The dynamics of an optimally controlled tumor model: A case study.  Math. Comp. Modelling 37(11), 1221, 1221-1244.
+\item[{[3]}] Itik, M. \& Banks, S. P. (2010 ). Chaos in a threedimensional cancer model, Int. J. Bifurcation and Chaos 20, 71–79.
+\item[{[4]}] Duarte, J.; Januário, C.; Rodrigues, C.; Sardanyés, J.(2013). Topological Complexity And Predictability In The Dynamics Of A Tumor Growth Model With Shilnikov's Chaos. International Journal Of Bifurcation And Chaos, 23(7), 1350124.
+\item[{[5]}] Shilnikov L.P. (1965). On one case of the existence of a countable set of periodic motions. Dokl. Akad. Nauk SSSR., 169, 3, 558–561
+\end{enumerate}
+\end{talk}
+\end{document}

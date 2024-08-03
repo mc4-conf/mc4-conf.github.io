@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Комбинаторный поиск при шуме}
+{Кабатянский Григорий Анатольевич}
+{Сколтех}
+{g.kabatyansky@skoltech.ru}
+{}
+{Теория числе и дискретная математика}
+
+Начиная с задачи (игры) Реньи-Улама  хорошо известно, что присутствие шума может сделать простую комбинаторную задачу нетривальной,  например, поиск  единственного дефектного элемента  среди \(N\), если разрешается задавать вопросы, на которые оракул отвечает ДА или НЕТ, но один раз оракул может обмануть, см. [1].  В докладе мы рассмотрим задачу о поиске фальшивых монет на неточных весах, да еще и в предположении, что веса фальшивых монет  могут быть различны  и неизвестны. Мы рассматриваем шум комбинаторной, а не случайной природы, например, суммарная величина шума ( в той или иной метрике) не  превышает некий порог. Известно, что эта задача тесно связана с задачей поиска носителя разреженного вектора по линейным зашумленным измерениям. Мы покажем, что для ее решения достаточно использовать не так называемые RIP матрицы, см. [2-4], а их ослабленный вариант, когда для матрицы \(H\)  и любого \(K\)-разреженного вектора \({\bf x}\) (т.е. в нем не более \(K\) координат, отличных от нуля) для некоторого \(\delta<1\) справедливо неравенство
+\((1-\delta) ||{\bf x}|| \leq   ||H {\bf x}||\).
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Ulam S.M. {\it Adventures of a Mathematician}. New York: Scribner, 1976.
+\item[{[2]}] Donoho D.L. {\it Compressed Sensing},  IEEE Trans. Inform. Theory. 2006. V. 52. № 4.
+P. 1289–1306.
+\item[{[3]}] Candes E.J., Tao T. {\it Near-Optimal Signal Recovery From Random Projections: Universal
+Encoding Strategies?},  IEEE Trans. Inform. Theory. 2006. V. 52. № 12. P. 5406–5425.
+\item[{[4]}] Кашин Б.С., Темляков В.Н. {\it Замечание о задаче сжатого измерения},  Матем. заметки.
+2007. Т. 82. № 6. С. 829–837.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Нормальная аппроксимация и мультипликативный бутстрап для алгоритмов линейной стохастической аппроксимации с усреднением}
+{Самсонов Сергей Владимирович}
+{НИУ ВШЭ}
+{svsamsonov@hse.ru}
+{Эрик Мулине, Ки-Ман Шао, Жуо-Сон Жэнг, Алексей Наумов}
+{Теория вероятностей} %
+
+В данной работе нами получены оценки типа Берри-Эссена точности нормальной аппроксимации для итераций линейной стохастической аппроксимации с усреднением Поляка-Рупперта и убывающим шагом. Наши результаты показывают, что наилучшая скорость нормальной аппроксимации достигается при выборе наиболее агрессивного шага \(\alpha_{k} \asymp k^{-1/2}\). Также мы показываем, как этот результат может быть использован для построения неасимптотических доверительных интервалов для оценки параметров в линейной стохастической аппроксимации с использованием мультипликативного бутстрапа. Мы иллюстрируем наши результаты на примере задачи оценке политики в обучении с подкреплением.
+\end{talk}
+\end{document}

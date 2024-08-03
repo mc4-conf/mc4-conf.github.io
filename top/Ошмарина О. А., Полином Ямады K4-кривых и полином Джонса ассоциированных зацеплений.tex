@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Полином Ямады K4-кривых и полином Джонса ассоциированных зацеплений}
+{Ошмарина Ольга Андреевна}
+{ТГУ, НГУ}
+{o.oshmarina@g.nsu.ru}
+{Веснин А.\,Ю.}
+{Топология} %
+
+В теории заузленных графов нередко используются методы, пришедшие из теории узлов. Так, для графов строятся полиномиальные инварианты, наиболее известными из которых являются полином Ямады [1] и полином Егера [2].
+
+В работе [3] была доказана эквивалентность полиномов Ямады и Егера для планарных графов, а также была изучена связь, возникающая между полиномом Ямады тета-кривой и полиномом Джонса зацепления, однозначно строящегося по заузленному тета-графу. В данном докладе мы представим аналогичные результаты для заузленных $\mathbb{K}_4$-графов [4].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] S. Yamada, {\it An invariant of spatial graphs}, Graph Theory, 13 (1989), 537–551.
+\item[{[2]}] F. Jaeger, {\it On some graph invariants related to the Kauffman polynomial}, Progress in knot theory and related topics, 56 (1997), 69–82.
+\item[{[3]}] Y. Huh, {\it Yamada polynomial and associated link of theta-curves}, Discrete Mathematics, 347 (2024).
+\item[{[4]}]  O. Oshmarina, A. Vesnin, {\it Polynomials of complete spatial graphs and Jones polynomial of related links}, 2024, preprint arXiv:2404.12264.
+\end{enumerate}
+\end{talk}
+\end{document}

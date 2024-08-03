@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Кванторная модальная логика Белнапа--Данна}
+{Грефенштейн Александр Витальевич}
+{Математический институт им. В.\,А. Стеклова Российской академии наук}
+{aleksandrgrefenstejn@gmail.com}
+{Сперанский Станислав Олегович}
+{Математическая логика и теоретическая информатика} %
+
+Кванторная интуиционистская логика, \(\mathsf{QInt}\), играет ключевую роль в конструктивной математике. Но, хотя из каждого вывода \(\Phi\) в интуиционистской теории чисел можно извлечь способ верификации \(\Phi\), вывод \(\neg \Phi\) не~даёт прямого способа фальсификации \(\Phi\), а лишь сводит предположение о верификации \(\Phi\) к абсурду. С целью устранения этого недостатка Д.\ Нельсон предложил обогатить язык \(\mathsf{QInt}\) путём добавления ``сильного отрицания'', которое отвечает непосредственно за фальсификацию; см.\ [1]. Так возникла логика \(\mathsf{QN3}\). Позднее было описано её полезное обобщение \(\mathsf{QN4}\), которое позволяет работать с противоречивыми данными; см.\ [2]. Стоит отметить, что при удалении импликации \(\mathsf{QN4}\) превращается в кванторную версию хорошо известной \emph{четырёхзначной логики Белнапа--Данна}; см. [3].
+
+Важную роль в понимании \(\mathsf{QInt}\) играет её точное вложение в модальную логику \(\mathsf{QS4}\). Хотелось бы иметь аналогичное понимание \(\mathsf{QN3}\) и \(\mathsf{QN4}\). В пропозициональном случае эта задача была решена в [4], где С.\,П.\ Одинцов и Х.\ Вансинг разработали пропозициональную \emph{модальную логику Белнапа--Данна}, \(\mathsf{BK}\). Однако до сих пор ничего не~было известно о ситуации в кванторном случае, несмотря на то что конструктивные теории формулируются именно в кванторном языке. С целью устранения данного недостатка мы разработали кванторную версию \(\mathsf{BK}\), обозначаемую через \(\mathsf{QBK}\); см. [5]. Получены кванторные обобщения теорем о сильной полноте для \(\mathsf{BK}\) и некоторых важных её расширений (относительно подходящей семантики типа Крипке) из [4], а также показано, что \(\mathsf{QN3}\) и \(\mathsf{QN4}\) точно вкладываются в подходящие \(\mathsf{QBK}\)-рас\-ши\-ре\-ния. Кроме того, мы получили полезные результаты об интерполяционных свойствах \(\mathsf{QBK}\)-расширений.
+
+\medskip
+
+Исследование выполнено за счёт гранта Российского научного фонда №~23-11-00104,\\ {https://rscf.ru/project/23-11-00104/}.
+
+\begin{enumerate}
+\item[{[1]}] D.~Nelson, Constructible falsity, \emph{Journal of Symbolic Logic}, \textbf{14}:1 (1949), 16--26.
+\item[{[2]}] A.\ Almukdad, D.\ Nelson, Constructible falsity and inexact predicates, \emph{Journal of Symbolic Logic}, \textbf{49}:1 (1984), 231--233.
+\item[{[3]}] N.~Belnap, A useful four-valued logic, in: J.\,M.~Dunn, G.~Epstein, eds., \emph{Modern Uses of Multiple-Valued Logic}, D.\ Reidel, 1977, 8--37.
+\item[{[4]}] S.\,P.~Odintsov, H.~Wansing, Modal logics with Belnapian truth values, \emph{Journal of Applied Non-Classical Logics}, \textbf{20}:3 (2010), 279--301.
+\item[{[5]}] А.\,В.~Грефенштейн, С.\,О.~Сперанский, О кванторной версии модальной логики Белнапа–Данна, \emph{Математический сборник}, \textbf{215}:3 (2024), 37--69.
+\end{enumerate}
+\end{talk}
+\end{document}

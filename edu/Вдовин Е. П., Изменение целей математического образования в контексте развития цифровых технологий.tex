@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Изменение целей математического образования в контексте развития цифровых технологий}
+{Вдовин Евгений Петрович}
+{Тюменский государственный университет}
+{e.p.vdovin@utmn.ru}
+{}
+{Математическое образование и просвещение}
+
+В предлагаемом докладе мы различим на принципиальном уровне несколько тактов действий человека в ситуации достижения какой-либо цели (примеры таких различений приведены в [1] и [2]). На основании сформированного различения мы покажем, как выглядят текущие цели массового математического образования, сформулируем тезис о том, что в сложившейся технологической ситуации все эти цели сейчас закрывают цифровые технологии. После этого будут сформулированы те цели, которые более соответствуют сложившейся технологической ситуации. Завершим доклад примерами из практики автора и его команды по перестройке математического образования в соответствии с новыми целями.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Werner Blum, Rita Borromeo Ferri, {\it Mathematical Modelling: Can It Be Taught and Learnt?}, Journal of Mathematical Modelling and Application, 1 (2009), No. 1, 45--58.
+\item[{[2]}] А.В. Боровских, {\it О понятии математической грамотности}, Бедагогика, 86 (2022), 3б 33--45.
+\end{enumerate}
+\end{talk}
+\end{document}

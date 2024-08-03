@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Теорема Бэра--Сузуки и ее аналоги}
+{Ревин Данила Олегович}
+{Международный научно-образовательный математический центр НГУ; Институт математики им. С.\,Л. Соболева СО РАН}
+{revin@math.nsc.ru}
+{}
+{Алгебра}
+
+Теорема Бэра--Сузуки --- классический результат теории групп. Она утверждает, что \(p\)-радикал конечной группы  для любого простого числа \(p\) совпадает с множеством таких элементов \(x\), что любые два элемента, сопряженных с \(x,\) порождают \(p\)-подгруппу.  Теорема является популярным источником различных аналогов и обобщений. Один из них [1,2] утверждает, что разрешимый радикал конечной группы совпадает с множеством таких элементов \(x\), что любые четыре элемента, сопряженных с \(x\), порождают разрешимую подгруппу.
+
+Пусть фиксирован непустой класс конечных групп \(\mathfrak{X}\), замкнутый относительно подгрупп, гомоморфных образов и расширений (последнее означает, что конечная группа~\(G\), обладающая нормальной подгруппой \(N\) такой, что \(N\) и \(G/N\) принадлежат классу \(\mathfrak{X}\), сама принадлежит \(\mathfrak{X}\)). Основной результат доклада утверждает, что существует натуральная константа \(m\), зависящая от \(\mathfrak{X}\), с тем свойством, что элемент \(x\) конечной группы принадлежит \(\mathfrak{X}\)-радикалу (наибольшей нормальной \(\mathfrak{X}\)-подгруппе) группы тогда и только тогда, когда любые \(m\) сопряженных с \(x\) элементов порождают \(\mathfrak{X}\)-подгруппу.
+
+\medskip
+
+Работа выполнена за счет РНФ, грант 24-11-00127, \url{https://rscf.ru/project/24-11-00127/}.
+
+\begin{enumerate}
+\item[{[1]}] P. Flavell, S. Guest, R. Guralnick, ``Characterizations of the solvable radical'', Proc. Amer. Math. Soc., 138:4 (2010), 1161--1170.
+
+\item[{[2]}] N. Gordeev, F. Grunewald, B. Kunyavski\u{\i}, E. Plotkin, ``From Thompson to Baer--Suzuki: a sharp characterization of the solvable radical'', J. Algebra, 323:10 (2010), 2888--2904.
+\end{enumerate}
+\end{talk}
+\end{document}

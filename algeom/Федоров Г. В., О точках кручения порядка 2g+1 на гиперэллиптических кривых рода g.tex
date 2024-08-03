@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О точках кручения порядка \(2g+1\) на гиперэллиптических кривых рода \(g\)}
+{Федоров Глеб Владимирович}
+{Университет ``Сириус'' (Сочи), НИИСИ РАН (Москва)}
+{fedorov.gv@talantiuspeh.ru}
+{}
+{Алгебраическая геометрия}
+
+Пусть гиперэллиптическая кривая \(C\) рода \(g\), определенная над алгебраически замкнутым полем \(K\) характеристики \(0\), задана уравнением \(y^2 = f(x)\), где многочлен \(f\) свободен от квадратов и имеет нечетную степень \(2g+1\).
+Существует классическое вложение (вложение Альбанезе) \(C(K)\) в группу \(K\)-точек \(J(K)\) якобиева многообразия \(J\) кривой \(C\), отождествляющее бесконечно удаленную точку \(\mathcal{O}\) с единичным элементом группы \(J(K)\).
+При таком вложении образ в \(J(K)\) отождествляют с точками кривой \(C(K)\). Тем самым групповая структура якобиана \(J\) частично переносится на \(K\)-точки кривой \(C\).
+
+В недавней работе [1] рассмотрена задача о верхней оценке количества
+классов эквивалентности гиперэллиптических кривых \(C\),
+заданных уравнением \(y^2 = f(x)\), \(\deg f = 2g+1\), для
+которых существует \(2\), \(4\), \(6\) или более точек кручения \(P\) порядка \(2g+1\),
+лежащих в \(C_{tor}(K) \cap J(K)\), где \(K\) --- алгебраически замкнутое поле.
+Важно отметить, что таких точек порядка \(m\), \(3 \le m \le 2g\), быть не может.
+
+Целью наших исследований в этом направлении был ответ на вопрос (поставленный в работе [1]) о явном виде представителей классов бирациональной эквивалентности, таких гиперэллиптических кривых \(C\), что множество \(C_{tor}(K) \cap J(K)\) содержит не менее \(6\) точек кручения порядка \(2g+1\). При \(g = 2\) в статьях [2] и [3] было изучено семейство гиперэллиптических кривых рода \(2\), якобианы которых обладают точками кручения порядка \(5\). В частности, было показано, что при \(g=2\) над алгебраически замкнутым полем \(K\) существует ровно \(5\) классов бирациональной эквивалентности, таких гиперэллиптических кривых \(C\), что множество \(C_{tor}(K) \cap J(K)\) содержит не менее \(6\) точек кручения порядка \(5\). В статье [4] нам удалось явно найти представители этих классов.
+При \(g=3\) и \(g=5\) мы доказали, что таких представителей нет. При \(g=4\)
+нами доказано, что существует единственный класс бирациональной эквивалентности, и явно выписан его
+представитель. Наконец, нами улучшена оценка из [1] в 27 раз.
+
+\medskip
+
+Исследование выполнено за счет гранта Российского научного фонда (проект 22-71-00101).
+
+\begin{enumerate}
+\item[{[1]}]
+\emph{Bekker B. M., Zarhin Y. G.}
+Bekker B. M., Zarhin Y. G. Torsion points of small order on hyperelliptic curves // European Journal of Mathematics. 2022. Vol. 8, №2. P. 611-624.
+\item[{[2]}]
+\emph{Boxall J., Grant D., Lepr\'evost F.}
+5-torsion points on curves of genus 2 // Journal of the London Mathematical Society. 2001. Vol. 64,  №1. P. 29-43.
+\item[{[3]}]
+\emph{Elkies N. D.}
+Contemporary Mathematics Volume 796, 2024 // LuCaNT: LMFDB, Computation, and Number Theory. 2024. Vol. 796. P. 165-186.
+\item[{[4]}]
+\emph{Fedorov G.V.}
+On hyperelliptic curves of odd degree and genus g with 6 torsion points of order 2g+1 // Doklady Mathematics. 2024.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Бифуркационный анализ задачи о качении омнишара по плоскости}
+{Килин Александр Александрович}
+{Удмуртский государственный университет}
+{kilin@rcd.ru}
+{Т.\,Б. Иванова}
+{Дифференциальные уравнения и динамические системы}
+
+Рассмотрена задача о тяжелом неуравновешенном шаре  с осесимметричным распределением масс (сферический волчок), который катится по горизонтальной плоскости с частичным проскальзыванием. Полагается, что шар не проскальзывает (катится) в направлении проекции оси симметрии на опорную плоскость. При этом в направлении, перпендикулярном к указанному, шар может скользить относительно плоскости.Рассматриваемая задача описывается в рамках неголоносмной модели, при этом на систему накладывается только одна неголономная связь [1]. В [2] показано, что рассматриваемая система допускает избыточный набор первых интегралов и инвариантную меру, что позволяет свести ее к одной степени свободы.Полученная система зависит от констант четырех первых интегралов и двух массо-геометрических параметров. В работе проводится бифуркационный анализ и классификация различных типов движения рассматриваемой системы. Кроме того, показано, что накладываемая связь вырождается в некоторых точках конфигурационного пространства системы. Это приводит к появлению в системе особенностей, вблизи которых наблюдаются интересные динамические эффекты.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] A. V. Borisov, A. A. Kilin, I. S. Mamaev, {\it Dynamics and control of an  omniwheel vehicle}, Regul. Chaotic Dyn., 20(2) (2015), 153--172.
+\item[{[2]}] A. A. Kilin, T. B. Ivanova, {\it The Integrable Problem of the Rolling Motion of a Dynamically Symmetric Spherical Top with One Nonholonomic Constraint}, Russian J. Nonlinear Dyn., 19(1) (2023), 3–-17.
+\end{enumerate}
+\end{talk}
+\end{document}

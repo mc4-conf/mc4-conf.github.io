@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Спектральные методы и их применения в стохастическом анализе}
+{Яровая Елена Борисовна}
+{МГУ имени М.\,В. Ломоносова, механико-математический факультет, кафедра теории вероятностей,
+МИАН им. В. А. Стеклова РАН}
+{elena.yarovaya@math.msu.ru}
+{}
+{Теория вероятностей} %
+
+Развитие спектральной техники позволит получить предельные теоремы о численностях частиц в ветвящемся случайном блуждании по точкам многомерной решетки в предположении существования  источников ветвления (т.е. точек решетки, в которых возможны размножение и гибель частиц) как с положительной, так и с  отрицательной интенсивностью ветвления. Будут представлены результаты о связи между структурой спектра эволюционного оператора и геометрическим расположением источников ветвления на многомерной решетке. Как правило, в более ранних исследованиях  случайное блуждание, лежащее в основе процесса предполагалось симметричным  Показано, что полученные результаты остаются справедливыми при замене условия самосопряженности оператора, задающего случайное блуждание, на более слабое условие подобия самосопряженному. Таким образом, c привлечением  спектральной техники решены задачи, связанные с многоточечными возмущениями операторов, возникающих в эволюционных уравнениях для первых моментов численностей частиц в многотипных ветвящихся случайных блужданиях и доказан ряд новых предельных теорем о поведении популяций и субпопуляций частиц в ветвящемся случайном блуждании.
+
+\medskip
+
+Работа выполнена при поддержке РНФ, проект 23-11-00375, в Математическом институте им. В. А. Стеклова РАН.
+\end{talk}
+\end{document}

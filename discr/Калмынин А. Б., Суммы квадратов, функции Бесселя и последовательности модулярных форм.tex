@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Суммы квадратов, функции Бесселя и последовательности модулярных форм}
+{Калмынин Александр Борисович}
+{НИУ ВШЭ и МИАН им. В.\,А. Стеклова}
+{alkalb1995cd@mail.ru}
+{}
+{Теория чисел и дискретная математика}
+
+Задача о промежутках между суммами двух квадратов --- один из самых известных открытых вопросов в аналитической теории чисел. Оказывается, что данную задачу можно связать с поведением некоторой функции от двух переменных, которая обладает свойствами, сходными с тета-функцией Якоби. В докладе будет представлена конструкция данной функции в виде ряда с функциями Бесселя и её связь с теорией модулярных и квазимодулярных форм при помощи модулярных дифференциальных операторов. Кроме того, мы покажем, что её разложение в ряд Тейлора по одной из переменных может быть описано в терминах дифференциальной рекуррентной последовательности рациональных функций, обладающих очень специальными свойствами. Данная конструкция обобщается на случай произвольных модулярных форм относительно конгруэнц-подгруппы уровня \(2\). В частности, в таких терминах можно переформулировать гипотезу Лемера о необращении в нуль \(\tau\)-функции Рамануджана.
+\end{talk}
+\end{document}

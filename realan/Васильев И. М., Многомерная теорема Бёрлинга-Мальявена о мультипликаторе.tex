@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Многомерная теорема Бёрлинга--Мальявена о мультипликаторе}
+{Васильев Иоанн Михайлович}
+{Université Paris Cergy и ПОМИ РАН}
+{ioann.vasilyev@cyu.fr}
+{}
+{Вещественный и функциональный анализ} %
+
+Доклад будет посвящен новому многомерному обобщению теоремы о Бёрлинга и Мальявена о мультипликаторе. Более подробно, мы увидим, как получить новое достаточное условие на то, чтобы радиальная функция являлась мажорантой Бёрлинга и Мальявена в многомерном случае (это означает, что рассматриваемая функция может быть оценена снизу ненулевой, квадратично интегрируемой функцией, которая имеет носитель преобразования Фурье, заключенный в шаре произвольно малого радиуса). Мы также объясним, как отсюда вывести новое точное достаточное условие и в нерадиальном случае. Наши результаты дают частичный ответ на вопрос, поставленный Л. Хёрмандером. Если позволит время, то мы также обсудим некоторые связанные одномерные результаты. Доклад будет основан на результатах статей [1], [2] и [3].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] I. Vasilyev, \emph{On the multidimensional Nazarov lemma}, Proceedings of American Ma\-the\-ma\-ti\-cal Society, 11 p., (2022) (DOI: https://doi.org/10.1090/proc/15805).
+\item[{[2]}] I. Vasilyev, \emph{A generalization of the First Beurling--Malliavin theorem}, (2022), 16 p., to appear in Analysis and PDE, preprint: \texttt{https://arxiv.org/pdf/2109.04123.pdf},\\\texttt{https://msp.org/soon/coming.php?jpath=apde}.
+\item[{[3]}] I. Vasilyev, \emph{The Beurling and Malliavin Theorem in Several Dimensions}, preprint: \texttt{https://arxiv.org/pdf/2306.12397.pdf}.
+\end{enumerate}
+\end{talk}
+\end{document}

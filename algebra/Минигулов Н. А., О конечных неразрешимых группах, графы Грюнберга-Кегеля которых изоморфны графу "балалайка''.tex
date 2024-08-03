@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О конечных неразрешимых группах, графы Грюнберга--Кегеля которых изоморфны графу ``балалайка''}
+{Минигулов Николай Александрович}
+{Институт математики и механики им. Н.\,Н. Красовсого УрО РАН, Екатеринбург}
+{n.a.minigulov@imm.uran.ru}
+{А.\,С. Кондратьев}
+{Алгебра}
+
+{\it Графом Грюнберга--Кегеля} (или {\it графом простых чисел}) \(\Gamma(G)\) конечной группы \(G\) называют граф, в
+котором множеством вершин является множество всех простых делителей порядка группы \(G\) и две различные вершины \(p\)
+и \(q\) смежны тогда и только тогда, когда в группе \(G\) существует элемент порядка \(pq\). Графом ``балалайка'' (paw)
+называют граф, который имеет ровно 4 вершины со степенями 1, 2, 2 и 3.
+
+А.С.~Кондратьев описал конечные группы с графом Грюнберга--Кегеля как у групп \(Aut(J_2)\) (см. [1]) и \(A_{10}\) (см. [2]). Графы Грюнберга--Кегеля этих групп изоморфны как абстрактные графы графу ``балалайка''.
+
+Нами была поставлена более общая задача: описать конечные группы, графы Грюнберга--Кегеля которых изоморфны как
+абстрактные графы графу ``балалайка''. В дальнейшем будем считать, что
+\(G\) --- конечная группа, граф Грюнберга--Кегеля которой как абстрактный граф изоморфен графу ``балалайка'', т. е.,
+граф \(\Gamma(G)\) имеет следующий вид:
+\begin{center}
+\begin{picture}(60,35)
+\put(10,0){\circle{4}}
+\put(10,2){\line(0,1){30}}
+\put(10,2){\line(4,3){20}}
+\put(10,34){\circle{4}}
+\put(10,32){\line(4,-3){20}}
+\put(32,17){\circle{4}}
+\put(34,17){\line(1,0){21}}
+\put(57,17){\circle{4}}
+\put(0,34){\(r\)}
+\put(0,0){\(s\)}
+\put(30,8){\(p\)}
+\put(55,8){\(q\)}
+\put(70,0){,}
+\end{picture}
+\end{center}
+где \(r\), \(s\), \(p\) и \(q\) --- некоторые попарно различные простые числа.
+
+В [3] мы доказали, что если группа \(G\) неразрешима, то фактор-группа \(\overline{G}=G/S(G)\) (где
+\(S(G)\) --- разрешимый радикал группы \(G\)) почти проста, и класифицировали все конечные почти простые группы графы
+Грюнберга--Кегеля которых изоморфны как абстрактные графы подграфу графа ``балалайка''. В [4] мы описали
+конечные разрешимые группы \(G\). Также в [5, 6] мы классифицировали конечные неразрешимые группы \(G\) в
+следующих трех случаях:
+\begin{enumerate}[label=(\arabic*)]
+\item группа \(G\) не содержит элементов порядка 6;
+\item группа \(G\) содержит элемент порядка 6 и вершина \(q\) графа \(\Gamma(G)\) делит \(|S(G)|\);
+\item вершина \(q\) графа \(\Gamma(G)\) меньше 5.
+\end{enumerate}
+
+В данной работе мы продолжаем изучение этой проблемы. Мы доказываем следующую теорему.
+
+\textbf{Теорема.} {\it Пусть \(G\)~--- неразрешимая группа, \(\{r,s\}=\{2,3\}\), \(p>3\), \(q>3\) и \(q\) не делит \(|S(G)|\). Тогда
+граф Грюнберга--Кегеля фактор-группы \(\overline{G}:=G/S(G)\) несвязен.}
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] A.~S.~Kondrat'ev, {\it Finite groups with prime graph as in the group \(Aut(J_2)\)},  Proc. Steklov Inst. Math. 283:1 (2013), 78-85.
+\item[{[2]}] A.~S.~Kondrat'ev, {\it Finite groups that have the same prime graph as the group \(A_{10}\)}, Proc. Steklov Inst. Math., 285:~1 (2014), 99-107.
+\item[{[3]}] A.~S.~Kondrat'ev, N.~A~Minigulov, {\it Finite almost simple groups whose Gruenberg--Kegel graphs as abstract graphs are isomorphic to subgraphs of the Gruenberg--Kegel graph of the alternating group \(A_{10}\)}, Siberian Electr. Math. Rep., 15 (2018), 1378-1382.
+\item[{[4]}] A.~S.~Kondrat'ev, N.~A.~Minigulov, {\it Finite solvable groups whose Gruenberg-Kegel graphs are isomorphic to the paw}, Тр. ИММ УрО РАН., 28:2 (2022), 269-273.
+\item[{[5]}] A.~S.~Kondrat'ev, N.~A.~Minigulov, {\it On finite non-solvable groups whose Gruenberg--Kegel graphs are isomorphic to the paw}, Commun. Math. Stat., 10:4 (2022), 653-667.
+\item[{[6]}] A.~S.~Kondrat'ev, N.~A.~Minigulov, {\it On finite non-solvable groups whose Gruenberg–Kegel graphs are isomorphic to the paw}, Тезисы докладов международной (54-й всеросийской) молодежной школы-конференции "Современные проблемы математики и ее приложений". Екатеринбург: ИММ УрО РАН, 2023, 39.
+\end{enumerate}
+\end{talk}
+\end{document}

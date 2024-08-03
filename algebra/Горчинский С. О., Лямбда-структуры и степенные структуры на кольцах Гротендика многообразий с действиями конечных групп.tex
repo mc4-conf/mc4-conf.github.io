@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Лямбда-структуры и степенные структуры на кольцах Гротендика многообразий с действиями конечных групп}
+{Горчинский Сергей Олегович}
+{Математический институт им. В.\,А.\,Стеклова РАН}
+{gorchins@mi-ras.ru}
+{Дёмин Данила Александрович}
+{Алгебра}
+
+Доклад основан на совместной работе с Д.\,А. Дёминым.
+
+Существуют различные естественные структуры на коммутативных кольцах, задающиеся набором операций на них. Одним из хорошо известных примеров является лямда-структура: набор отображений \(\lambda_i\colon A\to A\), \(i\geqslant 1\), для кольца \(A\), удовлетворяющий условиям \(\lambda_1={\rm id}\), \({\lambda_n(a+b)=\sum_{i+j=n}\lambda_i(a)\lambda_j(b)}\). Другой пример даётся степенной структурой, введённой в работах С.\,М. Гусейна-Заде, И. Луенго и А. Мелле-Хернандеса. Степеннные структуры строятся по лямбда-структурам.
+
+В алгебраической геометрии активно рассматривается кольцо Гротендика многообразий, а также его различные варианты, включая кольцо Гротендика многообразий с действиями конечных групп. Между данными кольцами определен естественный гомоморфизм, а на каждом из этих колец определена лямбда-структура в терминах (эквивариантных) симметрических степеней многообразий. Легко видеть, что гомоморфизм не коммутирует с лямбда-структурами.
+
+Основной результат доклада заключается в том, что указанный выше гомоморфизм коммутирует с степенными структурами на кольцах Гротендика. Это получено при помощи новой общей формулы, выражающей степенную структуру в терминах комбинаторики корневых деревьев. В качестве приложения найдено существенное усиление и, в частности, новое доказательство, гипотезы Галкина--Шиндера о мотивной и категорной дзета-функциях многообразий.
+\end{talk}
+\end{document}

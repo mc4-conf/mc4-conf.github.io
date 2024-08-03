@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Многомерное весовое неравенство Бернштейна для целых функций экспоненциального типа}
+{Горбачев Дмитрий Викторович}
+{ООО ``Горизонт''}
+{dvgmail@mail.ru}
+{}
+{Вещественный и функциональный анализ} % [6] название секции
+
+Неравенство Бернштейна для целых функций экспоненциального типа является
+классическим в теории приближений. В стандартной постановке оно устанавливает
+порядок роста $L^{p}$-нормы линейного дифференциального оператора на классе
+полиномов или целых функций экспоненциального типа. Интересен случай весовой
+$L^{p}$-нормы при $p>0$, задаваемой мерой, удовлетворяющей условию удвоения. Он
+разобран, например, для тригонометрических и сферических полиномов. Однако для
+целых функций экспоненциального типа, особенно в многомерной постановке,
+известно меньше. Целью доклада будет привести новые результаты в этом
+направлении. Особенно интересны весовые неравенства, отвечающие степенным весам
+Данкля и $(\kappa,a)$-обобщенного преобразования Фурье, где есть
+дифференциально-разностные аналоги классических дифференциальных операторов.
+Одно из приложений данных результатов состоит в доказательстве обратных теорем
+теории приближений в соответствующих весовых пространствах $L^{p}$.
+\end{talk}
+\end{document}

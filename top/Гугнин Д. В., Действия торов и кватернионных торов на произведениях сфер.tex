@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Действия торов и кватернионных торов на произведениях сфер}
+{Гугнин Дмитрий Владимирович}
+{Математический институт им. В.\,А. Стеклова РАН \\
+Механико-математический факультет МГУ имени М.\,В. Ломоносова}
+{dmitry-gugnin@yandex.ru}
+{}
+{Топология} %
+
+Речь пойдет о действиях торов (стандартных компактных торов, а также их кватернионных аналогов) на произведениях сфер [1]. Мы покажем, что пространство орбит некоторого специального действия тора на произведении произвольного конечного набора сфер гомеоморфно сфере (размерность каждой сферы набора в случае тора должна быть не меньше 2, в случае кватернионного тора --- не меньше 4). Для \(k\ge 2\) сфер в наборе действует тор \(T^{k-1}\), в кватернионном случае --- тор \(\mathrm{Sp}(1)^{k-1}\). Аналогичное утверждение для вещественного тора \(\mathbb{Z}_2^{k-1}\) было доказано автором в 2019 году [2]. Основным содержанием данных теорем является явно выписываемая вещественно аналитическая формула канонической проекции на пространство орбит (стандартную круглую сферу). Также будет сформулирована естественная гипотеза о неуменьшаемости ранга тора \(k-1\), доказанная автором для случая вещественного тора в 2023 году [3].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] А. А. Айзенберг, Д. В. Гугнин, {\it О действиях торов и кватернионных торов на произведениях сфер}, Топология, геометрия, комбинаторика и математическая физика, Сборник статей. К 80-летию члена-корреспондента РАН Виктора Матвеевича Бухштабера, Труды МИАН, 326, МИАН, М., 2024 (в печати).
+\item[{[2]}] Д. В. Гугнин, {\it Разветвленные накрытия многообразий и \(nH\)-пространства}, Функц. анализ и его прил., 53:2 (2019), 68–71.
+\item[{[3]}] Д. В. Гугнин, {\it О несвободных действиях коммутирующих инволюций на многообразиях}, Матем. заметки, 113:6 (2023), 820–826.
+\end{enumerate}
+\end{talk}
+\end{document}

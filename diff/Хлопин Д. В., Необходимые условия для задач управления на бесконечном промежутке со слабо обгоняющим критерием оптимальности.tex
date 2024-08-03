@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Необходимые условия для задач управления на бесконечном промежутке со слабо обгоняющим критерием оптимальности}
+{Хлопин Дмитрий Валерьевич}
+{Институт математики и механики им. Н.\,Н. Красовского}
+{khlopin@imm.uran.ru}
+{}
+{Дифференциальные уравнения и динамические системы}
+
+В задачах управления на бесконечности принцип максимума Л.\,С. Понтрягина, как система необходимых условий оптимальности, не имеет ``общепризнанного'' условия трансверсальности на правом конце. Для  одного из самых общих в таких задачах критериев, слабо обгоняющего критерия, недавно удалось подобрать краевое условие [1], необходимое без каких-либо асимптотических требований на систему. Это условие не может быть усилено как минимум в некоторых линейных задачах, что, впрочем, не мешает ему в  тех же задачах выделять даже континуальный пучок подозрительных на оптимальность экстремалей. Поэтому интересны  и асимптотические предположения, при которых, воспользовавшись условием трансверсальности, можно было бы получить ровно одно решение сопряженной системы. Такие  асимптотические предположения на систему, не слабее работ [1,2], также удалось получить. Основным идеям, позволившим это  сделать, а также разбору нескольких примеров задач управления, и планируется посвятить доклад.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]
+D. Khlopin,  {\it Necessary conditions in infinite-horizon control problems that need no asymptotic assumptions}. Set-Valued and Variational Analysis, 31:2 (2023), 8.
+\item[{[2]}] С. М. Асеев,  В. М. Вельов, {\it Другой взгляд на принцип максимума для задач оптимального управления с бесконечным горизонтом в экономике}, УМН, 74:6 (2019), 3–54
+\end{enumerate}
+\end{talk}
+\end{document}

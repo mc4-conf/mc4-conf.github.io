@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Элиминация кванторов для экзистенциальной арифметики Бюхи}
+{Старчак Михаил Романович}
+{Санкт-Петербургский государственный университет}
+{m.starchak@spbu.ru}
+{}
+{Математическая логика и теоретическая информатика} %
+
+Доклад посвящён двум алгоритмам элиминации кванторов~[1, 2], которые оперируют с экзистенциальными (\(\exists\)-)формулами арифметики Бюхи Th\(\langle\mathbb{N};0,1,+,V_{k},\leq\rangle\), где \(k\geq2\) есть некоторое фиксированное натуральное число, а \(V_k\) есть двухместный предикат, истинный в точности для пар \((x,y)\in\mathbb{N}^2\), таких что \(y\) есть наибольшая степень \(k\), делящая \(x\).
+
+В работе [1] впервые даётся полное описание множеств \(S\subseteq\mathbb{N}\), определимых с \mbox{помощью} \(\exists\)-формул арифметики Бюхи. До этого результата было известно лишь, что не все \(k\)-регулярные предикаты являются \(\exists\)-определимыми~[3]. Алгоритм элиминации \mbox{кванторов} из [1] пригоден и для доказательства принадлежности \(\exists\)Th\(\langle\mathbb{N};0,1,+,V_{k},\lambda x.2^x,\leq\rangle\) классу NExpTime. Однако, в результате совместной работы с Д.~Чистиковым и А.~Мансутти~[2], удалось построить алтернативный алгоритм элиминации кванторов, который позволил доказать принадлежность указанной теории классу NP. Этот результат усиливает и обобщает принадлежность \(\exists\)-арифметики Бюхи классу NP~[4] и \(\exists\)-арифметики Семёнова классу NExpTime~[5]. На пути построения разрешающей процедуры из класса NP было получено доказательство принадлежности классической задачи целочисленного линейного программирования классу NP посредством элиминации кванторов.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] M. Starchak, {\it Existential Definability of Unary Predicates in Büchi Arithmetic}, In CiE, 2024.
+\item[{[2]}] D. Chistikov, A. Mansutti, and M. Starchak, {\it Integer Linear-Exponential Programming in NP by Quantifier Elimination}, In ICALP, 2024.
+\item[{[3]}] C. Haase, J. Różycki, {\it On the Expressiveness of Büchi Arithmetic}, In FoSSaCS, 2021.
+\item[{[4]}] F. Guépin, C. Haase, and J. Worrell. {\it On the Existential Theories of Büchi
+Arithmetic and Linear \(p\)-adic Fields}, In LICS, 2019.
+\item[{[5]}] M. Benedikt, D. Chistikov, and A. Mansutti, {\it The Complexity of Presburger Arithmetic with Power or Powers}, In ICALP, 2023.
+\end{enumerate}
+\end{talk}
+\end{document}

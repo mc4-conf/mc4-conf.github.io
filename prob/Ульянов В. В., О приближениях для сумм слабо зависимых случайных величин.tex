@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О приближениях для сумм слабо зависимых случайных величин}
+{Ульянов Владимир Васильевич}
+{МГУ имени М\,В. Ломоносова и НИУ ВШЭ}
+{}
+{}
+{Теория вероятностей} %
+
+Пусть \((X_i, i \in J)\) - семейство локально зависимых неотрицательных целочисленных случайных величин. Рассмотрим сумму \(W =\sum_{i\in J} X_i\). Сначала мы устанавливаем общую верхнюю границу для \(d_{TV} (W,M)\), используя метод Стейна, где целевая переменная
+\(M\) является  смесью распределения Пуассона и биномиального или отрицательного биномиального
+распределения.В качестве приложений мы получаем оптимальный порядок   \(O(|J|^{-1})\)   ошибки приближения для распределений \((k_1, k_2)\)- серий и \(k\)-серий. Наши результаты значительно улучшают существующие результаты
+порядка \(O(|J|^{-1/2})\). Более того, используя недавний результат Бобкова и Ульянова [1] по уточнению центральной предельной теоремы для независимых слагаемых с целыми значениями, мы получаем асимптотические разложения для функции распределения \(W\). Доклад основан на
+препринте [2].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] С. Г. Бобков, В. В. Ульянов, {\it Поправка Чебышёва–Эджворта в центральной предельной теореме для целочисленных независимых слагаемых}, Теория вероятностей и ее применения, 66(2022), вып.4, 676--692.
+\item[{[2]}] Zhonggen Su, Vladimir V. Ulyanov, Xiaolin Wang, {\it Approximation of Sums of Locally Dependent Random Variables via Perturbation of Stein Operator}, \\ https://doi.org/10.48550/arXiv.2209.09770.
+\end{enumerate}
+\end{talk}
+\end{document}

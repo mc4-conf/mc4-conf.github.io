@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Отсутствие энергетической функции для 2-диф\-фе\-о\-мор\-физ\-мов c подковой Смейла}
+{Тирская Карина Юрьевна}
+{Национальный исследовательский университет ``Высшая школа экономики''}
+{}
+{}
+{Дифференциальные уравнения и динамические системы}
+
+В данной работе рассматривается вопрос существования энергетической функции у диффеоморфизмов на плоскости, имеющих нульмерное базисное множество с парами сопряженнытх точек. Для потоков, заданных на компактных многообразиях, такой вопрос не стоит, тк было доказано, что для любого такого потока есть энергетическая функция. Однако не все дискретные динамические системы обладают энергетической функцией. Первоначальные результаты в данной области были достигнуты Д. Пикстоном в 1977 году. В своей работе [1] он продемонстрировал существование энергетической функции Морса для любого диффеоморфизма Морса—Смейла на поверхности. Кроме того, в той же работе Д. Пикстон представил диффеоморфизм Морса—Смейла на трёхмерной сфере, который не обладает энергетической функцией Морса.
+На сегодняшний день известно, что \(\Omega\)-устойчивые 2-диффеоморфизмы, не имеющие нульмерных нетривиальных базисных множеств, обладают энергетической функцией [1], [2], [3].
+В 2022 году Баринова М.\,К. в своей работе [4] доказала, что если 2-диффеоморфизм имеет хотя бы одно нульмерное базисное множество без пар сопряжённых точек, то у него отсутствует энергетическая функция.
+До настоящего времени вопрос о существовании энергетической функции для диффеоморфизма с нульмерным базисным множеством, содержащим пары сопряжённых точек, оставался нерешённым. Одним из классических примеров таких множеств является подкова Смейла, которая и является предметом данного исследования.
+Основным результатом данной работы является следующее увтерждение:
+
+\textit{Если хотя бы одно из базисных множеств \(\Omega\)-устойчивого диффеоморфизма \(f: M^2 \rightarrow M^2\) является подковой Смейла на диске, то диффеоморфизм \(f\) не обладает энергетической функцией.}
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Pixton D. Wild unstable manifolds. \textit{Topology}. 1985;16(2):167-172.\\ {\tt https://doi.org/10.1016/0040-9383(77)90014-3}.
+\item[{[2]}] Mitryakova TM, Pochinka OV, Shishenkova AE. Energy function for diffeomorphisms on surfaces with finite hyperbolic chain recurrent set. \textit{Middle Volga Mathematical Society}. 2012;14(1):98-106.
+\item[{[3]}] Grines VZ, Noskova MK, Pochinka OV. The construction of an energy function for three-dimensional cascades with a two-dimensional expanding attractor. \textit{Transactions of the Moscow Mathematical Society}. 2015;76(2):237-249.\\{\tt https://doi.org/10.1090/mosc/249}.
+\item[{[4]}] Barinova M. On Existence of an Energy Function for \(\Omega\)-stable Surface Diffeomorphisms. \textit{Lobachevskii Journal of Mathematics}. 2022; 43:3317–3323.\\{\tt https://doi.org/10.1134/S1995080222020020}.
+\end{enumerate}
+\end{talk}
+\end{document}

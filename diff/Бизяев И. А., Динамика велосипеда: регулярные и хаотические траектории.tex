@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Динамика велосипеда: регулярные и хаотические траектории}
+{Бизяев Иван Алексеевич}
+{Уральский математический центр, Удмуртский государственный университет}
+{bizyaevtheory@gmail.com}
+{Бердникова А.\,С.}
+{Дифференциальные уравнения и динамические системы}
+
+Рассмотрена задача о движении по инерции роликового велосипеда на горизонтальной плоскости.
+В этой модели велосипед представляет собой связку двух твердых тел (рама и руль), в которой каждое тело опирается на горизонтальную плоскость лезвием или роликом,
+которое препятствует движению тела в фиксированном направлении [1, 2].
+Получена математическая модель, описывающая динамику данной неголономной модели велосипеда.
+Она сводится к анализу пяти нелинейных дифференциальных уравнений, описывающих эволюцию поступательной скорости точки контакта руля, двух компонент угловых скоростей и углов поворота руля относительно рамы и наклона рамы.
+Проанализирован размер области начальных условий в фазовом пространстве исходной нелинейной редуцированной системы, из которой траектории асимптотически стремятся к прямолинейному движению (бассейн притяжения).
+Показано, что при некотором выборе параметров существует достаточно большие начальные значения для углов поворота руля и наклона рамы, при которых велосипед возвращается к прямолинейному движению.
+Найдены условия, в которых прямолинейное движение теряет устойчивость после бифуркации Андронова-Хопфа. В результате  в редуцированной системе возникает устойчивое периодическое решение.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] J. D. G. Kooijman, J. P. Meijaard, J. M. Papadopoulos, A. Ruina,  A. L. Schwab, {\it A Bicycle Can
+Be Self-Stable without Gyroscopic or Caster Effects}, Science, 2011, vol. 332, no. 6027, pp. 339–342.
+\item[{[2]}] R. S. Hand, {\it Comparisons and Stability Analysis of Linearized Equations of Motion for a Basic Bicycle
+Model}, Master’s Thesis, Ithaca, N.Y., Cornell Univ., 1988, 200 pp.
+\end{enumerate}
+\end{talk}
+\end{document}

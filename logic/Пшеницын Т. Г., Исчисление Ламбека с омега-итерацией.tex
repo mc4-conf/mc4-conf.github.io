@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Исчисление Ламбека с омега-итерацией}
+{Пшеницын Тихон Григорьевич}
+{Математический институт им. В.\,А. Стеклова Российской академии наук}
+{tpshenitsyn@mi-ras.ru}
+{}
+{Математическая логика и теоретическая информатика} %
+
+Исчисление Ламбека --- субструктурная логика, аксиоматизирующая инэквациональную теорию полугрупп с делениями; она находит применения в лингвистике для моделирования синтаксиса естественных языков. В литературе изучаются расширения исчисления Ламбека различными операциями. Одной из таких операций является итерация Клини, которую можно рассматривать как ``конечную итерацию'': если \(R\) --- это отношение, то \(R^\ast\) --- его рефлексивное транзитивное замыкание, состоящее из \(n\)-кратных композиций \(R\) с собой для \(n \in \mathbb{N}\). Исчисление Ламбека с итерацией Клини и с решеточными операциями называется логикой действий. В статье [1] вводится инфинитарная логика действий и доказывается, что задача выводимости в этом исчислении \(\Pi^0_1\)-полна.
+
+Нами вводится и исследуется расширение исчисления Ламбека с помощью бесконечной итерации, или \(\omega\)-итерации. Данная операция мотивирована теорией формальных языков с бесконечными словами. В рассматриваемой логике секвенции имеют вид \(\Pi \vdash B\), где \(\Pi\) --- либо конечная, либо бесконечная последовательность формул. Вводится правило сечения и доказывается его допустимость. Доказывается полнота исчисления Ламбека с \(\omega\)-итерацией относительно реляционных моделей. Наконец, устанавливается нижняя оценка на сложность задачи выводимости для конечных секвенций в этом исчислении: показывается, что данная задача \(\Pi^1_2\)-трудна. Таким образом, исчисление с бесконечной итерацией оказывается существенно сложнее исчисления с конечной итерацией.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Palka, E. (2007). An infinitary sequent system for the equational theory of *-continuous action lattices. Fundamenta Informaticae 78(2), 295–309.
+\end{enumerate}
+\end{talk}
+\end{document}

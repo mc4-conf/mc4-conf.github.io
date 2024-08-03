@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Теория обучения интеллектуальных систем}
+{Нечесов Андрей Витальевич}
+{Математический центр в Академгородке: ИМ СО РАН и НГУ}
+{nechesov@math.nsc.ru}
+{Сергей Гончаров}
+{Математическая логика и теоретическая информатика}
+
+В докладе будет рассмотрена теория обучения интеллектуальных систем. Данная тематика взяла свое начало с двух довольно популярных логических направлений: концепции семантического программирования и концепции задачного подхода. В рамка этих двух концепций мы идем от понятия задачи, ее решения и эффективности решения в сторону построения систем искусственного интеллекта, в основе которых лежит логическое мышление. Это удается достичь за счет формализации понятия знания и иерархии знаний. Что позволяет строить динамические деревья знаний и, в конечном счете, эффективно выдавать финальный результат. Данная теория обучения может стать хорошей альтернативой нейронным сетям или усиливать и контролировать их в выдаче правильных ответов.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Goncharov, S.; Nechesov, A. AI-Driven Digital Twins for Smart Cities. Eng. Proc. 2023, 58, 94. \url{https://doi.org/10.3390/ecsa-10-16223}
+\item[{[2]}] Vityaev, E.E.; Goncharov, S.S.; Gumirov, V.S.; Mantsivoda, A.V.; Nechesov, A.V.; Sviridenko, D.I. Task approach: on the way to trusting artificial intelligence. WORLD CONGRESS SYSTEMS THEORY, ALGEBRAIC BIOLOGY, ARTIFICIAL INTELLIGENCE: Mathematical Foundations and Applications SELECTED WORKS. 2023. pp. 179-243, \url{https://doi.org/10.18699/sblai2023-41}
+\item[{[3]}] Goncharov, S.; Nechesov, A. Semantic programming for AI and Robotics,  SIBIRCON, 2022, pp. 810-815, \url{https://doi.org/10.1109/SIBIRCON56155.2022.10017077}
+\end{enumerate}
+\end{talk}
+\end{document}

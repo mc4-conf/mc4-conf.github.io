@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Решение уравнения Абловица-Ладика с помощью алгоритма Шура}
+{Губкин Павел Васильевич}
+{ПОМИ РАН}
+{gubkinpavel@pdmi.ras.ru}
+{Бессонов Роман Викторович}
+{Комплексный анализ}
+
+Рассмотрим аналитическую функцию \(f\), действующую из единичного круга \(\mathbb{D}\) в себя. Для нее можно определить последовательность функций \(f_0 = f, f_1, f_2, \ldots \) удовлетворяющих соотношениям
+\begin{equation*}
+zf_{n+1} = \frac{f_n - f_n(0)}{1 - \overline{f_n(0)}f_n}, \qquad n \ge 0,
+\end{equation*}
+при этом каждая из функций \(f_n\) будет снова действовать из \(\mathbb{D}\) в \(\mathbb{D}\). Алгоритмом Шура называется построение последовательности  \(\{f_n(0)\}_{n\ge 0}\) по функции \(f\), такая последовательность может быть любой последовательностью комплексных чисел из единичного круга. На докладе мы обсудим вопросы, связанные с устойчивостью алгоритма Шура и то, как это построение позволяет решать дифференциальное уравнение Абловица-Ладика
+\begin{equation*}
+\frac{\partial}{\partial t}q(t,n) = i\bigl(1 - |q(t,n)|^2\bigr)\bigl(q(t,n-1) + q(t,n+1)\bigr), \qquad n\in \mathbb{Z}.
+\end{equation*}
+
+Доклад основан на результатах, полученных в работе [1].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Bessonov R. V., Gubkin P. V. Stability of Schur's iterates and fast solution of the discrete integrable NLS //arXiv preprint {\tt arXiv:2402.02434}. – 2024.
+\end{enumerate}
+\end{talk}
+\end{document}

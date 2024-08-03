@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Абелева периодичность морфических слов}
+{Филимонова Арина Николаевна}
+{СПбГУ}
+{arina4filimonova@gmail.com}
+{С.\,А. Пузынина}
+{Математическая логика и теоретическая информатика}
+
+Цель настоящего исследования --- дать характеризацию морфизмов над конечным алфавитом, порождающих абелево периодические слова. Два слова \(u\) и \(v\) называются \textit{абелево эквивалентными}, если в слове \(u\) можно переставить местами буквы так, чтобы получилось слово \(v\). Слово \(w\) называется \textit{абелево периодическим}, если  \(w\) представляет из себя конкатенацию абелево эквивалентных слов. Говоря об абелево периодичских бесконечных словах, мы будем допускать наличие предпериода, то есть условие абелевой периодичности должно начинаться с некоторого индекса.
+
+\textit{Морфизмом} называется эндоморфизм на множестве слов, сохраняющий конкатенацию. Если морфизм \(f\) нестирающий, то есть образ никакого слова не пуст, и образ некоторой буквы \(a\) начинается с \(a\) и имеет длину больше двух, то говорят, что морфизм порождает бесконечное слово \(w=\lim_{n\to\infty}f^n(a)\).
+Построение бесконечных слов с помощью морфизмов является одной из основных конструкций бесконечных слов в комбинаторике слов. Одним из ее преимуществ является возможность порождать слова быстро.
+
+Всякому морфизму \(f\) над алфавитом \(\Sigma = \{a_1, a_2,\dots a_n\}\) ставится в соответствие матрица \(M(f)\) размера \(n\times n\), коэффициенты которой таковы: \(m_{ij}\) равно количеству вхождений буквы \(a_i\) в слово \(f(a_j)\). Обозачим собственные числа такой матрицы за \(\theta_1,\; \theta_2\; \dots, \theta_n\) (числа пронумерованы в порядке убывания их модуля). В терминах такой матрицы можно, в частности, получить некоторые необходимые условия абелевой периодичности.
+
+Получены следующие результаты. Во-первых, задача решена для бинарных равноблочных (образы букв имеют равную длину) морфизмов:
+
+\textbf{Теорема 1.}
+{\it Пусть \(f\) равноблочный морфизм над бинарным алфавитом. Тогда морфическое слово \(f^{\omega}(a)\) абелево периодично в следующих случаях и только в них:
+\begin{enumerate}
+\item Морфизму \(f\) соответствует матрица с \(\theta_2 = 0\), то есть матрица вида
+\(\begin{pmatrix}
+A & A\\
+B & B
+\end{pmatrix}\);
+\item Морфизм \(f\) имеет вид \(f(a) = a(ba)^k\), \(f(b) = b(ab)^k\) для некоторого \(k\).
+\end{enumerate}}
+
+Для неравноблочных бинарных морфизмов получен ряд необходимых и ряд достаточных условий абелевой периодичности. Для произвольных бинарных морфизмов остаётся неразобранным только случай \(\theta_2 = 0\), то есть не получена характеризация абелевой периодичности морфизмов, которым отвечают матрицы вида \(\begin{pmatrix}
+A & \alpha A\\
+B & \alpha B
+\end{pmatrix}\).
+
+Результаты получены совместно с С.\,А. Пузыниной.
+\end{talk}
+\end{document}

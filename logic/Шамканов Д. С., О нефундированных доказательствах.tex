@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О нефундированных доказательствах}
+{Шамканов Данияр Салкарбекович}
+{Математический институт им. В.\,А.~Стеклова РАН}
+{daniyar.shamkanov@gmail.com}
+{}
+{Математическая логика и теоретическая информатика} %
+
+В последнее десятелетие явно возрос интерес к дедуктивным системам, допускающим циклические и более общие нефундированные выводы. Данного рода системы возникают при изучении логик, отражающих различные аспекты индуктивных рассуждений, а также в области логик доказуемости.  Стоит напомнить, что нефундированные выводы представляют собой произвольные, возможно бесконечные, деревья формул (или секвенций), построенные по заданным правилам вывода. Обычно на бесконечные ветви нефундированных выводов дополнительно накладывают различные условия для обеспечения корректности. С точки зрения струкутрной теории доказательств естественно возникает вопрос о нормализации выводов в нефундированных системах. Несколько лет назад нами совместно с Ю.В.~Саватеевым был предложен подход к устранению сечения в данных системах с привлечением теоремы о неподвижной точке для сжимающих отображений из непустых сферически полных ультраметрических пространств в себя. Мы рассмотрим, как работает этот подход на примере модальной логики транзитивного замыкания \(\mathsf{K}^+\). Если позволит время, то мы также обсудим семантику нефундированных систем на примере модального исчисления предикатов \(\mathsf{QGL}\) с нефундированными доказательствами. Недавно вместе с П.М.~Разумным мы показали, что данное исчисление является полным относительно топологической семантики, в то время как исходная система без нефундированных доказательств неполна.
+\end{talk}
+\end{document}

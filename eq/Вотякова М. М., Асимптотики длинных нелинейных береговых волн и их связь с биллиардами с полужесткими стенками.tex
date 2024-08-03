@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Асимптотики длинных нелинейных береговых волн и их связь с биллиардами с полужесткими стенками}
+{Вотякова Мария Михайловна}
+{Москва, МФТИ, ИПМех РАН}
+{votiakova.mm@phystech.edu}
+{С.\,Ю. ~Доброхотов, Д.\,С.~ Миненков}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+Под береговыми волнами мы понимаем  периодические или близкие к периодическим по времени гравитационные волны на воде
+в бассейне глубины \(D(x)\), \(x=(x_1,x_2)\), локализованные в окрестности береговой линии \(\Gamma^0=\{D(x)=0\}\).
+В двух конкретных примерах мы строим отвечающие береговым волнам асимптотические решения системы нелинейных уравнений мелкой воды
+в виде параметрически заданных функций, определяемых через асимптотики линеаризованной системы (см. [1]), которые в свою очередь связаны с асимптотическими собственными функциями оператора \(\hat L = - \nabla g D(x) \nabla\). Область определения оператора --- гладкие функции \(\xi(x)\) в области \(\Omega = \{x : D(x) > 0\}\) с конечной энергией: \(|\xi|_{x\in\Gamma^0} < \infty\).
+Также обсуждается связь построенных асимптотик с классическими (почти интегрируемыми) ``биллиардами с полужесткими стенками''.
+
+\medskip
+
+Работа выполнена при финансовой поддержке гранта РНФ 24-11-00213.
+
+\begin{enumerate}
+\item[{[1]}] S.,Y.~Dobrokhotov, D.S.~Minenkov, V.E.~Nazaikinskii~//  Russ. J. Math. Phys.~--- 2022.~--- vol.~29,~--- p.~28--36.
+\end{enumerate}
+\end{talk}
+\end{document}

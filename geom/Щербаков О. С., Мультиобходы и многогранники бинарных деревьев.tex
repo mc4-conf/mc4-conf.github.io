@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Мультиобходы и многогранники бинарных деревьев}
+{Щербаков Олег Сергеевич}
+{МГУ им. М.\,В. Ломоносова, МГТУ им. Н.\,Э. Баумана}
+{shcherbakovos@yandex.ru}
+{}
+{Геометрия} %
+
+Одномерная задача Громова о минимальном заполнении конечного метрического пространства [1] возникла как обобщение  задачи Штейнера о кратчайшей сети и задачи Громова о  минимальном заполнении гладкого риманова многообразия. Задача заключается в поиске взвешенного дерева наименьшего веса, соединяющего данное метрическое пространство так, что для любых точек метрического пространства вес единственного пути, соединяющего их в дереве, был не меньше расстояния между ними в метрическом пространстве.
+
+Формула веса миимального заполнения [2] использует т.\,н. мультиобходы бинарного дерева, в частности, неприводимые мультиобходы.  Другой подход --- рассмотреть задачу с точки зрения линейного программирования [3]. При таком подходе возникают так называемые многогранники бинарных деревьев.
+
+Оказывается, между вершинами многогранников бинарных деревьев и неприводимыми мультиобходами есть естественная биекция [4]. Автору удалось получить оценки на кратности неприводимых мультиобходов, найти их нормальную форму и описать для некоторых типов бинарных деревьев их многогранники.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]  {Иванов А.О., Тужилин А.А.}  {\it Одномерная проблема Громова о минимальном заполнении.} // Матем. сб. 2012. Т. 203, № 5.С. 65-118.
+\item[{[2]}] Еремин А.Ю. {\it Формула веса минимального заполнения конечного метрического пространства.} Матем. сб., 2013. Т.204, №9. С.51-72.
+\item[{[3]}] Ivanov A., Tuzhilin A. {\it Dual Linear Programming Problem and One-Dimensional Gromov Minimal Fillings of Finite Metric Space} //  Differential Equations on Manifolds and Mathematical Physics. Trends in Mathematics. Birkhauser, Cham. 2022. pp. 165-182.
+\item[{[4]}]	Щербаков О.С. {\it Многогранники бинарных деревьев, строение многогранника дерева типа ``змея''.} Чебышёвский сб., 2022. Т.23, №85. С.136-151.
+\end{enumerate}
+\end{talk}
+\end{document}

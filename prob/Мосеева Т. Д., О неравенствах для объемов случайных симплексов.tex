@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О неравенствах для объемов случайных симплексов}
+{Мосеева Татьяна Дмитриевна}
+{СПбГУ, ПОМИ РАН}
+{polezina@yandex.ru}
+{}
+{Теория вероятностей} %
+
+В 1971 году Майлзом была получена явная формула для моментов объема случайного симплекса, часть вершин которого выбирается равномерно внутри единичного шара, а часть --- равномерно на единичной сфере. Из данного результата следует, что при фиксированном количестве вершин симплекса его средний объем возрастает при увеличении количества вершин, выбираемых на границе шара.
+
+Равномерное распреление внутри или на границе единичного шара можно рассматривать как частный случай бета-распределения: в первом случае параметр  равен 0, а равномерное распределение на единичной сфере получается как предел бета-распределений при стремлении параметра к \(-1\).
+Рассмотрим случайный симплекс, часть вершин которого выбрана в соответствии с бета-распределением с параметром \(\beta_1\), а часть --- с параметром \(\beta_2 < \beta_1\). Оказывается, чем больше вершин выбирается со вторым параметром (при фиксированном общем количестве вершин), тем больше средний объем рассматриваемого симплекса.
+
+Доклад посвящен данному обобщению результата Майлза, а также более общим условиям на распределение вершин симплексов, при которых мы можем получить аналогичные соотношения на объемы.
+\end{talk}
+\end{document}

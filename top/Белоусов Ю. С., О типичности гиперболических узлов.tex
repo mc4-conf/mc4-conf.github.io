@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О типичности гиперболических узлов}
+{Белоусов Юрий Станиславович}
+{Международный математический институт имени Л. Эйлера}
+{bus99@yandex.ru}
+{А.\,В.~Малютин}
+{Топология} %
+
+Знаменитая теорема Терстона 1978 года о классификации узлов утверждает, что каждый узел либо торический, либо сателлитный, либо гиперболический. До недавнего времени существовала гипотеза (известная как гипотеза Адамса) утверждающая, что доля гиперболических узлов среди всех простых узлов с \(n\) или менее пересечениями стремится к 1 при стремлении \(n\) к бесконечности. В 2017 году А.~Малютин показал, что это утверждение противоречит нескольким другим правдоподобным гипотезам. Наконец, в 2019 году в совместной работе с А.~Малютиным было установлено, что гипотеза Адамса неверна. В докладе мы обсудим ключевые компоненты её опровержения.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Y.~Belousov, A.~Malyutin {\it Hyperbolic knots are not generic}, arXiv:1908.06187, 2019.
+\end{enumerate}
+\end{talk}
+\end{document}

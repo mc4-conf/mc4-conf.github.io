@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Cлед резольвенты оператора Лапласа на метрическом графе}
+{Толченников Антон Александрович}
+{ИПМех РАН, Механико-математический факультет МГУ}
+{}
+{}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+Доклад будет посвящен оператору Лапласа на метрическом конечном графе \(G=(V,E)\) с длинами ребер \(\{ l_j \}_{j =1}^{|E|}\),
+который на каждом ребре задан выражением \(-\frac{d^2}{dx^2}\), а в вершинах графа заданы граничные условия, обеспечивающие самосопряженность оператора. Для работы с такими операторами есть эффективный метод ---
+формализм Крейна, позволяющий удобно записывать резольвенту такого оператора и вычислять его след (или след подходящей степени резольвенты в случае пространств большей размерности, например, декорированных графов).
+Каждый такой оператор однозначно определяется лагранжевой плоскостью в \(\mathbb{C}^{|2E|}\oplus \mathbb{C}^{2|E|}\): \(\Lambda \leftrightarrow \Delta^{\Lambda}\). Цель --- написать  коэффициенты
+разложения \(\mathrm{tr} (\Delta^\Lambda -z)^{-1}\) при больших \(z\) (за исключением сектора, содержащего положительную вещественную полуось).
+Первые два слагаемых в разложении особенно просты:
+\( \mathrm{tr} (\Delta^\Lambda + w^2)^{-1} =
+\frac{\sum_{i=1}^{|E|} l_i}{2w} + \frac{|E| - \dim \Lambda\cap \Lambda_X}{2w^2} +
+O(w^{-3}),
+\)
+где \(\Lambda_X = \mathbb{C}^{2|E|} \oplus 0\). Этот подход, связанный с резольвентной формулой Крейна, можно применять для более сложных пространств -- декорированных графов.
+
+\medskip
+
+Работа поддержана грантом РНФ 22-11-00272.
+\end{talk}
+\end{document}

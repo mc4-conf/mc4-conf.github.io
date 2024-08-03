@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Аналитическое представление \(\sigma\)-функции Вейерштрасса и её вычисление}
+{Алексеев Максим Максимович}
+{ФИЦ ИЦ РАН}
+{alienkseev@gmail.com}
+{Безродных Сергей Игоревич}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+\textit{Функции Вейерштрасса} возникают естественным образом в контексте \textit{эллиптических функций} --- двоякопериодечиских мероморфных функций, описывающих решения дифференциальных уравнений в механике, реализующих некоторые классические конформные отображения и формирующих фундамент трансцендентых методов в алгебраической геометрии. Одной из функций Вейерштрасса является \(\sigma\)\textit{-функция} --- целая функция одного комплексного переменного, которая может быть использована для вычисления любой эллиптической функции с согласованной периодической структурой.
+
+В данном докладе будут представлены результаты исследования \textit{системы уравнений в частных производных} для \(\sigma\)-функции Вейерштрасса [1] и эквивалентных ей счетных системы ОДУ, а также будут описаны новые \textit{рекуррентные и нерекуррентные представления для коэффициентов} ряда Тейлора [2]. Кроме того, будет затронута тематика вычисления эллиптических функций и функций Вейерштрасса с известной относительной точностью на основании расчётов значений \(\sigma\){-функции}.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Weierstrass K. \textit{Zur Theorie der elliptischen Functionen}, Sitzungsberichte der Akademie der Wissenschaften zu Berlin, 1882-1883.
+\item[{[2]}] {Alekseev M., Bezrodnykh S.} \textit{System of Partial Differential Equations and Analytical Representations of the Weierstrass Sigma Function}, Mathematical Notes, 114 (2024), 1094–1102.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Короткие \(SL_2\)-структуры на алгебрах Ли и лиевских модулях}
+{Стасенко Роман Олегович}
+{НИУ ВШЭ, Московский центр фундаментальной и прикладной математики}
+{theromestasenko@yandex.ru}
+{}
+{Алгебраическая геометрия}
+
+Пусть \(S\) --- произвольная редуктивная алгебраическая группа. Назовем \(S\)-структурой на алгебре Ли \(\mathfrak{g}\)  гомоморфизм \(\Phi:S\rightarrow \operatorname{Aut}(\mathfrak{g})\). \(S\)-структуры ранее излучались различными авторами, в том числе Э.\,Б. Винбергом.
+
+В докладе рассматриваются \(SL_2\)-структуры. \(SL_2\)-структуру назовем короткой, если представление \(\Phi\) группы \(SL_2\) разлагается на неприводимые представления размерностей 1, 2 и 3.
+Если рассматривать неприводимые представления размерностей только 1 и 3, то получится известная конструкция Титса-Кантора-Кехера, устанавливающая взаимно-однозначное соответствие между  простыми йордановыми алгебрами и простыми алгебрами Ли определенного вида.
+
+Аналогично теореме Титса–Кантора–Кехера в случае коротких \(SL_2\)-структур можно установить взаимно-однозначное соответствие между простыми алгебрами Ли с такой структурой и так называемыми простыми симплектическими структурами Ли-Йордана.
+
+Пусть на алгебре Ли \(\mathfrak{g}\) задана \(SL_2\)-структура и отображение \(\rho:\mathfrak{g}\rightarrow\mathfrak{gl}(U)\) --- линейное представление. Гомомофизм \(\Psi:S\rightarrow GL(U)\) называется  \(SL_2\)-структурой на лиевском \(\mathfrak{g}\)-модуле \(U\), если
+\[\Psi(s)\rho(\xi)u = \rho(\Phi(s)\xi)\Psi(s)u,\quad\forall s\in S, \xi\in\mathfrak{g}, u\in U.\]
+Подобная конструкция имеет интересные приложения к теории представлений йордановых алгебр, о которых будет рассказано в докладе. Также в докладе будет представлена полная классификация неприводимых коротких \(\mathfrak{g}\)-модулей для простых алгебр Ли.
+\end{talk}
+\end{document}

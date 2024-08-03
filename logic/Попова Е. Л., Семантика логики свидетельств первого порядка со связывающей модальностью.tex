@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Семантика логики свидетельств первого порядка со связывающей модальностью}
+{Попова Елена Леонидовна}
+{НИУ ВШЭ}
+{elpop.logics@gmail.com}
+{Яворская Татьяна Леонидовна}
+{Математическая логика и теоретическая информатика} %
+
+
+Работа посвящена семантике логики свидетельств первого порядка. Пропозициональные логики свидетельств были введены С. Артемовым в [1]. Они сформулированы в расширении пропозиционального языка формулами вида t:F, где t --- свидетельский терм, F --- формула. Подразумеваемая семантика таких атомов ``t является свидетельством F’’. Для таких логик изучена семантика в стиле Крипке и арифметическая семантика, а также их связь с модальной логикой [2].
+
+
+Логика свидетельств первого порядка была введена в работе [3]. Свидетельские формулы t:F в этой логике доопределены таким образом, чтобы сделать возможным различие между локальными и глобальными параметрами. А именно, рассматриваются формулы вида \(t:_X\) F, где X – список параметров (т. е. свободных переменных), которые являются глобальными, т. е., открытыми для подстановки.
+
+В работе [3] описана логика доказательств первого порядка FOLP и арифметическая семантика для нее. Семантика в стиле возможных миров Крипке была описана в [4], там же доказаны полнота и корректность.
+
+В нашей статье рассматривается логика доказательств первого порядка \(FOLP^\Box\) в языке, расширенном модальностью Box, которая также допускает связывание параметров. Для этой логики мы описываем модели в стиле Фиттинга, доказываем полноту и корректность относительно этих моделей. В отличие от подхода, выбранного М.Фиттингом, мы описываем модели с терминах означивания свободных переменных, не используя расширение языка с помощью дополнительных констант. Это позволяет придать семантической значение формулам, содержащим свободные переменные. Главными результатами являются полнота и корректность логики \(FOLP^\Box\) в описанной семантике.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] S.N. Artemov. Operational modal logic. Technical Report 95-29, Mathematical Sciences Institute, Cornell University, 1995.
+\item[{[2]}] S.N. Artemov, M. Fitting, Justification Logic. Reasoning with reasons, Cambridge University Press, 2019.
+\item[{[3]}] S.N. Artemov, T.L. Yavorskaya. On first order logic of proofs. Moscow Mathematical Journal, 1:475–490, 2001.
+\item[{[4]}] M. Fitting. Possible world semantics for first-order logic of proofs. Annals of Pure and Applied Logic, 165(1):225–240, 2014.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Моделирование воздействия вихревых структур на сверхзвуковое обтекания крыла}
+{Борисов Виталий Евгеньевич}
+{ИПМ им. М.\,В. Келдыша РАН}
+{borisov@keldysh.ru}
+{Константиновская Т.\,В., Луцкий А.\,Е.}
+{Прикладная математика и математическое моделирование}
+
+В работе представлены результаты численного исследования сверхзвукового обтекания тандема крыльев (пара: крыло--генератор и основное крыло) с углом атаки 20\(^\circ\), актуальность которого связана, в частности, со сложностями проведения натурных экспериментов [1,2]. Расчеты проводились для прямоугольных в плане крыльев с острыми кромками и ромбовидным основанием. Рассматривались две конфигурации тандема, отличающиеся полуразмахом первого по потоку крыла-генератора, которое составляло половину либо равнялось полуразмаху основного крыла. Для численного расчета использовалась система осредненных по Рейнольдсу и Фавру нестационарных уравнений Навье--Стокса (URANS) с моделью турбулентности Спаларта--Аллмараса. Расчеты проводились на гибридной суперкомпьютерной системе К-60 [3] с помощью авторского программного комплекса ARES для расчета трехмерных турбулентных течений вязкого сжимаемого газа. Показано развитие взаимодействия вихревых структур в зависимости от полуразмаха крыла-генератора, а также изменение зоны обратного течения на подветренной стороне основного крыла. Проведено сравнение с результатами обтекания крыла в невозмущенном набегающем потоке.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Гайфуллин А.М. Вихревые течения. --М.: Наука, 2015. 319 с.
+\item[{[2]}] Borisov~V.E., Davydov~A.A., Konstantinovskaya~T.V., Lutsky~A.E., Shevchenko~A.M., Shmakov~A.S. Numerical and experimental investigation of a supersonic vortex wake at a wide distance from the wing // AIP Conference Proceedings. 2018. 2027, 030120.
+\item[{[3]}] Вычислительный комплекс K-60. [Электронный ресурс]. \\ URL: https://www.kiam.ru/MVS/resourses/k60.html
+\end{enumerate}
+\end{talk}
+\end{document}

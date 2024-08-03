@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Игры среднего поля в динамике социальных протестов}
+{Глухов Антон Иосифович}
+{Международный математический центр ИМ СО РАН}
+{a.glukhov@g.nsu.ru}
+{Шишленин Максим Александрович}
+{Прикладная математика и математическое моделирование}
+
+Доклад посвящен математическому моделированию социальной динамики общества и решению обратных задач на основе концепции ``игр среднего поля'' [1]. В последние годы во всем мире наблюдается рост социальной напряженности общества, которая проявляется в виде социальных протестов. Понимание динамики уличных протестов и изучение факторов, которые могут повлиять на их возникновение, продолжительность, а также интенсивность, принципиально важно для стабильного и устойчивого развития общества.
+
+Разработана комбинированная математическая модель, для изучения динамики социальных протестов с учетом индивидуальности поведения агентов в разных группах, на основе подхода “игр среднего поля” и модели социальных протестов, основанной на динамическом моделировании. При исследовании прямой задачи реализован разностный метод для решения сопряженной системы дифференциальных уравнений в частных производных Колмогорова-Фоккера-Планка и Гамильтона-Якоби-Беллмана, а поиск оптимального управления сведен к итерационному алгоритму [2]. Алгоритм решения обратной задачи состоит в минимизации целевого функционала методом дифференциальной эволюции. Разработанные алгоритмы апробированы на статистических данных социального движения
+во Франции (2018–2019 гг.) [3].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] M. Lasry and P.-L. Lions, Mean field games, Jpn. J. Math., vol. 2 (1), 2007, pp. 229-260.
+\item[{[2]}] Lachapelle, J. Salomon, G. Turinici. Computation of mean field equilibria in economics// Mathematical Models and Methods in Applied Sciences. – 2010. Vol. 20. – P. 567-588.
+\item[{[3]}] URL: \url{https://www.interieur.gouv.fr}.
+\end{enumerate}
+\end{talk}
+\end{document}

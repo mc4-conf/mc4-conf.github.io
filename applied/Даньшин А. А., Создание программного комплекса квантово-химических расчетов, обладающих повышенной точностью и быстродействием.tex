@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Создание программного комплекса квантово-хи\-ми\-чес\-ких расчетов, обладающих повышенной точностью и быстродействием}
+{Даньшин Артем Александрович}
+{НИЦ ``Курчатовский институт''}
+{danshin_aa@nrcki.ru}
+{А.\,А. Ковалишин}
+{Прикладная математика и математическое моделирование}
+
+Существующие методы квантовой химии обладают большой вычислительной сложностью в большинстве приложений в химии, физике конденсированного состояния, биохимии и фармакологии, что ограничивает их область применимости. Поэтому необходимо развивать новые численные методы и математические модели, которые позволят на порядки ускорить вычисления, не теряя в точности. В докладе рассматриваются методы квантового Монте-Карло, Хартри-Фока, пост-Хартри-Фока и теории функционала плотности как с точки зрения численной реализации [1], так и методологических аспектов [2, 3]. Представленные результаты легли в основу программного комплекса, предназначенного для расчета структуры и свойств многоэлектронных систем.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] A. A. Danshin, A. A. Kovalishin, {\it Operator Spectrum Transformation in Hartree–Fock and Kohn–Sham Equations}, Doklady Mathematics, 107 (2023), 17–20.
+\item[{[2]}] A. A. Danshin, A. A. Kovalishin, M. I. Gurevich, {\it Approach to determine nodal surfaces of some \(s\)-electron systems}, Physical Review E, 108 (2023), 015305.
+\item[{[3]}] A. A. Danshin, A. A. Kovalishin, {\it High-Performance Computing in Solving the Electron Correlation Problem}, Lecture Notes in Computer Science, 13708 (2022), 140-151.
+\end{enumerate}
+\end{talk}
+\end{document}

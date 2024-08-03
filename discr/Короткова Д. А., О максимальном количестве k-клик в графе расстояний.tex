@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О максимальном количестве k-клик в графе расстояний}
+{Короткова Дарья Алексеевна}
+{Студент МФТИ}
+{alekhina.da@phystech.edu}
+{Андрей Купавский}
+{Теория чисел и дискретная математика}
+
+Рассматривается вопрос об оценке максимального числа k-клик \(c_k(G^{(n)})\), содержащихся в качестве подграфов в графе единичных расстояний (графе диаметров) \(G^{(n)}\) при заданном количестве вершин \(n\) в евклидовом пространстве \(\mathbb{R}^d\). Показывается, что при достаточно больших \(n\) графы, максимизирующие значение \(c_k(G^{(n)})\), удовлетворяют так называемой конструкции Ленца.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Konrad J. Swanepoel, {\it Unit distances and diameters in Euclidean spaces}, Discrete \& Computational Geometry (2009), 1-27.
+\item[{[2]}] P. Erdős, {\it On the number of complete subgraphs contained in certain grap}, Mathematical Institute of the Hungarian Academy of Science (1962).
+\item[{[3]}] Jürgen Eckhoff, {\it A new Turán-type theorem for cliques in graphs}, Discrete Mathematics (2004), 113-122.
+\end{enumerate}
+\end{talk}
+\end{document}

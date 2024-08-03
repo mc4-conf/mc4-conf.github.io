@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Существование марковского равновесия для игр среднего поля}
+{Шатилович Дмитрий Вячеславович}
+{МГУ имени М.\,В.Ломоносова}
+{dmitriy.shatilovich@math.msu.ru}
+{}
+{Теория вероятностей} %
+
+Задача оптимального управления, которая соответствует исследованию марковского равновесия в игре среднего поля с неуправляемой диффузией и линейным по управлению сносом, имеет вид
+\[
+\begin{cases}
+J(\alpha(\cdot), \mu_\cdot) = \displaystyle{\mathbb{E}\left[\int_0^Tf\left(t, X_t, \mu_t, \alpha(t, X_t)\right)dt + g(X_T, \mu_T)\right] \longrightarrow \inf_{\alpha(\cdot)\in\mathcal{A}}},\\
+dX_t = \sigma\left(t, X_t, \mu_t\right)dW_t +  \left(b\left(t, X_t, \mu_t,\right) + \alpha(t, X_t)\right)dt,\\
+\mu_t = \operatorname{Low}(X_t).
+\end{cases}
+\]
+
+Игры среднего поля были введены независимо в работах [1], [2] и заключались в исследовании определенного класса стохастических дифференциальных игр с большим числом игроков. В играх среднего поля каждый игрок учитывает поведение других агентов через эмпирическое распределение. В литературе по статистической физике это распределение принято называть средним полем.
+
+Три основных вопроса, которые рассматриваются в теории игр среднего поля, касаются существования решения, единственности решения и сходимости равновесия в случае конечного числа игроков. Доклад будет посвящен вопросу существования решения. Существование марковского равновесия для игр среднего поля было доказано в работе [3]. В докладе будет рассмотрен новый метод исследования игр среднего поля, позволяющий обосновать существование марковского равновесия при предположениях, более слабых, чем в работе [3]. Так условие липшицевости коэффициентов уравнения будет заменено условием непрерывности. Ключевую роль в данном подходе играют уравнения Колмогорова, которые подробно исследовались в работе [4].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] M. Huang, R. Malham\'e, P. Caines, Large population stochastic dynamic games: closed-loop McKean–Vlasov systems and the Nash certainty equivalence principle, Commun. Inf. Syst. 6 (3) (2006) 221–252.
+\item[{[2]}] J.M. Lasry, P.L. Lions, Mean field games, Jpn. J. Math. 2 (2007) 229–260.
+\item[{[3]}] Lacker, D. Mean field games via controlled martingale problems: existence of
+markovian equilibria. Stochastic Processes and their Applications, 125(7):2856–2894.
+\item[{[4]}] V.\,I.~Bogachev, M.~R\"ockner, S.\,V.~Shaposhnikov. Uniqueness Problems for Degenerate Fokker--Planck--Kolmogorov Equations. Journal of Mathematical Sciences,
+vol. 207, p. 147--165.
+\end{enumerate}
+\end{talk}
+\end{document}

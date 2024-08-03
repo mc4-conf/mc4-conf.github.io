@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О дистанционно регулярных графах \(\Gamma\) диаметра 3, содержащих максимальный 1-код, и с сильно регулярными графами \(\Gamma_2\) и \(\Gamma_3\)}
+{Голубятников Михаил Петрович}
+{ИММ УрО РАН}
+{mike_ru1@mail.ru}
+{А.\,А. Махнев, Минчжу Чень}
+{Алгебра}
+
+Наши терминология и обозначения стандартны, их можно найти в [1].
+
+В докладе рассматриваются дистанционно регулярные графы диаметра \(d=2e+1\), содержащие \(e\)-код \(C\).
+Для \(e\)-кода \(C\) справедлива оценка \(|C|\le p^d_{dd}+2\) (см [2]).
+
+Если равенство достигается, то \(C\) называется максимальным кодом. В случае равенства \(v=|C|(k+1)\) код \(C\) называется совершенным.
+
+Аналогично, справедлива оценка
+\[|C| \le \frac{k_d}{\sum_{i=0}^e p^d_{id}} + 1.\]
+
+Если равенство достигается в этой границе, то код \(C\) называется совершенным относительно последней окрестности.
+
+Для дистанционно регулярных графов диаметра \(3\), содержащих максимальный локально регулярный 1-код, совершенный относительно последней окрестности, Юришич и Видали нашли возможные массивы пересечений (см [2]). Оказалось, что такой граф \(\Gamma\) имеет массив пересечений \(\{a(p+1),cp,a+1;1,c,ap\}\) (и сильно регулярный граф \(\Gamma_3\)) или \(\{a(p+1),(a+1)p,c;1,c,ap\}\), где \(a=a_3\), \(p=p^3_{33}\), \(c=c_2\). В первом случае при \(a=c+1\) граф \(\Gamma_3\) --- псевдогеометрический граф для
+\(GQ(p+1,c_2+1)\), а \(\bar \Gamma_2\) --- псевдогеометрический граф для \(pG_2(p+1,2c_2+2)\).
+
+В работе рассматриваются дистанционно регулярным графом диаметра \(3\) с сильно регулярными графами \(\Gamma_2\) и \(\Gamma_3\), содержащими максимальный \(1\)-код.
+
+Основные результаты доклада формулируются в следующих двух теоремах:
+
+\textbf{Теорема 1.}
+\textit{Пусть \(\Gamma\) является дистанционно регулярным графом диаметра
+\(3\) с сильно регулярными графами \(\Gamma_2\) и \(\Gamma_3\). Если \(\Gamma\) содержит максимальный \(1\)-код, то
+\(a_3=c_2+1\) и \(\Gamma\) имеет массив пересечений \(\{(p+1)(c_2+1),pc_2,c_2+2;1,c_2,p(c_2+1)\}\), где \(p=p^3_{33}\).}
+
+\textbf{Теорема 2.}
+\textit{Дистанционно регулярный граф с массивом пересечений
+\[\{(p+1)(c_2+1),pc_2,c_2+2;1,c_2,p(c_2+1)\}\] не существует.}
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Brouwer~A.\,E.,  Cohen~A.\,M.,  Neumaier~A. {\it Distance-Regular Graphs}. Berlin; Heidelberg; New York: Springer-Verlag, 1989. 495~p.
+
+\item[{[2]}] A. Jurishich, J. Vidali, {\it Extremal 1-codes in distance-regular graphs of diameter 3},  Des. Codes Cryptogr, 65 (2012), 29-47.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Алгоритмы сравнения периодических строк}
+{Золотов Борис Алексеевич}
+{Санкт-Петербургский государственный университет, МЦМУ им. Леонарда Эйлера}
+{boris.a.zolotov@yandex.com}
+{Гаевой Никита Сергеевич,
+Тискин Александр Владимирович}
+{Математическая логика и теоретическая информатика} %
+
+Задача поиска наибольшей общей подпоследовательности {\it (LCS)} формулируется
+следующим образом: по паре входных строк \(a\), \(b\) определить длину
+наибольшей строки, которая являлась бы подпоследовательностью обеих этих строк.
+Это важнейшая алгоритмическая задача, имеющая множество применений.
+А.\,В.~Тискиным была предложена алгебраическая интерпретация для этой задачи
+и её аналогов (задачи о редакционном расстоянии, о взвешенном выравнивании
+и других). Основные объект этой интерпретации --- моноид Гекке
+и представление его элементов в виде липких кос.
+Алгебраическая интерпретация неожиданно эффективна для решения задачи LCS
+в случае, когда одна или обе входные строки имеют период (представляются как
+конкатенация нескольких копий одной строки).
+Случай, когда только одна из двух входных строк периодична, был решен ранее
+при помощи обобщения указанной интерпретации на аффинный моноид Гекке.
+Центральный результат настоящего доклада --- алгоритмически эффективное сведение
+умножения в аффинном моноиде Гекке к умножению в стандартном моноиде Гекке.
+С его помощью нами разработан эффективный алгоритм для более общего случая,
+когда обе строки периодичны.
+Предлагаемый алгоритм был реализован Н.\,С.~Гаевым,
+полученная программа способна находить длину наибольшей общей
+подпоследовательности для пар периодических строк, размеры которых
+не позволили бы обработать их известными ранее алгоритмами.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}]
+D.~E. Knuth,
+{\it The Art of Computer Programming: Sorting and Searching, Volume~3.}
+Addison Wesley, 1998.
+\item[{[2]}]
+Joel~Brewster Lewis,
+{\it Affine symmetric group,}
+WikiJournal of Science, 4(1):3, 2021.
+\item[{[3]}]
+A.~Tiskin,
+{\it Semi-local string comparison: Algorithmic techniques and applications,}
+\linebreak
+Mathematics in Computer Science, 1(4):571--603, 2008.
+\item[{[4]}]
+A.~Tiskin,
+{\it Periodic String Comparison,}
+In Proceedings of CPM, volume 5577 of
+Lecture Notes in Computer Science, pages 193--206, 2009.
+\item[{[5]}]
+A.~Tiskin,
+{\it Fast Distance Multiplication of Unit-Monge Matrices,}
+Algorithmica, 71:859--888, 2015.
+\end{enumerate}
+\end{talk}
+\end{document}

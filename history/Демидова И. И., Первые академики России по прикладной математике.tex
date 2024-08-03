@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Первые академики России по прикладной математике}
+{Демидова Ирина Ивановна}
+{СПбГУ}
+{maria_ib@mail.ru}
+{}
+{История математики} %
+
+Для развития российской науки в 1724 году Пётр 1 пригласил иностранных учёных, среди которых был  Даниил Бернулли (1700--1782). Он имел медицинское образование, защитил диссертацию  по физиологии дыхания, выпустил ``Математические упражнения''. Это позволило ему получить звание академика Болонской академии наук. В Петербургской АН Д. Бернулли одним из первых изучал движения мышц. В монографии  ``Гидродинамика или записки о силах и движениях жидкостей'' (1738) он первым вывел основное уравнение стационарного движения идеальной жидкости. Показал возможность изучения кровообращения и предложил способ измерения давления крови в сосудах.
+
+Позднее при изучении взаимосвязи между скоростью, с которой течёт кровь, и ее давлением к Даниилу присоединился Леонард Эйлер (1707--1783).  Эйлер впервые сформулировал задачу о движении крови по сосудам с учётом изменения  свойств стенок сосудов. Эйлер решал задачу о критической нагрузке при  сжатии стержня.  Спустя почти сто лет его формула была применена для расчета прочности опор железнодорожных мостов. В биомеханике эту формулу можно применить для оценки допустимой нагрузки на кости в зависимости от состояния тканей, т.е. при учете изменения величины модуля Юнга от времени, возраста, соотношения компонентов структуры и других параметров.
+В своих исследованиях Бернулли и Эйлер показали возможные применения математики к решению биомеханических задач.
+
+Почти через 100 лет выпускник École Polytechnique Габриель Ламе (1795--1870) был приглашён Александром I для чтения лекций по инженерным наукам. Ламе также включился в решение разнообразных технических задач, среди них задача о действии внешнего и внутреннего давлений на сферу или цилиндр. В ХХ веке задача Ламе была использована для определения напряжённого состояния и  разрушения биоконструкций сферической и цилиндрической форм.
+
+\end{talk}
+\end{document}

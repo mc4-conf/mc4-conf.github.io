@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О стационарных решениях системы уравнений Власова-Пуассона с внешним магнитным полем}
+{Беляева Юлия Олеговна}
+{Российский университет дружбы народов имени Патриса Лумумбы}
+{yilia-b@yandex}
+{}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+Для описания высокотемпературной плазмы существует несколько подходов. Классификация этих подходов основывается на необходимой степени детализации исследуемых процессов. В рамках доклада будет рассмотрена модель кинетики двукомпонентной высокотемпературной плазмы: система уравнений Власова-Пуассона с внешним магнитным полем и самосогласованным электрическим полем в области с границей.
+
+Будут построены новые классы стационарных решений для первой смешанной задачи для системы уравнений Власова-Пуассона в цилиндрической области с носителями функций распределения заряженных частиц, лежащими на расстоянии от границ цилиндра и нетривиальным потенциалом электрического поля. Построенные решения соответствуют удержанию плазмы строго внутри реактора.
+
+\medskip
+
+Работа выполнена при поддержке Министерства науки и высшего образования Российской Федерации (мегагрант соглашение № 075-15-2022-1115).
+\begin{enumerate}
+\item[{[1]}] Belyaeva Yu. O., Gebhard B., Skubachevskii A. L., A general way to confined stationary Vlasov-Poisson plasma configurations, Kinetic and Related Models, Vol. 14, N. 2, 257-282 (2021).
+\end{enumerate}
+\end{talk}
+\end{document}

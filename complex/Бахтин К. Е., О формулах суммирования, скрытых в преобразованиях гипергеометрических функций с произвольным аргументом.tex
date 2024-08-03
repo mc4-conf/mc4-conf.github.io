@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О формулах суммирования, скрытых в преобразованиях гипергеометрических функций с произвольным аргументом}
+{Бахтин Кирилл Евгеньевич}
+{РНОМЦ ``Дальневосточный центр математических исследований'', ДВФУ}
+{bakhtin.ke@dvfu.ru}
+{Прилепкина Е.\,Г.}
+{Комплексный анализ}
+
+Хорошо известны преобразования Эйлера-Пфаффа для гипергеометрической функции Гаусса. В последствии было открыто несколько преобразований подобного типа, общий вид которых можно записать в форме
+\[F\left(\left.\begin{matrix}\mathbf{a}\\\mathbf{b}\end{matrix}\right\vert Mx^w\right) =
+V(1-x)^{\lambda}  F\left(\left.\begin{matrix} \mathbf{c}\\\mathbf{d}\end{matrix}\right\vert \frac{Dx^u}{(1-x)^v}\right),\ \ x\in G,\]
+где \(F\) --- обобщенная гипергеометрическая функция, \(\mathbf{c}, \mathbf{d}\), \(V\) и \(\lambda\) функции, зависящие от векторов \(\mathbf{a}, \mathbf{b},\) \(w,u \in \mathbb{N},\) \(v \in \mathbb{Z}, M, D\) --- некоторые константы, и  \(G\) является  областью комплексной плоскости \({\mathbb C}_x\).
+Очевидно, что если некоторые функции \(f(x),\ g(x),\ h(x)\) раскладываются в области \(G\) в степенные ряды, то в преобразовании  \(f(x)=g(x)h(x),\ x\in G,\) скрыта некоторая формула суммирования. В данном докладе мы показываем, что преобразования типа Эйлера--Пфаффа основаны на формулах суммирования для конечных гипергеометрических функций.
+Обсуждаются также обобщения известной формулы суммирования Карлсона-Минтона.
+
+\medskip
+
+Работа выполнена в Дальневосточном центре математических исследований при финансовой поддержке Минобрнауки России, соглашение  №075-02-2024-1440 от 28 февраля 2024 года по реализации программ развития региональных научно-образовательных математических центров.
+\end{talk}
+\end{document}

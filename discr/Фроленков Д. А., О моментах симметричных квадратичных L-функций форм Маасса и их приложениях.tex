@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О моментах симметричных квадратичных \(L\)-функций форм Маасса и их приложениях}
+{Фроленков Дмитрий Андреевич}
+{МИАН им. В.А. Стеклова РАН}
+{frolenkov@mi-ras.ru}
+{О.\,Г. Балканова}
+{Теория чисел и дискретная математика}
+
+Пусть \(\{u_j(z)\}\) --- ортонормированный базис Гекке пространства параболических форм Маасса уровня один. Известно, что каждая функция \(u_j(z)\) может быть разложена в ряд Фурье, при этом сами коэффициенты Фурье \(\lambda_j(n)\) мультипликативны. Ряд Дирихле с коэффициентами  \(\lambda_j(n^2)\) называют симметричной квадратичной \(L\)-функцией формы Маасса. Назовем \(m\)-м моментом данной \(L\)-функции-среднее значение ее \(m\)-ой степени при усреднении по спектральному параметру формы Маасса.  В докладе речь пойдет о поведении первого и  второго  моментов симметричных квадратичных \(L\)-функций форм Маасса, о различных следствиях полученных результатов, а также о том, как данные \(L\)-функции и их моменты связаны с теоремой о простых геодезических.
+\end{talk}
+\end{document}

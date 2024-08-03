@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Полиномиальные зависимости в задаче Франкла-Фюреди о запрещенных подсолнухах с фиксированным размером ядра}
+{Носков Федор Андреевич}
+{Московский физико-технический институт}
+{noskov.fa@phystech.edu}
+{Андрей Купавский}
+{Теория чисел и дискретная математика}
+
+Назовем систему \(s\) различных множеств \(S_1, \ldots, S_s\) подсолнухом с яром размера \(t - 1\), если существует множество \(C\) размера \(t - 1\) такое, что любые два множества \(S_i, S_j\) пересекаются ровно по \(C\): \(S_i \cap S_j = C\). В 1987 году Франкл и Фюреди рассмотрели следующую задачу: каков максимальный размер подсемейства \(\binom{[n]}{k}\), не содержащего подсолнуха с \(s\) лепестками и ядром размера \(t - 1\)? Они нашли асимптотически точную верхную границу при \(n\) стремящемся к бесконечности и \(k, s, t\) фиксированными, \(k \ge 2t - 1\). В настоящем докладе мы найдем размер максимального семейства при \(n \ge 2^{15} s t^2 k \log k\) и \(k \ge 2t - 1\) с точностью до аддитивной ошибки порядка \(O \left ( \frac{(2 s t)^t \log n}{n^{1/3}} \right ) \binom{n - t}{k - t}\).
+\end{talk}
+\end{document}

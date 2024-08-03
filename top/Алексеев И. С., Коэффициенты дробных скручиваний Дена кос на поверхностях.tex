@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Коэффициенты дробных скручиваний Дена кос на поверхностях}
+{Алексеев Илья Сергеевич}
+{СПбГУ}
+{ilyaalekseev@yahoo.com}
+{Малютин Андрей Валерьевич и Ионин Василий Андреевич}
+{Топология} %
+
+{\it Коэффициент дробного скручивания Дена} (или {\it закрученность}) — это рациональнозначный инвариант сопряженности в группе классов отображений~$\textrm{Mod}(\Sigma)$ компактной поверхности~$\Sigma$ с непустым краем (и, возможно, конечным числом отмеченных точек), который измеряет то, насколько автогомеоморфизм поверхности «перекручивает» окрестность заданной граничной компоненты~$\partial$ этой поверхности.
+Так, закрученность является псевдохарактером (отображением, «похожим» на гомоморфизм), принимает единичное значение на скручивании Дена~$T_\partial$ вдоль компоненты~$\partial$ и неотрицательные значения на всех тех элементах группы~$\textrm{Mod}(\Sigma)$, которые переводят направо каждую дугу с началом на компоненте~$\partial$.
+
+Коэффициенты дробных скручиваний Дена играют заметную роль в маломерной топологии и динамике. В литературе они впервые появились в работе~[1], и с тех пор получили ряд различных эквивалентных определений: в терминах теории Нильсена--Тёрстона~[2,5], в терминах левоинвариантных порядков на группах классов отображений~[3,15,16], в терминах гомологий Хегора--Флоера~[9,11,14], в терминах введённых А.~Пуанкаре чисел переноса и чисел вращения~[2,10].
+Подобное разнообразие позволяет закрученности проникать в контактную топологию~[6,7], теорию слоений на трёхмерных многообразиях~[8,12], теорию узлов~[2,4,11,14], теорию пространств модулей~[13].
+
+Первые исследования закрученности относятся к теории кос. Так, группа классов отображений диска с~$n$ отмеченными точками изоморфна группе кос Артина~$B_n$, то есть фундаментальной группе конфигурационного пространства~${\rm UConf}_n(D^2)$ наборов $n$~различных точек на диске~$D^2$, и в этом случае коэффициент дробного скручивания Дена показывает, насколько сильно коса «закручена» или «перекручена»~[2]. В случае же произвольной поверхности~$\Sigma$ имеется точная последовательность Бирман, которая устанавливает связь между группой кос~$B_n(\Sigma)$ этой поверхности и группой классов отображений~$\textrm{Mod}(\Sigma; \{x_1,\ldots,x_n\})$ поверхности, получающейся из~$\Sigma$ добавлением~$n$ отмеченных точек~$x_1,\ldots, x_n$. Данная последовательность позволяет задать коэффициенты дробных скручиваний Дена для кос на произвольных поверхностях с непустым краем, однако такой подход оставляет непокрытым наиболее интересный случай групп кос замкнутых поверхностей.
+
+В работе~[5] были предложены аналоги коэффициентов дробных скручиваний Дена на группах кос Артина $B_n$, которые измеряют «закрученность косы вокруг своей нити заданного индекса». Мы исследуем возможность переноса данных понятий с диска на произвольные поверхности. Наш подход предполагает обращение к задаче поднятия {\it гомоморфизма-протаскивания} (от англ. {\it pushing}) относительно {\it гомоморфизма-заклеивания} (от англ. {\it capping}), фигурирующих в длинной точной последовательности Бирман. Мы показываем, что данная задача поднятия имеет решение в случае сферы, проективной плоскости, тора, бутылки Клейна и всех поверхностей с непустым краем, что позволяет построить искомые аналоги коэффициентов дробного скручивания Дена для кос на этих поверхностях. Кроме того, мы устанавливаем неразрешимость указанной задачи поднятия на всех остальных замкнутых поверхностях.
+
+Данный круг идей приводит нас к аналогам известной в теории кос проблемы расщепления последовательности Фаделла--Нойвирта, проблеме непрерывного построения векторных полей с заданными нулями и ряду родственных задач.
+
+\begin{enumerate}
+\item[{[1]}] D. Gabai, U. Oertel, {\it Essential laminations in 3-manifolds}, The Annals of Mathematics {\bf 130} (1989), no.~1, 41--73.
+\item[{[2]}] А. В. Малютин, {\it Закрученность (замкнутых) кос}, Алгебра и анализ, {\bf 16} (2004), \textnumero~5, 59--91.
+\item[{[3]}] K. Honda, W. H. Kazez, G. Mati{\'c}, {\it Right-veering diffeomorphisms of compact surfaces with boundary}, Inventiones Mathematicae {\bf 169} (2007), no.~2, 427--49.
+\item[{[4]}] T. Ito, {\it Braid ordering and the geometry of closed braid}, Geometry \& Topology, {\bf 15} (2011), no~1, 473--98.
+\item[{[5]}] И. А. Дынников, В. А. Шастин, {\it О независимости некоторых псевдохарактеров на группах кос}, Алгебра и анализ, {\bf 24} (2012), \textnumero~6, 21--41.
+\item[{[6]}] W. H. Kazez, R. Roberts, {\it Fractional Dehn twists in knot theory and contact topology}, Algebraic \& Geometric Topology {\bf 13} (2013), no.~6, 3603--37.
+\item[{[7]}] J. B. Etnyre, J. Van Horn-Morris, {\it Monoids in the mapping class group}, Geometry \& Topology Monographs {\bf 19} (2015), no.~1, 319--65.
+\item[{[8]}] T. Ito, K. Kawamuro, {\it Essential open book foliations and fractional Dehn twist coefficient}, Geometriae Dedicata {\bf 187} (2017), no.~1, 17--67.
+\item[{[9]}] M. Hedden, T. E. Mark, {\it Floer homology and fractional Dehn twists}, Advances in Mathematics {\bf 324} (2018), 1--39.
+\item[{[10]}] А. В. Малютин, {\it Эффект целочисленного квантования числа вращения в группах кос}, Труды МИАН {\bf 305} (2019), 197--210.
+\item[{[11]}] P. Feller, D. Hubbard, {\it Braids with as many full twists as strands realize the braid Index}, Journal of Topology {\bf 12} (2019), no.~4, 1069--1092.
+\item[{[12]}] D. Hubbard et al, {\it Braids, fibered knots, and concordance questions}, in: Research directions in symplectic and contact geometry and topology (2021), 293--24.
+\item[{[13]}] X. L. Liu, {\it Fractional Dehn twists and modular invariants}, Science China Mathematics {\bf 64} (2021), no~8, 1735--44.
+\item[{[14]}] P. Feller, {\it The slice-Bennequin Inequality for the fractional Dehn twist coefficient}, \url{arxiv.org/abs/2204.05288v2}.
+\item[{[15]}] P. Feller, D. Hubbard, H. Turner, {\it The Dehn twist coefficient for big and small mapping class groups}, \url{arxiv.org/abs/2308.06214v1}.
+\item[{[16]}] A. Clay, T. Ghaswala, {\it Cofinal Elements and Fractional Dehn Twist Coefficients}, International Mathematics Research Notices {\bf 2024} (2024), no.~9, 7401--20.
+\end{enumerate}
+\end{talk}
+\end{document}

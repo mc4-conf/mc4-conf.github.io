@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О характеризации конечной простой группы ее порядком и графом Грюнберга--Кегеля}
+{Ильенко Кристина Альбертовна}
+{Институт математики и механики им. Н.\,Н. Красовского УрО РАН}
+{christina.ilyenko@yandex.ru}
+{}
+{Алгебра}
+
+Пусть \(G\) --- конечная группа. {\it Спектром} \(\omega(G)\) называется множество всех порядков элементов группы \(G\). Под {\it простым спектром} \(\pi(G)\) понимают множество всех простых чисел из \(\omega(G)\). Неориентированный граф без петель и кратных рёбер \(\Gamma(G)\), множество вершин которого совпадает с \(\pi(G)\), и две различные вершины \(p\) и \(q\) в котором смежны тогда и только тогда, когда \(pq \in \omega(G)\), называется {\it графом Грюнберга--Кегеля} или {\it графом простых чисел} группы \(G\).
+
+В. Ши поставил вопрос характеризации конечной простой группы ее спектром и порядком. Этот вопрос исследовался в серии работ, и 2009 г. А.В. Васильевым, М.А. Гречкосеевой и В.Д. Мазуровым [1] было доказано, что если \(G\) --- конечная простая группа и \(H\)~--- конечная группа такая, что \(\omega(H)=\omega(G)\) и \(|H|=|G|\), то \(H \cong G\).
+
+Поскольку понятие графа Грюнберга--Кегеля широко обобщает понятие спектра конечной группы, то вопрос характеризации конечной простой группы ее порядком и графом Грюнберга--Кегеля возникает естественным образом. Историю постановки этого вопроса можно найти, например, в [2].
+
+В этой работе мы обсуждаем вопрос характеризации порядком и графом Грюнберга--Кегеля конечной простой группы, граф Грюнберга--Кегеля которой содержит не менее трех компонент связности. В частности, мы исправляем неточности, допущенные в работах [3] и [4].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] А.~В.~Васильев, М.~А.~Гречкосеева, В.~Д.~Мазуров, {\it Характеризация конечных простых групп спектром и порядком}, Алгебра и логика, \textbf{48}:6 (2009), 685–728.
+\item[{[2]}] Peter~Cameron, Natalia~Maslova, {\it Criterion of unrecognizability of a finite group by its Gruenberg-Kegel graph}, J. Algebra, \textbf{607}:Part A (2022), 186-213.
+\item[{[3]}] Bahman~Khosravi, Behnam~Khosravi, Behrooz~Khosravi, {\it On the prime graph of \(PSL(2, p)\) where \(p > 3\) is a prime number}, Acta Math Hungar, \textbf{116}:4 (2007), 295.
+\item[{[4]}] Q.~Zhang, W.~Shi, R.~Shen, {\it Quasirecognition by prime graph of the simple groups \(G_2(q)\) and \({^2}B_2(q)\)}, J. Algebra Appl., \textbf{10}:2 (2011), 309--317.
+\end{enumerate}
+\end{talk}
+\end{document}

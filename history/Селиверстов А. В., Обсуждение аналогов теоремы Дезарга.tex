@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Обсуждение аналогов теоремы Дезарга}
+{Селиверстов Александр Владиславович}
+{Институт проблем передачи информации им. А.\,А. Харкевича РАН}
+{slvstv@iitp.ru}
+{Алексей А. Бойков (РТУ МИРЭА)}
+{История математики} %
+
+Целью работы служит иллюстрация изменений в доказательствах теорем с развитием многомерной геометрии. Теорема Дезарга (Girard Desargues, 1591--1661) о перспективных треугольниках переносится на случай перспективных тетраэдров. Эту теорему о тетраэдрах впервые доказал Понселе (Jean-Victor Poncelet, 1788--1867). Теорема может быть доказана как в трёхмерном проективном пространстве, так и вовлекая многомерное проективное пространство. Ранние публикации упоминают только первое доказательство, а второе было найдено позже. По свидетельству Нины Васильевны Наумович, выход в пятимерное пространство использовал в 1913 г. Дмитрий Дмитриевич Мордухай-Болтовской (1876--1952). С другой стороны, в 1899 г. Гильберт (David Hilbert, 1862--1943) показал, что нельзя вывести теорему Дезарга из аксиом проективной плоскости. Астроном Моултон (Forest Ray Moulton, 1872--1952) упростил доказательство в 1902 г. Поэтому доказательство теоремы Дезарга о перспективных треугольниках на плоскости требует выхода в трёхмерное пространство. Начиная с работ Кэли (Arthur Cayley, 1821--1895) и Шлефли (Ludwig Schläfli, 1814--1895) в середине XIX века, многомерная геометрия быстро развивалась. Геометрический смысл алгебраических уравнений от многих переменных был осознан к 1844 г., прежде чем многомерная геометрия стала общепризнанной. Но даже в начале XX века доказательство теоремы о перспективных тетраэдрах, использующее выход в многомерное пространство, не было привлекательным из-за возможности провести доказательство в трёхмерном пространстве. Напротив, в середине XX века доказательство, вовлекающее многомерное пространство, стало восприниматься как естественное обобщение доказательства теоремы Дезарга. Многомерные пространства стали обычными. При этом снизился интерес к основаниям геометрии. Но расширение доступных методов позволяет поддерживать единство математики, чтобы видеть красоту взаимосвязей между разделами.
+\end{talk}
+\end{document}

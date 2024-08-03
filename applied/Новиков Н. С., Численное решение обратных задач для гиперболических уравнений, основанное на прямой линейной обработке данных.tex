@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Численное решение обратных задач для гиперболических уравнений, основанное на прямой линейной обработке данных}
+{Новиков Никита Сергеевич}
+{ИМ СО РАН}
+{novikov-1989@yandex.ru}
+{}
+{Прикладная математика и математическое моделирование}
+
+В докладе мы построим многомерный аналог уравнения Гельфанда--Левитана--Крейна для задачи определения плотности из уравнения акустики по измеренным на поверхности откликам на систему зондирующих сигналов.
+Рассматривается переопределённая система задач, в которой используется отклик от (бесконечного) семейства источников.Тем самым метод использует больше информации, чем это обычно требуется для доказательства теоремы единственности. Преимуществом же данного подхода является сведение нелинейной задачи к системе линейных уравнений, а также возможность вычисления неизвестного коэффициента без многократного решения прямой задачи.
+В докладе рассматриваются аналоги метода для других обратных задач для гиперболических уравнений, приводятся результаты численного решения обратной задачи, а также обсуждается вопрос использования подходов, основанных на глубоком обучении для решения обратной задачи в рамках рассматриваемого подхода.
+\end{talk}
+\end{document}

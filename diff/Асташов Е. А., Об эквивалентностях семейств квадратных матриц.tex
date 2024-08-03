@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Об эквивалентностях семейств квадратных матриц}
+{Асташов Евгений Александрович}
+{МГУ имени М.\,В. Ломоносова, механико-математический факультет}
+{ast-ea@yandex.ru}
+{Н.\,Т. Абдрахманова, А.\,В. Терентьев}
+{Дифференциальные уравнения и динамические системы}
+
+В работах [1-4] рассматриваются задачи классификации простых аналитических семейств квадратных, симметричных и кососимметричных матриц --- общего вида, а также с ограничениями типа (не)чётности по совокупности параметров. Такие матрицы можно рассматривать как матрицы линейных отображений/операторов либо как матрицы (косо)симметричных билинейных форм.
+
+Доклад будет посвящен обсуждению различных отношений эквивалентности матричных семейств и соответствующих понятий простых ростков (т. е. ростков с конечным числом примыкающих орбит), а также сопоставлению решений соответствующих задач классификации.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] J.\,W. Bruce, F. Tari, {\it On Families of Square Matrices}, Cadernos de Mathematica, 3 (2002), 217--242.
+\item[{[2]}] J.\,W. Bruce, {\it On Families of Symmetric Matrices}, Moscow mathematical journal, 3 (2003), 335--360.
+\item[{[3]}] G.\,J. Haslinger, {\it Families of Skew-symmetric Matrices}, Ph. D. thesis, University of Liverpool, 2001.
+\item[{[4]}] N.\,T. Abdrakhmanova, E.\,A. Astashov, {\it Simple germs of skew-symmetric matrix families with oddness or evenness properties}, Journal of Mathematical Sciences, 270 (2023),  625-639.
+\end{enumerate}
+\end{talk}
+\end{document}

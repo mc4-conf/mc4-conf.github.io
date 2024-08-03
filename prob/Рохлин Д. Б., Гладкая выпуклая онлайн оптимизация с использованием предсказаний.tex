@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Гладкая выпуклая онлайн оптимизация с использованием предсказаний}
+{Рохлин Дмитрий Борисович}
+{Институт математики, механики и компьютерных наук Южного федерального университета и
+Региональный научно-образовательный математический центр Южного федерального университета}
+{dbrohlin@sfedu.ru}
+{}
+{Теория вероятностей} %
+
+Рассмотрим последовательность выпуклых \(L\)-гладких функций \(f_t(w)\), \(w\in\mathcal W\). Базовая версия задачи онлайн оптимизации состоит отыскании последовательности \(w_t\), обеспечивающей равномерную оценку сожаления \(R_T(w)=\sum_{t=1}^T(f_t(w_t)-f_t(w))=o(T)\). В градиентных методах на каждом шаге алгоритм получает информацию о градиенте  \(g_t=\nabla f_t(w_t)\)  в запрашиваемой точке. %
+В докладе рассматривается случай, когда доступны предсказания \(\hat g_t\) градиента. Большинство соответствующих оценок сожаления содержат слагаемые вида \(\|g_t-\hat g_t\|\) и являются неявными, так как точка \(w_t\) неизвестна в момент использования предсказания \(\hat g_t\). В докладе обсуждаются, в частности, результаты недавней работы [1], где получены явные оценки сожаления в терминах ошибок предсказания градиента. В случае когда \(f_t(w)=\ell(w,z_t)\), где \(z_t\) --- эргодический марковский процесс с неизвестным переходным ядром, и \(\ell\) является липшицевой по второму аргументу, данный результат непосредственно приводит к оценке сожаления в терминах \(\varepsilon_t=\|z_t-\mathsf E(z_t|z_{t-1})\|\). Аппроксимация условного математического ожидания \(\mathsf E(z_t|z_{t-1})\) на основе выборки \(z_1,\dots,z_{t-1}\), и оценка математического ожидания \(\varepsilon_t\) о инвариантной мере также могут быть найдены с использованием онлайн-оптимизации: [2]. Одним из приложений является задача лог-оптимального инвестирования.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] P.Z. Scroccaro, A.S. Kolarijani,  P.M. Esfahani, {\it Adaptive composite online optimization: Predictions in static and dynamic environments}, IEEE Transactions on Automatic Control, 68 (2023), 2906–2921.
+\item[{[2]}] A. Agarwal, J.C. Duchi, {\it The generalization ability of online algorithms for dependent data}, IEEE Transactions on Information Theory, 59 (2012), 573–587.
+\end{enumerate}
+\end{talk}
+\end{document}

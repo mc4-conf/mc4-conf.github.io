@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Свойства семейства случайных внешних мер, ассоциированных с бесконечной урновой схемой}
+{Ковалевский Артем Павлович}
+{Институт математики им. С.\,Л. Соболева Сибирского отделения РАН}
+{artyom.kovalevskii@gmail.com}
+{Берхане Абебе Андемикаэль}
+{Теория вероятностей} %
+
+Урновой схемой называется вероятностная модель, в которой шары последовательно и независимо друг от друга раскладываются по урнам.
+Предполагается, что для всех шаров есть одно и то же распределение вероятностей попадания в каждую из урн. В простейшем случае урн конечное
+число, и вероятности попадания в каждую урну одинаковы. Бесконечная урновая схема предполагает, что урн счетное число, в этом случае вероятность
+попадания шара в урну обязательно зависит от номера урны. Одна из изучаемых статистик --- число непустых урн после бросания \(n\) шаров.
+
+Итак, будем предполагать, что урн счетное число, и зафиксируем вероятности попадания шара в каждую из урн (одинаковые для всех шаров).
+Для произвольного подмножества \(A\) отрезка \([0, \, 1]\) рассмотрим не все номера шаров от 1 до \(n\), а только те из них, которые попали в множество
+\(nA\), и изучим число непустых урн после бросания шаров с номерами из множества \(nA\). Это число неотрицательно, и в случае пустого множества \(A\)
+тождественно равно нулю. Кроме того, оно удовлетворяет свойству сигма-субаддитивности: если \(A\) является подмножеством счетного объединения
+множеств, то число непустых урн для номеров из \(nA\) не превосходит суммы чисел, посчитанных таким же образом по каждому из этих множеств.
+Таким образом, число непустых урн для номеров шаров из \(nA\), где \(A\) --- произвольное подмножество из \([0, \, 1]\), удовлетворяет всем свойствам внешней меры на отрезке \([0, \, 1]\).
+
+Изучается сужение этого семейства случайных внешних мер на класс множеств \(A\), образованных  объединением конечного числа промежутков.
+Для этого сужения мы доказываем закон больших чисел и центральную предельную теорему.
+\end{talk}
+\end{document}

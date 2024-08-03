@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Концепция плотных данных в задачах непараметрической регрессии}
+{Линке Юлиана Юрьевна}
+{Институт математики им. С.\,Л. Соболева, ММЦ ИМ СО РАН}
+{linke@math.nsc.ru}
+{}
+{Теория вероятностей}
+
+Рассматриваются классические  задачи  регрессии: оценивание
+регрессионной функции по наблюдениям ее зашумленных значений в некотором известном наборе точек из области ее определения, называемых  регрессорами, а также оценивание   функций среднего и ковариации   случайного процесса
+в схеме, когда каждая из независимых копий этого процесса  наблюдается в зашумленном варианте в том или ином наборе регрессоров.
+В многочисленных работах, посвященных решению этих задач,  модели с детерминированными и случайными регрессорами принято рассматривать отдельно, при этом  регрессоры либо некоторым регулярным образом заполняют область задания регрессионной функции или случайного процесса, либо состоят из независимых одинаково распределенных или слабо зависимых  случайных величин.
+В докладе  предложена концепция плотных данных и
+новые классы  оценок ядерного типа, позволяющие  в едином подходе рассматривать модели с детерминированными или случайными регрессорами и
+существенно ослабить  известные условия на регрессоры без какой-либо спецификации их типа.
+Условия в терминах  плотных данных по существу  являются необходимыми для оценивания функций с той или иной точностью.
+
+\medskip
+
+Работа выполнена при поддержке Математического Центра в Академгородке, соглашение с Министерством науки
+и высшего образования Российской Федерации 075-15-2022-281.
+\end{talk}
+\end{document}

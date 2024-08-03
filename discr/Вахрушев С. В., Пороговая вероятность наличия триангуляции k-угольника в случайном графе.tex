@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Пороговая вероятность наличия триангуляции k-уголь\-ни\-ка в случайном графе}
+{Вахрушев Степан Викторович}
+{Санкт-Петербургский государственный университет, Московский физико-технический институт}
+{vakhrushev.sv@phystech.edu}
+{Жуковский Максим Евгеньевич}
+{Теория чисел и дискретная математика}
+
+В 1991-ом году Бела Боллобаш и Алан Фриз нашли пороговую вероятность для нахождения копии трингуляции треугольника в случайном графе \(G(n, p)\) с точностью до логарифмического множителя. В нашей работе мы находим данную пороговую вероятность триангуляции \(k\)-угольника с точностью до константы. Для этого мы используем недавно разработанную технологию процесса фрагментации и \(q\)-spread леммы. Оказывается, что необходимое условие на соотношение количества вершин и рёбер в подграфе в случае планарной триангуляции эквивалентно тому, что любой простой цикл ограничивает небольшое количество вершин. Более точно, отношение длины цикла к количеству ``внутренних'' вершин не менее чем данное отношение для исходной границы \(k\)-угольника: \(\frac{k}{n-k}\). Данное условие проверяется в работе для конкретной триангуляции, состоящей из вложенных друг в друга циклов.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] B. Bollob\'{a}s, A. M. Frieze, {\it Spanning maximal planar subgraphs of random graphs}, Random Structures \& Algorithms, {\bf 2}:2 (1991) 225-231.
+\item[{[2]}] A.E. D\'{i}az, Y. Person, {\it Spanning F-cycles in random graphs}, Combinatorics, Probability and Computing, {\bf 32}:5 (2023) 833-850.
+\item[{[3]}] J. Kahn, B. Narayanan and J. Park, {\it The threshold for the square of a Hamilton cycle}, Proceedings of the American Mathematical Society {\bf 149} (2020), 3201-3208.
+\item[{[4]}] O. Riordan, {\it Spanning subgraphs of random graphs}, Combinatorics, Probability and Computing, {\bf 9}:2 (2000), 125-148.
+\end{enumerate}
+\end{talk}
+\end{document}

@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Формальная классификация голоморфно однородных CR-многообразий}
+{Степанова Мария Александровна}
+{Математический институт им. В.\,А. Стеклова Российской академии наук}
+{step_masha@mail.ru}
+{}
+{Комплексный анализ}
+
+Мы покажем, что с точностью до формальной эквивалентности число параметров, задающих голоморфно однородное многообразие фиксированного CR-типа \((n,K)\), конечно (здесь \(n\) --- CR-размерность, \(K\) --- коразмерность). Этого естественно ожидать, исходя из имеющихся списков голоморфно однородных многообразий малых размерностей: списки состоят из семейств уравнений, зависящих лишь от конечного числа параметров (см. список литературы). Вопрос о конечности числа параметров возникает естественно еще и потому, что все имеющиеся классификации основаны на классификациях алгебр Ли малых размерностей (размерность алгебры должна быть равна размерности многообразия). А число параметров, задающих алгебры Ли фиксированной размерности, конечно (в качестве параметров можно выбрать структурные константы алгебры). Трудность состоит в том, что у одной алгебры может быть несколько неэквивалентных реализаций в виде векторных полей.
+
+Также мы приведем оценку на число параметров, зависящую только от \(n\) и \(K\).
+
+\medskip
+
+Исследование выполнено за счет гранта Российского научного фонда № 24-11-00196, {\tt https://rscf.ru/project/24-11-00196/}.
+
+\begin{enumerate}
+\item[{[1]}] E. Cartan, ``Sur la g\'{e}om\'{e}trie pseudoconforme des hypersurfaces de l'espace de deux variables complexes'', Ann. Math. Pura Appl, 11:4 (1932), 17–90.
+\item[{[2]}] V.K. Beloshapka, I.G. Kossovskiy, ``Classification Of Homogeneous CR-Manifolds In Dimension 4'', Journal of Mathematical Analysis and Application, 374 (2011) 655-672.
+\item[{[3]}] А. В. Лобода, ``Голоморфно однородные вещественные гиперповерхности в C3'', Тр. ММО, 81, № 2, МЦНМО, М., 2020, 205–280.
+\end{enumerate}
+\end{talk}
+\end{document}

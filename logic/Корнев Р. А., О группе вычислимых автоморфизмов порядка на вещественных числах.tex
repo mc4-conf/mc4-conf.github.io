@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{О группе вычислимых автоморфизмов порядка на вещественных числах}
+{Корнев Руслан Александрович}
+{Новосибирский государственный университет, МЦМУ в Академгородке}
+{kornevrus@gmail.com}
+{}
+{Математическая логика и теоретическая информатика} %
+
+Изучаются алгебраические свойства группы \(\mathrm{Aut}_c(\mathbb{R})\) вычислимых автоморфизмов линейного порядка \((\mathbb{R},\leqslant)\) в сравнении с классической группой всех автоморфизмов этого порядка, а также группой \(\mathrm{Aut}_c(\mathbb{Q})\) вычислимых автоморфизмов порядка на рациональных числах. Обсуждаются привычные для этой тематики вопросы в применении к \(\mathrm{Aut}_c(\mathbb{R})\): показывается, что эта группа не является делимой, содержит в точности три нетривиальные нормальные подгруппы, а также содержит элемент, не сопряжённый со своим квадратом (т.о., критерий Холланда не выполняется в \(\mathrm{Aut}_c(\mathbb{R})\)).
+
+Показывается, что \(\mathrm{Aut}_c(\mathbb{R})\) содержит бамп, не сопряжённый со своим квадратом. Кроме того, любое вычислимо перечислимое вещественное число \(z\) реализуется в качестве верхней границы некоторого бампа из \(\mathrm{Aut}_c(\mathbb{R})\). Эти свойства отличают \(\mathrm{Aut}_c(\mathbb{R})\) от \(\mathrm{Aut}_c(\mathbb{Q})\).
+
+Также обсуждаются определимые в языке теории групп свойства \(\mathrm{Aut}_c(\mathbb{R})\).
+\end{talk}
+\end{document}

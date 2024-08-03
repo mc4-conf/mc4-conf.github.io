@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Диаграмма Кирби как полный инвариант полярных потоков на четырехмерых многообразиях}
+{Гуревич Елена Яковлевна}
+{НИУ ВШЭ, Нижний Новгород}
+{els93@yandex.ru}
+{}
+{Дифференциальные уравнения и динамические системы}
+
+В докладе рассматривается класс структурно устойчивых потоков на замкнутых многообразиях размерности 4 в предположении, что неблуждающее множество любого потока конечно и состоит из единственного стока, единственного источника и произвольного числа седловых состояний равновесия типа \((2,2)\). Из~[1],~[2]  следует, что для любого  такого потока  существует энергетическая функция --- функция Морса, строго убывающая вдоль незамкнутых траекторий и имеющая критическую точку в каждом состоянии равновесия. Отсюда  следует, что многообразие \(M^4\)  допускает разложение на ручки с одной ручкой индекса 0, несколькими ручками индекса 2 (их число равно числу седловых состояний равновесия) и одной ручкой индекса 4. Согласно~[3],~[4] такое разложение  и, как следствие,  топология многообразия \(M^4\)  определяется некоторым классом эквивалентности   {\it диаграммы Кирби} --- оснащенного зацепления на сфере \(S^3\), несущего информацию о приклеивании ручек индекса 2.   Мы показываем, что  диаграмма Кирби  является полным топологическим инвариантом для потоков из рассматриваемого класса и обсуждаем связь между преобразованиями Кирби и бифуркациями потоков.
+
+\medskip
+
+Исследования выполнены  при поддержке программы ``Научный фонд Национального исследовательского университета ``Высшая школа экономики'' (НИУ ВШЭ)''.
+
+\begin{enumerate}
+\item[{[1]}] S.\,Smale, {\it On gradient dynamical systems},  Annals of Mathematics, 74 (1961),  199-206
+\item[{[2]}]  K.\,R.~Meyer, {\it  Energy functions for Morse-Smale systems},  Amer. J. Math., 90 (1968),  1031-1040.
+\item[{[3]}]  R.\,Kirby, {\it A calculus for framed links in \(S^3\)},  Invent. Math,   45 (1978), 35-56.
+\item[{[4]}] de Sa, E.C., {\it A link calculus for 4-manifolds},  In: Fenn, R. (eds) Topology of Low-Dimensional Manifolds. Lecture Notes in Mathematics, 722 (1979),  16-31.
+\end{enumerate}
+\end{talk}
+\end{document}

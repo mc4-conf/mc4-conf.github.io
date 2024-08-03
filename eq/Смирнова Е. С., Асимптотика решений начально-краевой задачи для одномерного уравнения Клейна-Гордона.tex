@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Асимптотика решений начально-краевой задачи для одномерного уравнения Клейна-Гордона и моделирование распространения акустических возмущений в атмосфере}
+{Смирнова Екатерина Сергеевна}
+{Институт проблем механики им. А.\,Ю. Ишлинского РАН; Балтийский Федеральный Университет им. Канта}
+{smirnova.ekaterina.serg@gmail.com}
+{}
+{Уравнения в частных производных, математическая физика и спектральная теория}
+
+В работе рассматривается начально-краевая задача для одномерного уравнения Клейна-Гордона \(h^2\frac{\partial^2 U}{\partial \tau^2}-h^2 c^2(y)\frac{\partial^2 U}{\partial y^2}+a(y) U=0\) с переменными коэффициентами на полуосях \(y \geq 0\), \(\tau \geq 0\), из физической задачи о моделировании волновых возмущений, распространяющихся в атмосферном газе.  Построено асимптотическое при \(0<h<<1\) решение этой задачи. Показано, что оно состоит из двух частей [1, 2]: погранслойной быстроубывающей при отдалении от точки \(y=0\) и бегущей осциллирующей, представляемой в виде канонического оператора Маслова.
+
+\medskip
+
+Работа выполнена по теме государственного задания №124012500437-9.
+
+\begin{enumerate}
+\item[{[1]}] S. Dobrokhotov, E. Smirnova, {\it  Asymptotics of the Solution of the Initial Boundary Value Problem for the One-Dimensional Klein–Gordon Equation with Variable Coefficients,} Russian Journal of Mathematical Physics, 31:2 (2024), 187-198.
+\item[{[2]}] Е.С. Смирнова, {\it  Асимптотика решения одной начально-краевой задачи для одномерного уравнения Клейна–Гордона на полуоси,}  Математические заметки, 114:4 (2023), 602-614.
+\end{enumerate}
+\end{talk}
+\end{document}

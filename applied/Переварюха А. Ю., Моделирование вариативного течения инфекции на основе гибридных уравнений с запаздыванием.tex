@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Моделирование вариативного течения инфекции на основе гибридных уравнений с запаздыванием}
+{Переварюха Андрей Юрьевич}
+{Санкт-Петербургский Федеральный исследовательский центр РАН}
+{madelf@rambler.ru}
+{}
+{Прикладная математика и математическое моделирование} % [6] название секции
+
+Обсудим гибридные модели с вероятностной компонентой для сценариев развития ситуации инвазионного процесса в биосистеме с адаптивным сопротивлением. Представим несколько аспектов запаздывания. Частный случай инвазии с неопределенно запаздывающим ответом это иммунный ответ на коронавирус, который может быть или сильным или медленно возникающим по целому ряду не полностью детерменированных факторов.
+Нами предложено включение в модель возмущенного равномерно распределенной на $[0,1]$ $\sigma$ репродуктивного запаздывания $x(t-\tau\times\sigma)$ c целью получить варианты поведения траектории, которые соответствуют динамике концентрации вирионов при различных сценариях развития инфекции в организме. Варианты развития отличаются от быстрого выздоровления, до летального варианта. Наиболее сложный для моделирования сценарий хронизации после острой фазы. В предложенной нами модели получен вариант хронизации без необходимости дальнейшего увеличения $r$, $H=1/3K$:
+$$
+\frac{dN}{dt}=rN\left(1-\frac{N(t-\tau\times\sigma)}{\mathcal{K}}\right)\left(H-N(t-\gamma)\right), \gamma<\tau. \eqno(1)
+$$
+Используем в новой форме модели вместо квадратичной зависимости логарифмическую форму регуляции:
+$$
+\frac{dN}{dt}=r\ln\left(\frac{\mathcal{K}}{N(t-\tau)}\right) - \mathcal{Q}N(t-\nu), \eqno(2)
+$$
+B таком варианте уравнения с внешним воздействием биотической среды дополнение модели фактором противодействия с отдельным запаздыванием изменит качественный характер решения для описания острой фазы инфекции.
+\end{talk}
+\end{document}

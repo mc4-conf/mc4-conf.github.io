@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Линейные группы над кольцами и группы Стейнберга}
+{Воронецкий Егор Юрьевич}
+{СПбГУ, Лаборатория им. П.\,Л. Чебышева}
+{voronetckiiegor@yandex.ru}
+{}
+{Алгебраическая геометрия}
+
+Хорошо известно, что группы точек простых линейных групп над полями как правило являются простыми абстрактными группами (с точностью до взятия производной подгруппы и факторизации по центру).
+
+С другой стороны, над коммутативными кольцами соответствующие группы уже имеют нетривиальную нормальную структуру. Оказывается, что в такой группе \(G\) обычно есть наибольшая совершенная подгруппа \(E\) (элементарная подгруппа), которая нормальна в \(G\), фактор-группа является разрешимой, а также имеется почти явное описание всех подгрупп \(G\), нормализуемых \(E\), в терминах идеалов основного кольца и некоторых гомологических инвариантов (относительных \(\mathrm K_1\)-функторов).
+
+В докладе будет рассказано про эту структурную теорию, а также её расширение на описание универсальных центральных расширений \(E\) при помощи так называемых групп Стейнберга, включая недавние результаты о центральности \(\mathrm K_2\)-функтора.
+\end{talk}
+\end{document}

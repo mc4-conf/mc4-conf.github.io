@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Вариационные задачи нелинейной теории упругости на группах Карно}
+{Павлов Степан Валерьевич}
+{Новосибирский Государственный Университет}
+{s.pavlov4254@gmail.com}
+{Водопьянов Сергей Константинович}
+{Вещественный и функциональный анализ} %
+
+Один из подходов к поиску положения, занимаемого гиперупругим телом \(\Omega\) в результате воздействия на него известных внешних сил, состоит в нахождении отображения \(\varphi:\Omega\to \mathbb{R}^n\), доставляющего минимум функционала энергии
+\[I(\varphi)=\int\limits_\Omega W(x,D\varphi(x))\, dx.\]
+В прошлом веке Дж. Боллом были найдены соответствующие реальным материалам математические условия, при которых удается получить теорему о существовании минимума функционала \(I\) в некотором классе непрерывных отображений с обобщенными производными.
+
+В работе [1] представлено приложение методов современного квазиконформного анализа к данной задаче~--- с их помощью в классе отображений с интегрируемым искажением установлено существование экстремального отображения, являющего взаимно однозначным. В настоящей работе этот подход развивается на группах Карно, обладающих существенно более сложной геометрией по сравнению с евклидовым пространством. Более подробные историческая справка и литература могут быть найдены в [1].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Molchanova A., Vodopyanov S., {\it Injectivity almost everywhere and mappings with finite distortion in nonlinear elasticity}, Calc. Var., 59, №17 (2019).
+\item[{[2]}] Водопьянов С.\,К., Павлов С.\,В., {\it Функциональные свойства пределов соболевских гомеоморфизмов с интегрируемым искажением}, Современная математика. Фундаментальные направления, 2024, Том 7, №3 (в печати).
+\end{enumerate}
+\end{talk}
+\end{document}

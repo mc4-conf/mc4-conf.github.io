@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Характеры и коприсоединённые орбиты унипотентных групп}
+{Игнатьев Михаил Викторович}
+{НИУ ВШЭ}
+{mihail.ignatev@gmail.com}
+{Михаил Венчаков, Алексей Петухов}
+{Алгебраическая геометрия}
+
+Основным инструментом в теории представлений нильпотентных групп и алгебр Ли является метод орбит, созданный А.А. Кирилловым в 1962 году. Коротко говоря, он гласит, что неприводимые представления (для групп) и их аннуляторы в универсальной обёртывающей алгебре (для алгебр Ли) находятся во взаимно однозначном соответствии с орбитами коприсоединённого представления данной алгебраической группы. Для унипотентных групп над конечными полями метод орбит описывает обычные их конечномерные комплексные представления.
+
+Увы, полная классификация орбит даже для группы унитреугольных матриц является дикой задачей. С другой стороны, для максимальных унипотентных подгрупп в группах Шевалле над конечными полями удаётся достаточно хорошо описать и изучить различные важные классы орбит --- больших и малых размерностей, ассоциированных с расстановками ладей и др. Я расскажу о методах, позволяющих изучать такие орбиты и соответствующие им неприводимые характеры, и сформулирую недавние результаты и открытые вопросы.
+\end{talk}
+\end{document}

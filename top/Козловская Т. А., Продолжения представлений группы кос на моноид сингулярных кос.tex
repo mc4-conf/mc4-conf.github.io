@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Продолжения представлений группы кос на моноид сингулярных кос}
+{Козловская Татьяна Анатольевна}
+{старший научный сотрудник Регионального научно-образовательного математического центра Томского государственного университета}
+{t.kozlovskaya@math.tsu.ru}
+{Бардаков Валерий Георгиевич, Нафаа Чбили.}
+{Топология} %
+
+Сингулярные узлы были определены для изучения инвариантов конечного
+порядка (инвариантов Васильева-Гусарова) классических узлов. Для изучения сингулярных узлов были введены моноид сингулярных кос \(SM_n\) и группа сингулярных кос \(SG_n\). Группы сингулярных крашеных кос изучались в работах [1]-[4].
+
+Естественным подходом к построению инвариантов узлов является построение различных представлений группы кос. Используя представление Артина автоморфизмами свободной группы, можно найти группу соответствующего зацепления. Используя приведенное представление Бурау, можно найти полином Александера соответствующего узла.
+
+О.~Дашбах и Б.~Гемейн изучали представления моноида сингулярных кос эндоморфизмами свободной группы. Также они построили линейное представление моноида сингулярных кос \(SM_n\) и доказали, что при \(n=3\) это представление точно.
+
+В работе [5] построены линейные представления и представления эндоморфизмами свободной группы \(F_n\) моноида и группы сингулярных кос,
+продолжающие представления группы кос Артина. Доказано, что построенное продолжение представления Бурау группы сингулярных кос приводимо.
+
+Одним из известных точных линейных представлений группы кос \(B_n\) является
+представление Лоуренса-Краммера-Бигелоу (ЛКБ). Возникает естественный вопросу о линейности группы \(SB_n\).
+
+В работе [5] построено линейное представление группы сингулярных кос,
+которое является продолжением представления ЛКБ, и вычислен дефект этого продолжения по отношению к внешнему произведению двух продолжений представления Бурау.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] V.G. Bardakov, T.A. Kozlovskaya,
+{\it On 3-strand singular pure braid group}, J. Knot Theory Ramif.,  29(10), (2020), 2042001 (20 pages).
+\item[{[2]}] V.G. Bardakov, T.A. Kozlovskaya,
+{\it Singular braids, singular links and subgroups of camomile type}. (2023), arXiv:2212.08267.
+\item[{[3]}] K. Gongopadhyay,  T. Kozlovskaya, O. Mamonov, {\it On some decompositions of the 3-strand singular braid group}, Topology Appl. 283(1), (2020), Article 107394.
+\item[{[4]}] T.A. Kozlovskaya,
+{\it Structure of 4-strand singular pure braid group}, Siberian Electronic Mathematical Reports, 19(1), (2022), 18--33,
+\item[{[5]}] V.G. Bardakov, N. Chbili, T.A. Kozlovskaya,
+{\it Extensions of braid group representations to the monoid of singular braids}. (2024), arXiv:2403.00516.
+\end{enumerate}
+\end{talk}
+\end{document}

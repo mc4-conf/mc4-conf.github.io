@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Сюръективность и инъективность операторов свертки: некоторые междисциплинарные результаты}
+{Андреева Татьяна Михайловна}
+{Южный федеральный университет}
+{metzi@yandex.ru}
+{}
+{Комплексный анализ}
+
+Пусть \(G\) --- выпуклая ограниченная область комплексной плоскости \(\mathbb{C}\), \(H\left(G\right)\) --- пространство всех функций, голоморфных в  \(G\), \(V=\left(v_n\right)_{n=1}^\infty\) --- последовательность возврастающих функций, непрерывных в \(G\). Обозначим \(VH\left(G\right):=\bigcup_{n=1}^{\infty}{H_{v_n}\left(G\right)}\), где
+\begin{equation*}
+\begin{array}{cc}
+H_{v_n}(G):= \Big\{ f\in H(G): ||f||_{v_n}:=\sup\limits_{z\in G} \cfrac{|f(z)|}{e^{v_n(z)}}  \Big\}, & n\in\mathbb{N}.
+\end{array}
+\end{equation*}
+В работе рассматриваются решения уравнения свертки \(\mu\ast f=g\), где \(\mu:VH\left(G+K\right)\rightarrow VH\left(G\right)\) --- аналитический функционал с носителем в выпуклом компакте \(K\).
+
+Основные результаты основаны на условиях сюръективности обозначенных операторов [1, 2]. Рассматриваются некоторые междисциплинарные вопросы, которые сводятся к качественным свойствам описанных в докладе отображений.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] {Abanin A.~V, Andreeva T.~M.}{On the surjectivity of the convolution operator in spaces of holomorphic functions of a prescribed growth~/\!/ Vladikavkaz. Mat. Zh.---2018.---20(2).~---Pp.~3--15.}
+\item[{[2]}] {Abanin A.~V, Andreeva T.~M.}{Analytic Description of the Spaces Dual to Spaces of Holomorphic Functions of Given Growth on Caratheodory Domains~/\!/ Mat. Zametki.---2018.--- 104:3.~---Pp. 323--335.}
+\end{enumerate}
+\end{talk}
+\end{document}

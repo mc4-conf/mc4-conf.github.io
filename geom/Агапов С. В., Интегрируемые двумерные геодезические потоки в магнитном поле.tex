@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Интегрируемые двумерные геодезические потоки в магнитном поле}
+{Агапов Сергей Вадимович}
+{Институт математики им. С.\,Л. Соболева СО РАН, Новосибирск}
+{agapov.sergey.v@gmail.com}
+{}
+{Геометрия} %
+
+В докладе речь пойдет об интегрируемых геодезических потоках на двумерных поверхностях в ненулевом магнитном поле.
+Известно, что требование интегрируемости таких потоков одновременно на всех (или хотя бы на нескольких различных) уровнях энергии
+является весьма ограничительным (см., например, [1], [2]).
+С другой стороны, хорошо известны примеры метрик и магнитных полей, допускающих дополнительный интеграл лишь на фиксированном уровне энергии.
+Так, например, в [3], [4] доказано, что на двумерном торе существуют семейства аналитических римановых метрик и магнитных полей
+с дополнительным квадратичным по импульсам первым интегралом.
+Различные примеры локальных рациональных по импульсам первых интегралов магнитных геодезических потоков в явном виде построены в [5].
+
+\medskip
+
+Доклад основан на совместных работах с М. Бялым, А.\,А. Валюженичем, А.\,Е. Мироновым, А.\,И. Поташниковым, В.\,В. Шубиным.
+
+\begin{enumerate}
+\item[{[1]}] И.А. Тайманов, {\it О первых интегралах геодезических потоков на двумерном торе}, Труды МИАН, 295 (2016), 241–260.
+\item[{[2]}] S. Agapov, A. Valyuzhenich, {\it Polynomial integrals of magnetic geodesic flows on the 2-torus on several energy levels},
+Disc. Cont. Dyn. Syst. - A., 39:11 (2019), 6565–6583.
+\item[{[3]}] B. Dorizzi, B. Grammaticos, A. Ramani, P. Winternitz, {\it Integrable Hamiltonian systems with velocity-dependent potentials},
+J. Math. Phys., 26:12 (1985), 3070–3079.
+\item[{[4]}] S.V. Agapov, M. Bialy, A.E. Mironov, {\it Integrable magnetic geodesic flows on 2-torus: new examples via quasi-linear system of PDEs},
+Comm. Math. Phys., 351:3 (2017), 993–1007.
+\item[{[5]}] S. Agapov, A. Potashnikov, V. Shubin, {\it Integrable magnetic geodesic flows on 2-surfaces}, Nonlinearity, 36:4 (2023), 2128–2147.
+\end{enumerate}
+\end{talk}
+\end{document}

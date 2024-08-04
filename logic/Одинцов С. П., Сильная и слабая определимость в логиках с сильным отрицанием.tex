@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Сильная и слабая определимость в логиках с сильным отрицанием} % [1] название доклада
+{Одинцов Сергей Павлович} % [2] имя докладчика
+{Институт Математики СО РАН}% [3] аффилиация
+{odintsov.sergey2013@yandex.ru} % [4] адрес электронной почты (НЕОБЯЗАТЕЛЬНО)
+{Д.~М.~Анищенко, Новосибирский госуниверситет, d.anishchenko@g.nsu.ru} % [5] соавторы (НЕОБЯЗАТЕЛЬНО)
+{Математическая логика и теоретическая информатика} % [6] название секции
+				
+В логиках с сильным отрицанием $\sim$ условия истинности и ложности формул определяются параллельно, а сильное отрицание позволяет переходить от условий истинности к условиям ложности и наоборот. Вследствие этого  слабая эквивалентность $\varphi\leftrightarrow\psi$, определяемая обычным образом, означает лишь, что в каждом из возможных миров формулы $\varphi$ и $\psi$ одновременно истинны. Сильная эквивалентность $\varphi\leftrightarrow\psi:=(\varphi\leftrightarrow\psi)\wedge(\mathord{\sim}\varphi\leftrightarrow\mathord{\sim}\psi)$ сохраняет как истинность, так и ложность формул  и является конгруенцией на алгебре формул. Именно эта эквивалентность используется при стандартном определении дефинициальной эквивалентности (d-эквивалентости) логик с сильным отрицанием. В [1] определена слабая d-эквивалентность за счет замены $\Leftrightarrow$ на $\leftrightarrow$  и отказа от условия на $\sim$  в определении структурной трансляции. Оказалось [1], что различные версии Белнаповских модальных логик являются слабо d-эквивалентными. 
+
+\medskip
+		
+В [3] определены так называемые bl-логики как логики, язык которых содержит сильное отрицание, правило отделимости для слабой эквивалентности является производным и есть формула $\odot(p,q)$ такая, что для любых формул $\varphi$ и $\psi$ доказуемы следующие слабые эквивалентности: $\odot(\varphi,\psi)\leftrightarrow\varphi$, $\mathord{\sim}\odot(\varphi,\psi)\leftrightarrow\psi$.  В [3] также доказано, что для bl-логик из слабой d-эквивалентности следует d-эквивалентность. 
+				
+\medskip
+		
+В данном докладе мы сделаем обзор упомянутых результатов и перейдем от взаимной определимости логик к изучению определимости параметров в логиках с сильным отрицанием. В качестве первого шага мы докажем для расширений избыточной логики Нельсона {\bf N3} аналог известной теоремы Крайзеля [2], утверждающей, что каждая суперинтуиционистская логика удовлетворяет свойству Бета, т.е. в каждой из таких логик из неявной определимости следует явная определимость.
+		
+\medskip
+{\bf Теорема.} {\em Пусть $L$ --- логика, расширяющая {\bf N3}. Для любой формулы $\Phi(\overline{p},q)$ из
+\[ (\Phi(\overline{p},q)\wedge \Phi(\overline{p},q'))\rightarrow(q\Leftrightarrow q')\in L \]
+следует существование двух формул $\psi^+(\overline{p})$  и $\psi^-(\overline{p})$ таких, что
+\[ \Phi(\overline{p},q)\rightarrow(q\leftrightarrow\psi^+(\overline{p})),\ \ \Phi(\overline{p},q)\rightarrow(\mathord{\sim} q\leftrightarrow\psi^-(\overline{p}))\in L.\]}
+		
+%\smallskip 
+Как видно, в расширениях логики {\bf N3} из сильной неявной определимости (однозначно определяющей как истинность, так и ложность параметра $q$) следует  слабая явная определимость, условия истинности и ложности для $q$ определяются при помощи различных формул.  Очевидно также, что в bl-логиках из слабой явной определимости следует сильная явная определимость. Логика {\bf N3} не является однако bl-логикой. Поэтому остается открытым вопрос, когда в расширениях {\bf N3} из слабой явной определимости следует сильная явная определимость.
+		
+		
+Работа выполнена в рамках государственного задания ИМ СО РАН (проект FWNF2022-0012).
+		
+\begin{enumerate}
+\item[{[1]}] S.P. Odintsov, H. Wansing, {\it Disentangling FDE-based paraconsistent modal logics}, Studia Logica, 105 (2017), 1221–-1254.
+\item[{[2]}] G. Kreisel, {\it Explicit definability in intuitionistic logic}, The Journal of Symbolic Logic, 25 (1960), 389--390.
+\item[{[3]}] S.P. Odintsov, D. Skurt, H. Wansing, {\it On Definability of Connectives and Modal Logics over FDE}, Logic and Logical Philosophy, 28 (2019), 631--659.			
+\end{enumerate}
+\end{talk}
+\end{document}

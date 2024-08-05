@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+  {О топологии несущих многообразий простейших систем с регулярной динамикой} % [1] название доклада
+  {Сараев Илья Александрович} % [2] имя докладчика
+  {Международная лаборатория динамических систем и приложений, \\ НИУ ВШЭ -- Нижний Новгород}% [3] аффилиация
+  {ilasaraev34@gmail.com} % [4] адрес электронной почты (НЕОБЯЗАТЕЛЬНО)
+  {Гуревич Елена Яковлевна} % [5] соавторы (НЕОБЯЗАТЕЛЬНО)
+  {Дифференциальные уравнения и динамические системы} % [6] название секции
+
+Известно, что любое замкнутое многообразие допускает градиентно-подобный поток и диффеоморфизм Морса-Смейла. Рассмотрим класс $G$ диффеоморфизмов Морса-Смейла таких, что инвариантные многообразия седловых периодических точек любого диффеоморфизма из $G$, имеющие коразмерность один, содержат лишь изолированные гетероклинические орбиты. В работе~[1] описана топология трехмерного ориентированного замкнутого многообразия, допускающего диффеоморфизмы из класса $G$. В работе~[2] этот результат обобщен на случай неориентируемого  трехмерного многообразия. В настоящем докладе эти результаты обобщаются на случай замкнутых многообразий размерности 4 и выше (как ориентируемых, так и неориентируемых). В отличие от размерности 3, в высших размерностях топологию такого многообразия удается описать с точностью до односвязных слагаемых в связной сумме. Однако, в размерности 4 топологию этих односвязных многообразий можно уточнить, используя результаты Рохлина, Фридмана, Дональдсона и Фуруты по классификации гладких односвязных четырехмерных многообразий. В докладе обсуждается возможность обобщения полученных результатов для непрерывных систем с регулярной динамикой, заданных на топологических многообразиях.
+
+{\it Благодарности:} Исследование осуществлено в рамках Программы фундаментальных исследований НИУ ВШЭ.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Bonatti, C., Grines, V., Medvedev, V. and Pecou, E., Three-dimensional manifolds admitting Morse-Smale diffeomorphisms without heteroclinic curves, \textit{Topology and Appl.}, 2002, vol.\,117, pp.\,335--344.
+\item[{[2]}] Pochinka, O.\,V., Osenkov E.M., The unique decomposition theorem for 3-manifolds, admitting Morse-Smale diffeomorphisms without heteroclinic curves, Moscow Math Journal ({\it to appear})
+\end{enumerate}
+\end{talk}
+\end{document}

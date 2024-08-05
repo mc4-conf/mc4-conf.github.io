@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage{hyphsubst}
+\usepackage[T2A]{fontenc}
+\usepackage[english,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+\usepackage{float}
+\usepackage{mathtools, commath, amssymb, amsthm}
+\usepackage{enumitem, tabularx,graphicx,url,xcolor,rotating,multicol,epsfig,colortbl,lipsum}
+
+\setlist{topsep=1pt, itemsep=0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\usepackage[math]{anttor}
+
+\newenvironment{talk}[6]{%
+\vskip 0pt\nopagebreak%
+\vskip 0pt\nopagebreak%
+\section*{#1}
+\phantomsection
+\addcontentsline{toc}{section}{#2. \textit{#1}}
+% \addtocontents{toc}{\textit{#1}\par}
+\textit{#2}\\\nopagebreak%
+#3\\\nopagebreak%
+\ifthenelse{\equal{#4}{}}{}{\url{#4}\\\nopagebreak}%
+\ifthenelse{\equal{#5}{}}{}{Соавторы: #5\\\nopagebreak}%
+\ifthenelse{\equal{#6}{}}{}{Секция: #6\\\nopagebreak}%
+}
+
+\definecolor{LovelyBrown}{HTML}{FDFCF5}
+
+\usepackage[pdftex,
+breaklinks=true,
+bookmarksnumbered=true,
+linktocpage=true,
+linktoc=all
+]{hyperref}
+
+\begin{document}
+\pagenumbering{gobble}
+\pagestyle{plain}
+\pagecolor{LovelyBrown}
+\begin{talk}
+{Неразрешимость логики QLC в языке с двумя предметными переменными} % [1] название доклада
+{Рыбаков Михаил Николаевич}
+{ВШМ МФТИ, НИУ ВШЭ, ТвГУ}% [3] аффилиация
+{m_rybakov@mail.ru} % [4] адрес электронной почты (НЕОБЯЗАТЕЛЬНО)
+{}
+{Математическая логика и теоретическая информатика} % [6] название секции
+
+{\bf Известные факты.} Классическая логика предикатов $\mathbf{QCl}$ неразрешима в языке с тремя предметными переменными и одной бинарной предикатной буквой, при этом е\"{е} фрагмент с двумя предметными переменными разрешим. 
+Любая логика, лежащая между интуиционистской предикатной логикой $\mathbf{QInt}$ и предикатной логикой слабого закона исключённого третьего $\mathbf{QKC}$, неразрешима в языке с двумя предметными переменными и одной унарной предикатной буквой, при этом используемые в доказательствах методы требуют наличия у логики шкал Крипке с бесконечными антицепями, и неприменимы к предикатной логике $\mathbf{QLC}$, определяемой классом линейных шкал Крипке. 
+Логика $\mathbf{QS4.3}$~--- модальная предикатная логика класса линейных шкал~--- неразрешима при наличии двух предметных переменных и двух унарных предикатных букв в языке, 
+но методы доказательства тоже не переносятся на $\mathbf{QLC}$, 
+оставляя вопрос о разрешимости её фрагмента от двух переменных 
+``интригующей открытой проблемой'' [1], которую мы и рассматриваем здесь.
+
+{\bf Результаты.} Пусть $\mathbf{QL\mathbb{N}}$~--- логика шкалы Крипке $\langle \mathbb{N},\leqslant\rangle$, а $\mathbf{QL\mathbb{N}.cd}$~--- расширение этой логики формулой $\bf{cd}$, требующей постоянства предметных областей. Тогда
+\begin{itemize}
+\item
+если $\mathbf{QLC}\subseteq L\subseteq \mathbf{QL\mathbb{N}.cd}$, то $L$ является $\Sigma^0_1$-трудной в языке с двумя предметными переменными;
+\item
+если $\mathbf{QL\mathbb{N}}\subseteq L\subseteq \mathbf{QL\mathbb{N}.cd}$, то $L$ является $\Sigma^0_1$-трудной и $\Pi^0_1$-трудной в языке с двумя предметными переменными.
+\end{itemize}
+
+{\bf Предмет обсуждения.} Если время позволит, то предполагается обсудить не столько сами результаты, сколько методы их получения и возможные обобщения.
+
+{\bf Финансирование.} Работа выполнена при финансовой поддержке программы ``Научный фонд НИУ ВШЭ'', проект \mbox{23-00-022}.
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] X. Caicedo, G. Metcalfe, R. Rodr\'{i}guez, O. Tuyt, {\it One-variable fragments of intermediate logics over linear frames}, Information and Computation, 287, 2022.
+\end{enumerate}
+\end{talk}
+\end{document}
